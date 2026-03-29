@@ -5,7 +5,7 @@ import SectionHeading from '../../components/SectionHeading.astro';
 import FeatureGrid from '../../components/FeatureGrid.astro';
 import GalleryGrid from '../../components/GalleryGrid.astro';
 import { getSiteContent } from '../../content/site-content';
-import { galleryMediaById } from '../../data/property';
+import { pageMedia } from '../../data/property';
 import { getStaticLocalePaths, type Locale } from '../../lib/i18n';
 
 export function getStaticPaths() {
@@ -22,10 +22,8 @@ const content = getSiteContent(locale);
     eyebrow={content.gallery.hero.eyebrow}
     title={content.gallery.hero.title}
     intro={content.gallery.hero.intro}
-    mediaSrc={galleryMediaById['house-exterior'].src}
-    mediaAlt={content.galleryCaptions['house-exterior']}
-    mediaWidth={galleryMediaById['house-exterior'].width}
-    mediaHeight={galleryMediaById['house-exterior'].height}
+    mediaItem={pageMedia.galleryHero}
+    mediaAlt={content.galleryCaptions[pageMedia.galleryHero.id]}
     asideEyebrow={content.navigation.gallery}
     asideTitle={content.gallery.introTitle}
     asideText={content.gallery.note}

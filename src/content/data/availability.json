@@ -1,0 +1,45 @@
+{
+  "source": "manual",
+  "icalFeeds": {
+    "airbnb": "",
+    "booking": ""
+  },
+  "months": [
+    {
+      "month": "2026-04",
+      "state": "available"
+    },
+    {
+      "month": "2026-05",
+      "state": "available"
+    },
+    {
+      "month": "2026-06",
+      "state": "limited"
+    },
+    {
+      "month": "2026-07",
+      "state": "booked"
+    },
+    {
+      "month": "2026-08",
+      "state": "limited"
+    },
+    {
+      "month": "2026-09",
+      "state": "available"
+    },
+    {
+      "month": "2026-10",
+      "state": "available"
+    },
+    {
+      "month": "2026-11",
+      "state": "inquiry"
+    },
+    {
+      "month": "2026-12",
+      "state": "inquiry"
+    }
+  ]
+}

@@ -38,7 +38,19 @@ export function buildStructuredData(
   const sameAs = Object.values(property.listingLinks).filter(hasRealExternalLink);
   const images = galleryMedia
     .slice(0, 4)
-    .map((item) => new URL(item.src, property.siteUrl).toString());
+    .map((item) => {
+      if (item.type === 'image') {
+        return item.src;
+      }
+
+      if (item.source === 'file') {
+        return item.poster || item.src;
+      }
+
+      return item.poster;
+    })
+    .filter((src): src is string => Boolean(src))
+    .map((src) => new URL(src, property.siteUrl).toString());
   const seoKey = page === '' ? 'home' : page;
   const seo = content.seo[seoKey];
 

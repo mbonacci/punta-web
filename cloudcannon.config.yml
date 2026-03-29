@@ -1,0 +1,13 @@
+paths:
+  static: public
+
+collections_config:
+  locale_content:
+    path: src/content/site
+    disable_add: true
+    disable_add_folder: true
+
+  site_data:
+    path: src/content/data
+    disable_add: true
+    disable_add_folder: true

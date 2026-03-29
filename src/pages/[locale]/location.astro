@@ -3,8 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 import FeatureGrid from '../../components/FeatureGrid.astro';
+import MediaAsset from '../../components/MediaAsset.astro';
 import { getSiteContent } from '../../content/site-content';
-import { galleryMediaById, property } from '../../data/property';
+import { pageMedia, property } from '../../data/property';
 import { getStaticLocalePaths, type Locale } from '../../lib/i18n';
 
 export function getStaticPaths() {
@@ -20,10 +21,8 @@ const content = getSiteContent(locale);
     eyebrow={content.location.hero.eyebrow}
     title={content.location.hero.title}
     intro={content.location.hero.intro}
-    mediaSrc={galleryMediaById['hero-coast'].src}
-    mediaAlt={content.galleryCaptions['hero-coast']}
-    mediaWidth={galleryMediaById['hero-coast'].width}
-    mediaHeight={galleryMediaById['hero-coast'].height}
+    mediaItem={pageMedia.locationHero}
+    mediaAlt={content.galleryCaptions[pageMedia.locationHero.id]}
     asideEyebrow={content.navigation.location}
     asideTitle={content.location.mapCard.title}
     asideText={content.location.mapCard.text}
@@ -62,12 +61,11 @@ const content = getSiteContent(locale);
   <section class="section">
     <div class="container split-grid">
       <article class="panel">
-        <img
-          src={galleryMediaById['hero-coast'].src}
-          alt={content.galleryCaptions['hero-coast']}
-          width={galleryMediaById['hero-coast'].width}
-          height={galleryMediaById['hero-coast'].height}
+        <MediaAsset
+          item={pageMedia.locationIllustration}
+          alt={content.galleryCaptions[pageMedia.locationIllustration.id]}
           loading="eager"
+          controls={false}
         />
       </article>
       <article class="panel">

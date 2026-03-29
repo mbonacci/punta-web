@@ -3,9 +3,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 import FeatureGrid from '../../components/FeatureGrid.astro';
+import MediaAsset from '../../components/MediaAsset.astro';
 import StatsStrip from '../../components/StatsStrip.astro';
 import { getSiteContent } from '../../content/site-content';
-import { galleryMediaById, property } from '../../data/property';
+import { pageMedia, property } from '../../data/property';
 import { getStaticLocalePaths, localizedPath, type Locale } from '../../lib/i18n';
 
 export function getStaticPaths() {
@@ -21,10 +22,8 @@ const content = getSiteContent(locale);
     eyebrow={content.accommodation.hero.eyebrow}
     title={content.accommodation.hero.title}
     intro={content.accommodation.hero.intro}
-    mediaSrc={galleryMediaById['terrace-evening'].src}
-    mediaAlt={content.galleryCaptions['terrace-evening']}
-    mediaWidth={galleryMediaById['terrace-evening'].width}
-    mediaHeight={galleryMediaById['terrace-evening'].height}
+    mediaItem={pageMedia.accommodationHero}
+    mediaAlt={content.galleryCaptions[pageMedia.accommodationHero.id]}
   />
 
   <section class="section section--compact">
@@ -40,12 +39,11 @@ const content = getSiteContent(locale);
         {content.accommodation.overview.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
       </div>
       <aside class="panel panel--aside">
-        <img
-          src={galleryMediaById['house-exterior'].src}
-          alt={content.galleryCaptions['house-exterior']}
-          width={galleryMediaById['house-exterior'].width}
-          height={galleryMediaById['house-exterior'].height}
+        <MediaAsset
+          item={pageMedia.accommodationOverview}
+          alt={content.galleryCaptions[pageMedia.accommodationOverview.id]}
           loading="eager"
+          controls={false}
         />
       </aside>
     </div>
@@ -95,12 +93,11 @@ const content = getSiteContent(locale);
         </dl>
       </div>
       <aside class="panel panel--aside">
-        <img
-          src={galleryMediaById['terrace-evening'].src}
-          alt={content.galleryCaptions['terrace-evening']}
-          width={galleryMediaById['terrace-evening'].width}
-          height={galleryMediaById['terrace-evening'].height}
+        <MediaAsset
+          item={pageMedia.accommodationHero}
+          alt={content.galleryCaptions[pageMedia.accommodationHero.id]}
           loading="lazy"
+          controls={false}
         />
         <div class="panel panel--note">
           <p class="eyebrow">{content.common.directInquiry}</p>

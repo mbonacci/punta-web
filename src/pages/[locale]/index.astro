@@ -3,10 +3,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 import FeatureGrid from '../../components/FeatureGrid.astro';
 import GalleryGrid from '../../components/GalleryGrid.astro';
+import MediaAsset from '../../components/MediaAsset.astro';
 import StatsStrip from '../../components/StatsStrip.astro';
 import AvailabilityBoard from '../../components/AvailabilityBoard.astro';
 import { getSiteContent } from '../../content/site-content';
-import { galleryMediaById, property } from '../../data/property';
+import { pageMedia, property } from '../../data/property';
 import { getStaticLocalePaths, localizedPath, type Locale } from '../../lib/i18n';
 
 export function getStaticPaths() {
@@ -19,14 +20,13 @@ const content = getSiteContent(locale);
 
 <BaseLayout locale={locale} page="" content={content}>
   <section class="home-hero">
-    <img
+    <MediaAsset
+      item={pageMedia.homeHero}
       class="home-hero__backdrop"
-      src={galleryMediaById['hero-coast'].src}
-      alt={content.galleryCaptions['hero-coast']}
-      width={galleryMediaById['hero-coast'].width}
-      height={galleryMediaById['hero-coast'].height}
+      alt={content.galleryCaptions[pageMedia.homeHero.id]}
       loading="eager"
       fetchpriority="high"
+      controls={false}
     />
     <div class="home-hero__scrim"></div>
 
@@ -131,12 +131,11 @@ const content = getSiteContent(locale);
       </div>
 
       <aside class="panel panel--aside">
-        <img
-          src={galleryMediaById['house-front'].src}
-          alt={content.galleryCaptions['house-front']}
-          width={galleryMediaById['house-front'].width}
-          height={galleryMediaById['house-front'].height}
+        <MediaAsset
+          item={pageMedia.homeStory}
+          alt={content.galleryCaptions[pageMedia.homeStory.id]}
           loading="lazy"
+          controls={false}
         />
         <div class="panel panel--note">
           <p>{content.home.story.aside}</p>

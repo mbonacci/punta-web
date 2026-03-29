@@ -1,0 +1,49 @@
+{
+  "siteName": "House Punta",
+  "propertyName": "House Punta",
+  "contact": {
+    "email": "stay@house-punta.example",
+    "phoneDisplay": "+385 91 000 0000",
+    "phoneE164": "+385910000000",
+    "whatsappDisplay": "+385 91 000 0000",
+    "whatsappE164": "+385910000000"
+  },
+  "coordinates": {
+    "latitude": 43.3298,
+    "longitude": 16.4462
+  },
+  "address": {
+    "locality": "Milna",
+    "region": "Split-Dalmatia County",
+    "postalCode": "21405",
+    "countryCode": "HR"
+  },
+  "facts": {
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "maxGuests": 6,
+    "livingSpaceSqFt": 807.3,
+    "groundsSqm": 20000,
+    "beachDistanceMeters": 30
+  },
+  "access": {
+    "milnaDistanceMiles": 3,
+    "milnaDriveMinutes": 15,
+    "parkingDistanceMeters": 40
+  },
+  "review": {
+    "score": 10,
+    "scoreDisplay": "10/10",
+    "reviewCount": 20
+  },
+  "schedule": {
+    "checkIn": "16:00",
+    "checkOut": "11:00"
+  },
+  "listingLinks": {
+    "vrbo": "https://www.vrbo.com/3724994ha?expediaPropertyId=34014412&regionId=6144551&destType=MARKET&sort=RECOMMENDED",
+    "airbnb": "https://example.com/airbnb-house-punta",
+    "booking": "https://example.com/booking-house-punta"
+  },
+  "mapDirectionsUrl": "https://www.google.com/maps/search/?api=1&query=43.3298,16.4462"
+}

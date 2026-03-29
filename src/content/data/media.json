@@ -1,0 +1,51 @@
+{
+  "socialImage": "/images/house-punta-hero.jpg",
+  "pageMedia": {
+    "homeHero": "hero-coast",
+    "homeStory": "house-front",
+    "accommodationHero": "terrace-evening",
+    "accommodationOverview": "house-exterior",
+    "galleryHero": "house-exterior",
+    "locationHero": "hero-coast",
+    "locationIllustration": "hero-coast"
+  },
+  "gallery": [
+    {
+      "id": "house-exterior",
+      "type": "image",
+      "src": "/images/house-punta-garden.jpg",
+      "width": 1400,
+      "height": 786,
+      "priority": true
+    },
+    {
+      "id": "hero-coast",
+      "type": "image",
+      "src": "/images/house-punta-hero.jpg",
+      "width": 1600,
+      "height": 900,
+      "priority": true
+    },
+    {
+      "id": "terrace-evening",
+      "type": "image",
+      "src": "/images/house-punta-terrace.jpg",
+      "width": 1400,
+      "height": 933
+    },
+    {
+      "id": "living-area",
+      "type": "image",
+      "src": "/images/house-punta-interior.jpg",
+      "width": 865,
+      "height": 1400
+    },
+    {
+      "id": "house-front",
+      "type": "image",
+      "src": "/images/house-punta-exterior-2.jpg",
+      "width": 1400,
+      "height": 786
+    }
+  ]
+}

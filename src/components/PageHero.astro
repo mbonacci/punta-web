@@ -1,4 +1,7 @@
 ---
+import type { GalleryMediaItem } from '../data/property';
+import MediaAsset from './MediaAsset.astro';
+
 type HeroAction = {
   href: string;
   label: string;
@@ -16,10 +19,8 @@ interface Props {
   title: string;
   intro: string;
   variant?: 'calm' | 'gallery' | 'utility';
-  mediaSrc?: string;
+  mediaItem?: GalleryMediaItem;
   mediaAlt?: string;
-  mediaWidth?: number;
-  mediaHeight?: number;
   asideEyebrow?: string;
   asideTitle?: string;
   asideText?: string;
@@ -32,10 +33,8 @@ const {
   title,
   intro,
   variant = 'calm',
-  mediaSrc,
+  mediaItem,
   mediaAlt,
-  mediaWidth,
-  mediaHeight,
   asideEyebrow,
   asideTitle,
   asideText,
@@ -44,7 +43,7 @@ const {
 } = Astro.props;
 
 const hasSupport =
-  Boolean(mediaSrc) ||
+  Boolean(mediaItem) ||
   Boolean(asideEyebrow) ||
   Boolean(asideTitle) ||
   Boolean(asideText) ||
@@ -80,15 +79,14 @@ const hasSupport =
         hasSupport && (
           <div class="page-hero__support">
             {
-              mediaSrc && (
+              mediaItem && (
                 <figure class="page-hero__media">
-                  <img
-                    src={mediaSrc}
+                  <MediaAsset
+                    item={mediaItem}
                     alt={mediaAlt || ''}
-                    width={mediaWidth}
-                    height={mediaHeight}
                     loading="eager"
                     fetchpriority="high"
+                    controls={false}
                   />
                 </figure>
               )

@@ -1,8 +1,8 @@
 # House Punta
 
-Production-ready Astro v1 website for a private family-owned rental house near Milna on the island of Brac, Croatia.
+Production-ready Astro website for a private family-owned rental house near Milna on the island of Brac, Croatia.
 
-The site is static, multilingual from day one, and designed for direct inquiries plus credibility links from Airbnb, Booking.com, and similar platforms.
+The site is static, multilingual from day one, and organized so non-technical content edits can happen without touching layout code.
 
 ## Stack
 
@@ -10,7 +10,8 @@ The site is static, multilingual from day one, and designed for direct inquiries
 - Static output
 - Custom CSS only
 - Locale JSON files for all user-facing copy
-- Simple mock availability layer with a documented future iCal extension point
+- Structured JSON data for property details, media, and availability
+- GitHub Actions for validation and optional cPanel deployment
 
 ## Local development
 
@@ -29,30 +30,44 @@ npm run build
 npm run preview
 ```
 
+`npm run check` now validates both:
+
+- locale/content structure
+- media references and captions
+- Astro type/build checks
+
 ## Project structure
 
 Key files and folders:
 
-- `src/pages/[locale]/`  
+- `src/pages/[locale]/`
   Localized routes for all required pages.
-- `src/content/site/*.json`  
-  Locale content files for `hr`, `en`, `de`, `fr`, and `es`.
-- `src/content/site-content.ts`  
+- `src/content/site/*.json`
+  Locale copy for `hr`, `en`, `de`, `fr`, and `es`.
+- `src/content/data/property.json`
+  Contact details, coordinates, guest facts, review summary, check-in/out, and listing links.
+- `src/content/data/media.json`
+  Gallery items plus page-level featured media selections.
+- `src/content/data/availability.json`
+  Manual availability source with future iCal placeholders.
+- `src/content/site-content.ts`
   Typed loader and validation for locale JSON content.
-- `src/data/property.ts`  
-  Contact data, coordinates, property facts, gallery file references, listing links, and mock availability.
-- `src/lib/i18n.ts`  
-  Supported locales, route helpers, and alternate-link generation.
-- `src/lib/inquiry.ts`  
+- `src/data/property.ts`
+  Typed loader and shared helpers for structured site data.
+- `src/lib/inquiry.ts`
   Inquiry adapter abstraction and direct-contact fallback helpers.
-- `src/lib/availability.ts`  
+- `src/lib/availability.ts`
   Mock availability provider and the future iCal integration hook.
-- `src/layouts/BaseLayout.astro`  
-  SEO, Open Graph, JSON-LD, header, footer, and sticky CTA shell.
-- `public/images/`  
+- `public/images/`
   Replaceable image assets.
-- `public/.htaccess`  
-  Apache root redirect to `/hr/` for cPanel deployments.
+- `public/videos/`
+  Optional web-ready video assets.
+- `.github/workflows/ci.yml`
+  Pull request and branch validation.
+- `.github/workflows/deploy-cpanel.yml`
+  Automatic deploy to cPanel after merge to `main` when FTP secrets are configured.
+- `cloudcannon.config.yml`
+  Basic repository hints for CloudCannon editing.
 
 ## Supported locales
 
@@ -86,13 +101,13 @@ All user-facing text lives in:
 - `src/content/site/fr.json`
 - `src/content/site/es.json`
 
-Croatian is the source version. Keep the same object shape across all locale files.
+Croatian is the source version. Keep the same structure across all locale files and update all locales in the same pull request when fields are added, removed, or reordered.
 
-### Edit contact info
+### Edit contact info, guest facts, and listing links
 
 Update:
 
-- `src/data/property.ts`
+- `src/content/data/property.json`
 
 This file contains:
 
@@ -102,8 +117,65 @@ This file contains:
 - coordinates
 - locality metadata
 - check-in / check-out
-- listing links
+- Airbnb / Booking / VRBO links
 - guest / room / sea-distance facts
+
+### Edit gallery items and featured media
+
+Update:
+
+- `src/content/data/media.json`
+
+This file contains:
+
+- the gallery media list
+- the social share image path
+- which media item appears in the home hero
+- which media item appears on accommodation, gallery, and location pages
+
+Captions stay in locale files under `galleryCaptions`.
+
+### Replace images
+
+Put optimized files in:
+
+- `public/images/`
+
+Then either:
+
+1. keep the same filenames for zero content changes, or
+2. update `src/content/data/media.json` if filenames change.
+
+### Add videos
+
+Put optimized web-ready files in:
+
+- `public/videos/`
+
+Then add a new media item in:
+
+- `src/content/data/media.json`
+
+Supported approaches:
+
+- local video file, for example `/videos/terrace-walkthrough.mp4`
+- external embed URL, for example a YouTube or Vimeo embed URL
+
+Keep original masters outside Git. Only commit compressed files intended for the website.
+
+### Edit availability
+
+Update:
+
+- `src/content/data/availability.json`
+
+Current behavior:
+
+- manual month-by-month statuses rendered statically
+
+Future behavior:
+
+- switch the provider to iCal-backed availability without changing page markup
 
 ### Edit site URL
 
@@ -114,33 +186,60 @@ Update:
 
 Then rebuild so canonical URLs, sitemap output, and OG URLs use the final domain.
 
-### Replace images
+## Editorial workflow for Marija
 
-Current images are locally stored JPGs imported from the legacy VRBO listing in:
+Recommended setup:
 
-- `public/images/`
+1. Connect this GitHub repo to CloudCannon.
+2. In CloudCannon, configure:
+   - install command: `npm ci`
+   - build command: `npm run build`
+   - output directory: `dist`
+3. Invite Marija as an editor.
+4. Keep `main` protected in GitHub.
+5. Require pull requests and the `Validate` workflow before merge.
 
-To replace them:
+Recommended day-to-day flow:
 
-1. Keep the same filenames if you want zero code changes.
-2. If you rename files, update `galleryMedia` in `src/data/property.ts`.
-3. Update captions in each locale file under `galleryCaptions`.
+1. Marija edits content in CloudCannon.
+2. CloudCannon creates a branch or pull request.
+3. GitHub Actions runs validation.
+4. You review and merge.
+5. Merge to `main` deploys automatically to cPanel once FTP secrets are configured.
 
-Current image set:
+Detailed notes:
 
-- `house-punta-hero.jpg`
-- `house-punta-garden.jpg`
-- `house-punta-terrace.jpg`
-- `house-punta-interior.jpg`
-- `house-punta-exterior-2.jpg`
+- `docs/editorial-workflow.md`
 
-### Add Airbnb / Booking.com links
+## GitHub and deployment setup
 
-Update:
+### Branch protection
 
-- `src/data/property.ts`
+In GitHub, protect `main` and require:
 
-Replace the placeholder `example.com` URLs in `listingLinks`. Once real links are present, they will automatically appear in structured data and the footer.
+- pull requests
+- at least one review
+- passing status check: `Validate`
+- code owner review if you want `CODEOWNERS` to apply
+
+### Automatic cPanel deployment
+
+The repository already includes:
+
+- `.github/workflows/deploy-cpanel.yml`
+
+Add these GitHub repository secrets before expecting automatic deployment:
+
+- `CPANEL_FTP_SERVER`
+- `CPANEL_FTP_USERNAME`
+- `CPANEL_FTP_PASSWORD`
+- `CPANEL_FTP_SERVER_DIR`
+
+Typical `CPANEL_FTP_SERVER_DIR` value:
+
+- `/public_html/`
+
+Once the secrets are present, every push to `main` rebuilds and uploads `dist/` to cPanel.
 
 ## Availability and inquiry extension points
 
@@ -149,16 +248,14 @@ Replace the placeholder `example.com` URLs in `listingLinks`. Once real links ar
 Start here:
 
 - `src/lib/availability.ts`
-
-Current behavior:
-
-- manual mock month statuses rendered statically
+- `src/content/data/availability.json`
 
 Recommended future direction:
 
-1. Fetch Airbnb and Booking.com iCal feeds at build time.
-2. Normalize booking events into monthly or daily availability.
-3. Swap the mock provider for an iCal-backed provider without changing page markup.
+1. store Airbnb and Booking.com iCal URLs in `src/content/data/availability.json`
+2. fetch calendars at build time
+3. normalize bookings into display data
+4. replace the manual provider with an iCal-backed provider
 
 ### Future form backend wiring
 
@@ -198,21 +295,9 @@ Build output:
 
 - `dist/`
 
-Static assets to deploy:
+## Deploy to cPanel manually
 
-- locale folders
-- `_astro/`
-- `images/`
-- `.htaccess`
-- `robots.txt`
-- `sitemap-index.xml`
-- `sitemap-0.xml`
-- `favicon.svg`
-- `index.html`
-
-## Deploy to cPanel
-
-Typical deployment flow:
+Typical manual deployment flow:
 
 1. Run `npm run build`.
 2. Open `dist/`.
@@ -223,26 +308,22 @@ Typical deployment flow:
 
 ## Verification completed
 
-Completed locally:
+This project should be verified with:
 
 - `npm run check`
 - `npm run build`
 
-Also verified from the build output:
-
-- root redirect page exists
-- localized pages were generated for all locales
-- sitemap files were created
-- `.htaccess`, `robots.txt`, imported gallery images, and compiled CSS were copied to `dist/`
-- canonical, hreflang, OG, and JSON-LD are present in built HTML
-
 ## Manual TODO
 
 - Replace placeholder domain in `site.settings.mjs` and `public/robots.txt`.
-- Replace placeholder contact details in `src/data/property.ts`.
-- Replace placeholder Airbnb and Booking.com links in `src/data/property.ts`.
-- Replace the imported VRBO JPGs in `public/images/` with final owner photography when available.
-- Review and finalize Croatian copy, then refine all translations.
+- Replace placeholder contact details in `src/content/data/property.json`.
+- Replace placeholder Airbnb and Booking.com links in `src/content/data/property.json`.
+- Connect the repo to CloudCannon and invite Marija as an editor.
+- Configure GitHub branch protection for `main`.
+- Add cPanel FTP secrets in GitHub to enable automatic deployment.
+- Replace the imported JPGs in `public/images/` with final owner photography.
+- Add final web-ready videos to `public/videos/` if you want motion in the gallery.
+- Review and finalize Croatian copy, then update the other locales.
 - Insert the final legal identity of the rental operator in the privacy policy files.
 - Decide the real form delivery backend and wire the inquiry adapter.
 - Implement iCal sync when platform calendar URLs are available.

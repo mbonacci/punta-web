@@ -1,0 +1,83 @@
+---
+import type { GalleryMediaItem } from '../data/property';
+
+interface Props {
+  item: GalleryMediaItem;
+  alt?: string;
+  class?: string;
+  loading?: 'eager' | 'lazy';
+  fetchpriority?: 'high' | 'auto';
+  controls?: boolean;
+}
+
+const {
+  item,
+  alt = '',
+  class: className,
+  loading = 'lazy',
+  fetchpriority = 'auto',
+  controls = item.type === 'video'
+} = Astro.props;
+
+const aspectRatio =
+  item.width && item.height ? `${item.width} / ${item.height}` : undefined;
+
+const assetStyle = aspectRatio ? `aspect-ratio: ${aspectRatio};` : undefined;
+
+function getVideoMimeType(src: string) {
+  if (src.endsWith('.webm')) {
+    return 'video/webm';
+  }
+
+  if (src.endsWith('.ogg') || src.endsWith('.ogv')) {
+    return 'video/ogg';
+  }
+
+  return 'video/mp4';
+}
+---
+
+{
+  item.type === 'image' ? (
+    <img
+      class:list={['media-asset', className]}
+      src={item.src}
+      alt={alt}
+      width={item.width}
+      height={item.height}
+      loading={loading}
+      fetchpriority={fetchpriority}
+      style={assetStyle}
+    />
+  ) : item.source === 'embed' ? (
+    <iframe
+      class:list={['media-asset', className]}
+      src={item.embedUrl}
+      title={alt || 'Embedded property video'}
+      width={item.width}
+      height={item.height}
+      loading={loading === 'eager' ? undefined : 'lazy'}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      referrerpolicy="strict-origin-when-cross-origin"
+      style={assetStyle}
+    />
+  ) : (
+    <video
+      class:list={['media-asset', className]}
+      width={item.width}
+      height={item.height}
+      poster={item.poster}
+      preload={loading === 'eager' ? 'auto' : 'metadata'}
+      autoplay={item.autoplay}
+      loop={item.loop}
+      muted={item.muted ?? item.autoplay ?? false}
+      controls={controls}
+      playsinline
+      style={assetStyle}
+    >
+      <source src={item.src} type={getVideoMimeType(item.src)} />
+      {alt}
+    </video>
+  )
+}

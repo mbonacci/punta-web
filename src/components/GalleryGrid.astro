@@ -1,6 +1,7 @@
 ---
 import type { SiteContent } from '../content/site-content';
 import { galleryMedia } from '../data/property';
+import MediaAsset from './MediaAsset.astro';
 
 interface Props {
   content: SiteContent;
@@ -15,11 +16,9 @@ const items = typeof limit === 'number' ? galleryMedia.slice(0, limit) : gallery
   {
     items.map((item, index) => (
       <figure class:list={['gallery-card', index === 0 && 'gallery-card--featured']}>
-        <img
-          src={item.src}
+        <MediaAsset
+          item={item}
           alt={content.galleryCaptions[item.id]}
-          width={item.width}
-          height={item.height}
           loading={item.priority ? 'eager' : 'lazy'}
           fetchpriority={item.priority ? 'high' : 'auto'}
         />
