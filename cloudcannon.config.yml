@@ -40,8 +40,6 @@ file_config:
       $:
         type: object
         comment: Croatian is the source locale. Keep the same keys in every language file.
-        options:
-          subtype: tabbed
       locale:
         label: Locale code
         disabled: true
@@ -190,8 +188,6 @@ file_config:
       $:
         type: object
         comment: These values control contact details, listing links, and the facts shown across the site.
-        options:
-          subtype: tabbed
       siteName:
         label: Site name
       propertyName:
@@ -226,8 +222,6 @@ file_config:
       listingLinks:
         type: object
         label: Listing platform links
-        options:
-          subtype: tabbed
       vrbo:
         type: url
         label: VRBO URL
@@ -343,8 +337,6 @@ file_config:
       $:
         type: object
         comment: Add gallery media here, then pick which item is featured on each page.
-        options:
-          subtype: tabbed
       socialImage:
         type: image
         label: Social sharing image
@@ -464,8 +456,6 @@ file_config:
       $:
         type: object
         comment: Keep manual month statuses here until iCal feeds are ready.
-        options:
-          subtype: tabbed
       source:
         type: select
         label: Availability source
@@ -474,8 +464,6 @@ file_config:
       icalFeeds:
         type: object
         label: iCal feed URLs
-        options:
-          subtype: tabbed
       airbnb:
         type: url
         label: Airbnb iCal URL
