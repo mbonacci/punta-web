@@ -94,8 +94,8 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Robinson-Ruhe auf Brač",
-      "title": "Steinhaus, privates Ufer und ein Sommer ohne Eile.",
+      "eyebrow": "Robinson-Ruhe auf Brač, mit einem Hauch von Luxus.",
+      "title": "Steinhaus, privates Ufer und Sommer unter sicheren Bedingungen.",
       "intro": "House Punta ist ein freistehendes dalmatinisches Steinhaus, versteckt zwischen Pinien und Olivenbäumen auf etwa 20.000 m2 privatem Land. Ein wilder Steinstrand und ein privater Steg liegen rund 30 m vom Haus entfernt.",
       "primaryCta": "Anfrage senden",
       "secondaryCta": "Auf WhatsApp schreiben",
@@ -226,6 +226,14 @@
         {
           "title": "Terrasse, Garten und Grün",
           "text": "Der Außenraum erweitert das Haus: Tisch im Schatten, Steinflächen, Grill und nur wenige Schritte bis zum Wasser."
+        },
+        {
+          "title": "Private Liegen im Kiefernschatten",
+          "text": "Nur wenige Schritte vom Meer entfernt bieten private Liegen unter Kiefern Diskretion und Sonne ohne Gedränge."
+        },
+        {
+          "title": "Gepflegter, großzügiger Privatgarten",
+          "text": "Für morgendliches Yoga, Meditation oder den ersten Kaffee des Tages – begleitet nur vom Rauschen der Wellen."
         }
       ]
     },

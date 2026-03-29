@@ -94,8 +94,8 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Calme Robinson sur Brač",
-      "title": "Maison en pierre, rivage privé et été sans précipitation.",
+      "eyebrow": "Calme Robinson sur Brač, avec une touche de luxe.",
+      "title": "Maison en pierre, rivage privé et été dans des conditions sûres.",
       "intro": "House Punta est une maison dalmate indépendante en pierre, cachée parmi les pins et les oliviers sur environ 20 000 m2 de terrain privé. Une plage sauvage de pierre et une jetée privée se trouvent à environ 30 m de la maison.",
       "primaryCta": "Envoyer une demande",
       "secondaryCta": "Écrire sur WhatsApp",
@@ -226,6 +226,14 @@
         {
           "title": "Terrasse, jardin et verdure",
           "text": "L'extérieur prolonge la maison : table à l'ombre, pierre, barbecue et quelques pas seulement jusqu'à l'eau."
+        },
+        {
+          "title": "Transats privés à l’ombre des pins",
+          "text": "À seulement quelques pas de l’entrée dans la mer, des transats privés à l’ombre des pins offrent discrétion et détente au soleil."
+        },
+        {
+          "title": "Jardin privé entretenu et spacieux",
+          "text": "Pour le yoga du matin, la méditation ou le premier café de la journée, avec pour seul fond sonore le murmure des vagues."
         }
       ]
     },
