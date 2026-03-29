@@ -1,5 +1,6 @@
 paths:
   static: public
+  uploads: public/uploads
 
 collections_config:
   locale_content:
