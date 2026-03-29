@@ -144,7 +144,7 @@
     },
     "galleryPreview": {
       "title": "Pogledajte stvarnu atmosferu kuće",
-      "intro": "Galerija koristi lokalno spremljene fotografije preuzete s postojećeg VRBO oglasa: eksterijer, terasa, vrt i pogled iz interijera.",
+      "intro": "Potpuno prirodan i privatan eksterijer, terasa, vrt i pogled iz interijera.",
       "cta": "Otvorite galeriju"
     },
     "locationPreview": {
@@ -169,8 +169,8 @@
   "accommodation": {
     "hero": {
       "eyebrow": "O kući",
-      "title": "Robinzonski karakter, ali s punom osnovnom udobnošću.",
-      "intro": "Samostojeća kamena kuća osmišljena je za goste koji žele more i prirodu kao glavni dio dana, ali bez odricanja od praktičnih sadržaja potrebnih za udoban boravak."
+      "title": "Robinzonski karakter, ali s punom udobnošću.",
+      "intro": "Samostojeća kamena kuća osmišljena je za goste koji žele more, prirodu i potpunu privatnost kao glavni dio dana, ali bez odricanja od praktičnih sadržaja potrebnih za udoban boravak."
     },
     "overview": {
       "title": "Kuća za one koji vole privatnost više od gužve",
