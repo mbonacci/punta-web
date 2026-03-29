@@ -5,6 +5,7 @@ import SectionHeading from '../../components/SectionHeading.astro';
 import FeatureGrid from '../../components/FeatureGrid.astro';
 import GalleryGrid from '../../components/GalleryGrid.astro';
 import { getSiteContent } from '../../content/site-content';
+import { galleryMediaById } from '../../data/property';
 import { getStaticLocalePaths, type Locale } from '../../lib/i18n';
 
 export function getStaticPaths() {
@@ -17,12 +18,20 @@ const content = getSiteContent(locale);
 
 <BaseLayout locale={locale} page="gallery" content={content}>
   <PageHero
+    variant="gallery"
     eyebrow={content.gallery.hero.eyebrow}
     title={content.gallery.hero.title}
     intro={content.gallery.hero.intro}
+    mediaSrc={galleryMediaById['house-exterior'].src}
+    mediaAlt={content.galleryCaptions['house-exterior']}
+    mediaWidth={galleryMediaById['house-exterior'].width}
+    mediaHeight={galleryMediaById['house-exterior'].height}
+    asideEyebrow={content.navigation.gallery}
+    asideTitle={content.gallery.introTitle}
+    asideText={content.gallery.note}
   />
 
-  <section class="section">
+  <section class="section section--compact">
     <div class="container">
       <SectionHeading title={content.gallery.introTitle} intro={content.gallery.introText} />
       <FeatureGrid items={content.gallery.categories} />

@@ -20,6 +20,13 @@ const content = getSiteContent(locale);
     eyebrow={content.location.hero.eyebrow}
     title={content.location.hero.title}
     intro={content.location.hero.intro}
+    mediaSrc={galleryMediaById['hero-coast'].src}
+    mediaAlt={content.galleryCaptions['hero-coast']}
+    mediaWidth={galleryMediaById['hero-coast'].width}
+    mediaHeight={galleryMediaById['hero-coast'].height}
+    asideEyebrow={content.navigation.location}
+    asideTitle={content.location.mapCard.title}
+    asideText={content.location.mapCard.text}
   />
 
   <section class="section">

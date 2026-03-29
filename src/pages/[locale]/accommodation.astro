@@ -21,6 +21,10 @@ const content = getSiteContent(locale);
     eyebrow={content.accommodation.hero.eyebrow}
     title={content.accommodation.hero.title}
     intro={content.accommodation.hero.intro}
+    mediaSrc={galleryMediaById['terrace-evening'].src}
+    mediaAlt={content.galleryCaptions['terrace-evening']}
+    mediaWidth={galleryMediaById['terrace-evening'].width}
+    mediaHeight={galleryMediaById['terrace-evening'].height}
   />
 
   <section class="section section--compact">
@@ -101,7 +105,7 @@ const content = getSiteContent(locale);
         <div class="panel panel--note">
           <p class="eyebrow">{content.common.directInquiry}</p>
           <h2>{content.common.priceOnRequest}</h2>
-          <p>{`${property.review.scoreDisplay} · ${property.review.reviewCount} ${content.home.reviewSummary.reviewCountLabel}`}</p>
+          <p>{`${property.review.scoreDisplay} - ${property.review.reviewCount} ${content.home.reviewSummary.reviewCountLabel}`}</p>
           <p>{content.home.reviewSummary.sourceLabel}</p>
         </div>
         <p>

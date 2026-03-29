@@ -72,17 +72,18 @@ export const property = {
 
 export const galleryMedia: GalleryMediaItem[] = [
   {
+    id: 'house-exterior',
+    src: '/images/house-punta-garden.jpg',
+    width: 1400,
+    height: 786,
+    priority: true
+  },
+  {
     id: 'hero-coast',
     src: '/images/house-punta-hero.jpg',
     width: 1600,
     height: 900,
     priority: true
-  },
-  {
-    id: 'house-exterior',
-    src: '/images/house-punta-garden.jpg',
-    width: 1400,
-    height: 786
   },
   {
     id: 'terrace-evening',

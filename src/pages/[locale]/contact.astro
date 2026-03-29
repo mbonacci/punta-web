@@ -6,7 +6,7 @@ import FeatureGrid from '../../components/FeatureGrid.astro';
 import InquiryForm from '../../components/InquiryForm.astro';
 import { getSiteContent } from '../../content/site-content';
 import { property } from '../../data/property';
-import { getStaticLocalePaths, type Locale } from '../../lib/i18n';
+import { getStaticLocalePaths, localizedPath, type Locale } from '../../lib/i18n';
 
 export function getStaticPaths() {
   return getStaticLocalePaths();
@@ -36,9 +36,28 @@ const methodCards = [
 
 <BaseLayout locale={locale} page="contact" content={content}>
   <PageHero
+    variant="utility"
     eyebrow={content.contact.hero.eyebrow}
     title={content.contact.hero.title}
     intro={content.contact.hero.intro}
+    asideEyebrow={content.common.directInquiry}
+    asideTitle={property.whatsappDisplay}
+    asideText={content.contact.methods[0].text}
+    actions={[
+      {
+        href: `https://wa.me/${property.whatsappE164.replace('+', '')}`,
+        label: content.common.contactLabels.whatsapp
+      },
+      {
+        href: `mailto:${property.email}`,
+        label: content.common.contactLabels.email,
+        variant: 'ghost'
+      },
+      {
+        href: localizedPath(locale, 'contact') + '#inquiry-form',
+        label: content.common.primaryCta
+      }
+    ]}
   />
 
   <section class="section">

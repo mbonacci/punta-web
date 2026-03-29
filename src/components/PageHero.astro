@@ -1,17 +1,123 @@
 ---
+type HeroAction = {
+  href: string;
+  label: string;
+  variant?: 'solid' | 'ghost';
+  external?: boolean;
+};
+
+type HeroStat = {
+  value: string;
+  label: string;
+};
+
 interface Props {
   eyebrow: string;
   title: string;
   intro: string;
+  variant?: 'calm' | 'gallery' | 'utility';
+  mediaSrc?: string;
+  mediaAlt?: string;
+  mediaWidth?: number;
+  mediaHeight?: number;
+  asideEyebrow?: string;
+  asideTitle?: string;
+  asideText?: string;
+  actions?: HeroAction[];
+  stats?: HeroStat[];
 }
 
-const { eyebrow, title, intro } = Astro.props;
+const {
+  eyebrow,
+  title,
+  intro,
+  variant = 'calm',
+  mediaSrc,
+  mediaAlt,
+  mediaWidth,
+  mediaHeight,
+  asideEyebrow,
+  asideTitle,
+  asideText,
+  actions = [],
+  stats = []
+} = Astro.props;
+
+const hasSupport =
+  Boolean(mediaSrc) ||
+  Boolean(asideEyebrow) ||
+  Boolean(asideTitle) ||
+  Boolean(asideText) ||
+  stats.length > 0;
 ---
 
-<section class="page-hero">
-  <div class="container page-hero__inner">
-    <p class="eyebrow">{eyebrow}</p>
-    <h1>{title}</h1>
-    <p class="lead">{intro}</p>
+<section class:list={['page-hero', `page-hero--${variant}`]}>
+  <div class="container">
+    <div class:list={['page-hero__frame', hasSupport && 'has-support']}>
+      <div class="page-hero__copy">
+        <p class="eyebrow">{eyebrow}</p>
+        <h1>{title}</h1>
+        <p class="lead">{intro}</p>
+        {
+          actions.length > 0 && (
+            <div class="button-row">
+              {actions.map((action) => (
+                <a
+                  class:list={['button', action.variant === 'ghost' && 'button--ghost']}
+                  href={action.href}
+                  rel={action.external ? 'noreferrer noopener' : undefined}
+                  target={action.external ? '_blank' : undefined}
+                >
+                  {action.label}
+                </a>
+              ))}
+            </div>
+          )
+        }
+      </div>
+
+      {
+        hasSupport && (
+          <div class="page-hero__support">
+            {
+              mediaSrc && (
+                <figure class="page-hero__media">
+                  <img
+                    src={mediaSrc}
+                    alt={mediaAlt || ''}
+                    width={mediaWidth}
+                    height={mediaHeight}
+                    loading="eager"
+                    fetchpriority="high"
+                  />
+                </figure>
+              )
+            }
+
+            {
+              (asideEyebrow || asideTitle || asideText || stats.length > 0) && (
+                <aside class="page-hero__aside">
+                  {asideEyebrow && <p class="eyebrow">{asideEyebrow}</p>}
+                  {asideTitle && <h2>{asideTitle}</h2>}
+                  {asideText && <p>{asideText}</p>}
+                  {
+                    stats.length > 0 && (
+                      <div class="page-hero__stats">
+                        {stats.map((stat) => (
+                          <article>
+                            <strong>{stat.value}</strong>
+                            <span>{stat.label}</span>
+                          </article>
+                        ))}
+                      </div>
+                    )
+                  }
+                </aside>
+              )
+            }
+          </div>
+        )
+      }
+    </div>
   </div>
 </section>

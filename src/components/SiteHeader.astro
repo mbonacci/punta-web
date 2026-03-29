@@ -23,41 +23,44 @@ const navItems: Array<{ slug: PageSlug; label: string }> = [
 ---
 
 <header class="site-header">
-  <div class="topbar">
-    <div class="container topbar__inner">
+  <div class="container site-header__inner">
+    <div class="topbar__inner">
       <p class="topbar__text">{content.metadata.announcement}</p>
       <LanguageSwitcher locale={locale} page={page} />
     </div>
-  </div>
-  <div class="container header-main">
-    <a href={localizedPath(locale)} class="brand">
-      <span class="brand__mark">HP</span>
-      <span>
-        <strong>{property.siteName}</strong>
-      </span>
-    </a>
-    <div class="header-actions">
-      <a class="button button--ghost" href={`https://wa.me/${property.whatsappE164.replace('+', '')}`}>
-        {content.common.secondaryCta}
+    <div class="header-main">
+      <a href={localizedPath(locale)} class="brand">
+        <span class="brand__mark">HP</span>
+        <span class="brand__copy">
+          <strong>{property.siteName}</strong>
+          <small>{content.footer.tagline}</small>
+        </span>
       </a>
-      <a class="button" href={localizedPath(locale, 'contact')}>
-        {content.common.primaryCta}
-      </a>
+
+      <nav class="site-nav">
+        <div class="site-nav__scroller">
+          {
+            navItems.map((item) => (
+              <a
+                href={localizedPath(locale, item.slug)}
+                class:list={['site-nav__link', item.slug === page && 'is-active']}
+                aria-current={item.slug === page ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a class="button button--ghost" href={`https://wa.me/${property.whatsappE164.replace('+', '')}`}>
+          {content.common.secondaryCta}
+        </a>
+        <a class="button" href={localizedPath(locale, 'contact')}>
+          {content.common.primaryCta}
+        </a>
+      </div>
     </div>
   </div>
-  <nav class="site-nav">
-    <div class="container site-nav__scroller">
-      {
-        navItems.map((item) => (
-          <a
-            href={localizedPath(locale, item.slug)}
-            class:list={['site-nav__link', item.slug === page && 'is-active']}
-            aria-current={item.slug === page ? 'page' : undefined}
-          >
-            {item.label}
-          </a>
-        ))
-      }
-    </div>
-  </nav>
 </header>

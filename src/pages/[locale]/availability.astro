@@ -4,6 +4,7 @@ import PageHero from '../../components/PageHero.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 import AvailabilityBoard from '../../components/AvailabilityBoard.astro';
 import { getSiteContent } from '../../content/site-content';
+import { availabilityProvider } from '../../lib/availability';
 import { getStaticLocalePaths, localizedPath, type Locale } from '../../lib/i18n';
 
 export function getStaticPaths() {
@@ -12,44 +13,48 @@ export function getStaticPaths() {
 
 const locale = Astro.params.locale as Locale;
 const content = getSiteContent(locale);
+const entries = availabilityProvider.getAvailability(locale);
 const legendItems = [
   { key: 'available', label: content.availability.legend.available },
   { key: 'limited', label: content.availability.legend.limited },
   { key: 'booked', label: content.availability.legend.booked },
   { key: 'inquiry', label: content.availability.legend.inquiry }
 ];
+
+const availabilityStats = legendItems.map((item) => ({
+  value: String(entries.filter((entry) => entry.state === item.key).length),
+  label: item.label
+}));
 ---
 
 <BaseLayout locale={locale} page="availability" content={content}>
   <PageHero
+    variant="utility"
     eyebrow={content.availability.hero.eyebrow}
     title={content.availability.hero.title}
     intro={content.availability.hero.intro}
+    asideEyebrow={content.common.directInquiry}
+    asideTitle={content.common.priceOnRequest}
+    asideText={content.availability.noteText}
+    actions={[
+      {
+        href: localizedPath(locale, 'contact'),
+        label: content.common.primaryCta
+      }
+    ]}
+    stats={availabilityStats}
   />
 
   <section class="section">
-    <div class="container split-grid">
-      <div>
+    <div class="container availability-shell">
+      <div class="availability-shell__intro">
         <SectionHeading
           title={content.availability.introTitle}
           intro={content.availability.introText}
         />
         <div class="season-tag">{content.common.season}</div>
       </div>
-      <aside class="panel panel--aside">
-        <p class="eyebrow">{content.common.directInquiry}</p>
-        <h2>{content.common.priceOnRequest}</h2>
-        <p>{content.availability.noteText}</p>
-        <a class="button" href={localizedPath(locale, 'contact')}>
-          {content.common.primaryCta}
-        </a>
-      </aside>
-    </div>
-  </section>
 
-  <section class="section section--soft">
-    <div class="container">
-      <AvailabilityBoard locale={locale} content={content} />
       <div class="legend-grid">
         {legendItems.map((item) => (
           <article class="legend-card">
@@ -57,6 +62,8 @@ const legendItems = [
           </article>
         ))}
       </div>
+
+      <AvailabilityBoard locale={locale} content={content} />
     </div>
   </section>
 

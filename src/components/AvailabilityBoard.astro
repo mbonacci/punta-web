@@ -6,9 +6,10 @@ import type { Locale } from '../lib/i18n';
 interface Props {
   locale: Locale;
   content: SiteContent;
+  compact?: boolean;
 }
 
-const { locale, content } = Astro.props;
+const { locale, content, compact = false } = Astro.props;
 
 const entries = availabilityProvider.getAvailability(locale);
 const formatter = new Intl.DateTimeFormat(locale, {
@@ -26,7 +27,7 @@ const stateLabels = {
 };
 ---
 
-<div class="availability-board">
+<div class:list={['availability-board', compact && 'availability-board--compact']}>
   {
     entries.map((entry) => (
       <article class:list={['availability-card', `is-${entry.state}`]}>

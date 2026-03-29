@@ -19,11 +19,23 @@ const content = getSiteContent(locale);
 
 <BaseLayout locale={locale} page="" content={content}>
   <section class="home-hero">
-    <div class="container home-hero__grid">
+    <img
+      class="home-hero__backdrop"
+      src={galleryMediaById['hero-coast'].src}
+      alt={content.galleryCaptions['hero-coast']}
+      width={galleryMediaById['hero-coast'].width}
+      height={galleryMediaById['hero-coast'].height}
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="home-hero__scrim"></div>
+
+    <div class="container home-hero__inner">
       <div class="home-hero__content">
-        <p class="eyebrow">{content.home.hero.eyebrow}</p>
+        <p class="eyebrow eyebrow--light">{content.home.hero.eyebrow}</p>
         <h1>{content.home.hero.title}</h1>
         <p class="lead">{content.home.hero.intro}</p>
+
         <div class="button-row">
           <a class="button" href={localizedPath(locale, 'contact')}>
             {content.home.hero.primaryCta}
@@ -32,34 +44,40 @@ const content = getSiteContent(locale);
             {content.home.hero.secondaryCta}
           </a>
         </div>
+
         <ul class="badge-list">
           {content.home.hero.badges.map((badge) => <li>{badge}</li>)}
         </ul>
       </div>
 
-      <div class="home-hero__media">
-        <img
-          src={galleryMediaById['hero-coast'].src}
-          alt={content.galleryCaptions['hero-coast']}
-          width={galleryMediaById['hero-coast'].width}
-          height={galleryMediaById['hero-coast'].height}
-          loading="eager"
-          fetchpriority="high"
-        />
-        <div class="hero-aside">
-          <p class="eyebrow">{content.common.season}</p>
-          <h2>{content.common.priceOnRequest}</h2>
-          <div class="hero-aside__facts">
-            <span>
-              {content.common.scheduleLabels.checkIn}: {property.checkIn}
-            </span>
-            <span>
-              {content.common.scheduleLabels.checkOut}: {property.checkOut}
-            </span>
-            <span>{content.footer.addressLabel}</span>
-          </div>
+      <aside class="home-hero__meta">
+        <p class="eyebrow">{content.common.season}</p>
+        <h2>{content.common.priceOnRequest}</h2>
+        <p>{content.home.reviewSummary.intro}</p>
+
+        <div class="home-hero__meta-grid">
+          <article>
+            <strong>{property.review.scoreDisplay}</strong>
+            <span>{content.home.reviewSummary.badgeLabel}</span>
+          </article>
+          <article>
+            <strong>{`${property.facts.beachDistanceMeters} m`}</strong>
+            <span>{content.common.statLabels.beachDistance}</span>
+          </article>
+          <article>
+            <strong>{property.checkIn}</strong>
+            <span>{content.common.scheduleLabels.checkIn}</span>
+          </article>
+          <article>
+            <strong>{property.checkOut}</strong>
+            <span>{content.common.scheduleLabels.checkOut}</span>
+          </article>
         </div>
-      </div>
+
+        <p class="home-hero__rating">
+          {property.review.reviewCount} {content.home.reviewSummary.reviewCountLabel}
+        </p>
+      </aside>
     </div>
   </section>
 
@@ -73,10 +91,12 @@ const content = getSiteContent(locale);
     </div>
   </section>
 
-  <section class="section">
-    <div class="container panel panel--trust">
-      <p class="eyebrow">{content.home.reviewSummary.eyebrow}</p>
-      <h2>{content.home.reviewSummary.title}</h2>
+  <section class="section section--compact">
+    <div class="container review-band">
+      <div>
+        <p class="eyebrow">{content.home.reviewSummary.eyebrow}</p>
+        <h2>{content.home.reviewSummary.title}</h2>
+      </div>
       <p>{content.home.reviewSummary.intro}</p>
       <ul class="trust-list">
         <li>
@@ -109,11 +129,21 @@ const content = getSiteContent(locale);
         <p class="lead lead--compact">{content.home.story.lead}</p>
         <p>{content.home.story.body}</p>
       </div>
+
       <aside class="panel panel--aside">
-        <p>{content.home.story.aside}</p>
-        <a class="button" href={localizedPath(locale, 'accommodation')}>
-          {content.common.viewAccommodation}
-        </a>
+        <img
+          src={galleryMediaById['house-front'].src}
+          alt={content.galleryCaptions['house-front']}
+          width={galleryMediaById['house-front'].width}
+          height={galleryMediaById['house-front'].height}
+          loading="lazy"
+        />
+        <div class="panel panel--note">
+          <p>{content.home.story.aside}</p>
+          <a class="button" href={localizedPath(locale, 'accommodation')}>
+            {content.common.viewAccommodation}
+          </a>
+        </div>
       </aside>
     </div>
   </section>
@@ -148,7 +178,7 @@ const content = getSiteContent(locale);
         <p class="eyebrow">{content.navigation.availability}</p>
         <h2>{content.home.availabilityPreview.title}</h2>
         <p>{content.home.availabilityPreview.intro}</p>
-        <AvailabilityBoard locale={locale} content={content} />
+        <AvailabilityBoard locale={locale} content={content} compact />
         <a class="button" href={localizedPath(locale, 'availability')}>
           {content.home.availabilityPreview.cta}
         </a>
@@ -156,8 +186,8 @@ const content = getSiteContent(locale);
     </div>
   </section>
 
-  <section class="section section--soft">
-    <div class="container panel panel--trust">
+  <section class="section">
+    <div class="container cta-band">
       <SectionHeading title={content.home.trust.title} />
       <ul class="trust-list">
         {content.home.trust.points.map((point) => <li>{point}</li>)}
