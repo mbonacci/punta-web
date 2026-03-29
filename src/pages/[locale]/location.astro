@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import FeatureGrid from '../../components/FeatureGrid.astro';
+import { getSiteContent } from '../../content/site-content';
+import { galleryMediaById, property } from '../../data/property';
+import { getStaticLocalePaths, type Locale } from '../../lib/i18n';
+
+export function getStaticPaths() {
+  return getStaticLocalePaths();
+}
+
+const locale = Astro.params.locale as Locale;
+const content = getSiteContent(locale);
+---
+
+<BaseLayout locale={locale} page="location" content={content}>
+  <PageHero
+    eyebrow={content.location.hero.eyebrow}
+    title={content.location.hero.title}
+    intro={content.location.hero.intro}
+  />
+
+  <section class="section">
+    <div class="container split-grid">
+      <div>
+        <SectionHeading
+          title={content.location.introTitle}
+          intro={content.location.introText}
+        />
+      </div>
+      <aside class="panel panel--map">
+        <p class="eyebrow">{content.navigation.location}</p>
+        <h2>{content.location.mapCard.title}</h2>
+        <p>{content.location.mapCard.text}</p>
+        <p>{content.footer.addressLabel}</p>
+        <p>
+          {property.coordinates.latitude}, {property.coordinates.longitude}
+        </p>
+        <a class="button" href={property.mapDirectionsUrl} rel="noreferrer noopener" target="_blank">
+          {content.location.mapCard.buttonLabel}
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <SectionHeading title={content.location.highlights.title} />
+      <FeatureGrid items={content.location.highlights.items} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-grid">
+      <article class="panel">
+        <img
+          src={galleryMediaById['hero-coast'].src}
+          alt={content.galleryCaptions['hero-coast']}
+          width={galleryMediaById['hero-coast'].width}
+          height={galleryMediaById['hero-coast'].height}
+          loading="eager"
+        />
+      </article>
+      <article class="panel">
+        <SectionHeading title={content.location.gettingHere.title} />
+        <ol class="step-list">
+          {content.location.gettingHere.steps.map((step) => <li>{step}</li>)}
+        </ol>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

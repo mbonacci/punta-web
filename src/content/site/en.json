@@ -1,0 +1,477 @@
+{
+  "locale": "en",
+  "languageLabel": "English",
+  "metadata": {
+    "siteTitle": "House Punta",
+    "siteDescription": "A private Robinson-style stone holiday house near Milna on Brac, about 30 m from the sea and surrounded by 20,000 m2 of pine and olive-tree quiet.",
+    "ogAlt": "House Punta stone house among pines, with a terrace and the sea nearby.",
+    "announcement": "Direct inquiries for the 2026 season. We reply quickly on WhatsApp and by email."
+  },
+  "navigation": {
+    "home": "Home",
+    "accommodation": "House",
+    "gallery": "Gallery",
+    "location": "Location",
+    "availability": "Availability",
+    "contact": "Inquiry",
+    "privacy": "Privacy"
+  },
+  "common": {
+    "primaryCta": "Send an inquiry",
+    "secondaryCta": "Message on WhatsApp",
+    "viewGallery": "View the gallery",
+    "viewAvailability": "Check availability",
+    "viewLocation": "Explore the location",
+    "viewAccommodation": "Discover the house",
+    "readMore": "Read more",
+    "directInquiry": "Direct inquiry",
+    "priceOnRequest": "Price on request",
+    "season": "Season 2026",
+    "placeholderNotice": "The photos in this version were migrated from the existing VRBO listing and can later be replaced with original files without changing the code.",
+    "statLabels": {
+      "guests": "guests",
+      "bedrooms": "bedrooms",
+      "bathrooms": "bathrooms",
+      "size": "of interior space",
+      "grounds": "of grounds and nature",
+      "beachDistance": "to the sea"
+    },
+    "contactLabels": {
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "listingLabels": {
+      "vrbo": "VRBO",
+      "airbnb": "Airbnb",
+      "booking": "Booking.com"
+    },
+    "scheduleLabels": {
+      "checkIn": "Check-in",
+      "checkOut": "Check-out"
+    }
+  },
+  "footer": {
+    "tagline": "A private family house in Robinson style, set within 20,000 m2 of pine and olive-tree shade, just a few steps from the sea.",
+    "navigationTitle": "Navigation",
+    "contactTitle": "Contact",
+    "legalTitle": "Information",
+    "listingsTitle": "Platform profiles",
+    "addressLabel": "Milna, island of Brac, Croatia",
+    "availabilityLabel": "Check-in after 16:00, check-out by 11:00",
+    "listingsNote": "The VRBO link is active. Add Airbnb and Booking.com links in the configuration when they are ready.",
+    "rights": "All rights reserved."
+  },
+  "seo": {
+    "home": {
+      "title": "House Punta | Private stone house by the sea on Brac",
+      "description": "Robinson-style calm near Milna: 2 bedrooms, 2 bathrooms, a private jetty and terrace around 30 m from the sea."
+    },
+    "accommodation": {
+      "title": "House and accommodation | House Punta",
+      "description": "See the layout, amenities, terrace, two bedrooms and practical stay details at House Punta."
+    },
+    "gallery": {
+      "title": "Gallery | House Punta",
+      "description": "View the house, terrace, garden and atmosphere through photos migrated from the existing VRBO listing."
+    },
+    "location": {
+      "title": "Location | House Punta",
+      "description": "Learn about the access route near Milna, how close the sea is and why the setting works so well for a quiet stay."
+    },
+    "availability": {
+      "title": "Availability | House Punta",
+      "description": "Review the manual availability overview and send an inquiry to confirm your preferred dates at House Punta."
+    },
+    "contact": {
+      "title": "Contact and inquiry | House Punta",
+      "description": "Contact the owners directly, send a WhatsApp message or email, and quickly confirm the details of your stay."
+    },
+    "privacy": {
+      "title": "Privacy policy | House Punta",
+      "description": "Review how House Punta handles the basic information you share through direct contact or an inquiry."
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Robinson-style calm on Brac",
+      "title": "A stone house, a private shoreline and a summer without hurry.",
+      "intro": "House Punta is a detached Dalmatian stone house hidden among pines and olive trees on about 20,000 m2 of private land. A wild stone beach and private jetty sit around 30 m from the house.",
+      "primaryCta": "Send an inquiry",
+      "secondaryCta": "Message on WhatsApp",
+      "badges": [
+        "30 m to the sea",
+        "20,000 m2 of private nature",
+        "2 bedrooms / up to 6 guests"
+      ]
+    },
+    "highlights": {
+      "title": "Why House Punta stays with people",
+      "intro": "This stay is shaped for guests who want calm, sea air and a day led by the terrace instead of a schedule.",
+      "items": [
+        {
+          "title": "A private shoreline for every day",
+          "text": "The wild stone beach and private jetty are only a few steps away, so swimming slips naturally into both the morning and the evening."
+        },
+        {
+          "title": "A real sense of privacy",
+          "text": "The house is surrounded by pines, olive trees and quiet, without nearby tourist density or the feeling of being inside a complex."
+        },
+        {
+          "title": "Milna is close when you need it",
+          "text": "The drive is about 15 minutes, short enough for lunch or supplies and far enough for the house to keep its secluded rhythm."
+        }
+      ]
+    },
+    "story": {
+      "title": "An authentic Adriatic stay, without giving up the essentials",
+      "lead": "Here the day naturally forms around the sea, the shade and a slower pace.",
+      "body": "House Punta offers Robinson-style atmosphere in a real family house: stone walls, a covered terrace, a garden, a barbecue and the feeling that nature begins right outside. At the same time you still have Wi-Fi, an equipped kitchen, two bathrooms and a layout that is easy to use for a longer summer stay.",
+      "aside": "It suits a family, two couples or a calmer group of friends of up to six guests, especially if they want more privacy than a typical apartment can offer."
+    },
+    "quickFacts": {
+      "title": "The stay at a glance",
+      "intro": "The key facts from the VRBO listing are condensed here without a booking engine and without hidden complexity."
+    },
+    "reviewSummary": {
+      "eyebrow": "Trust signal",
+      "title": "A strong guest aggregate, without leaning on generic marketing copy.",
+      "intro": "The current House Punta VRBO profile shows a very steady summary of guest satisfaction, which gives this site extra credibility alongside direct owner contact.",
+      "sourceLabel": "Source: aggregated rating summary on VRBO",
+      "badgeLabel": "Loved by Guests",
+      "reviewCountLabel": "verified reviews",
+      "rankingLabel": "In the top tier, among the best 10% of properties in the area"
+    },
+    "galleryPreview": {
+      "title": "See the real atmosphere of the house",
+      "intro": "The gallery uses locally stored photos migrated from the existing VRBO listing: exterior views, terrace life, garden setting and a view from inside toward the terrace.",
+      "cta": "Open the gallery"
+    },
+    "locationPreview": {
+      "title": "A quiet cove, but not cut off",
+      "intro": "The approach follows a mix of asphalt and macadam through vineyards and olive groves. Milna is about 3 miles away, roughly a 15-minute drive.",
+      "cta": "View the location"
+    },
+    "availabilityPreview": {
+      "title": "A simple way to check dates",
+      "intro": "Availability remains manual and easy to read. If a date range looks right, send an inquiry and we will confirm the real status directly.",
+      "cta": "Review availability"
+    },
+    "trust": {
+      "title": "For a calm decision, without inflated promises",
+      "points": [
+        "2 bedrooms, 2 bathrooms and about 807 sq ft of interior space.",
+        "Dogs are welcome, and the house offers Wi-Fi, satellite TV, fans, a barbecue and a washing machine.",
+        "Direct owner inquiries backed by the existing VRBO profile and its 10/10 aggregate review score."
+      ]
+    }
+  },
+  "accommodation": {
+    "hero": {
+      "eyebrow": "About the house",
+      "title": "Robinson-style character, with the core comforts in place.",
+      "intro": "This detached stone house is made for guests who want sea and nature to shape the day, without giving up the practical features needed for a comfortable stay."
+    },
+    "overview": {
+      "title": "A house for people who value privacy more than crowding",
+      "paragraphs": [
+        "House Punta sits on a large private plot among pines and olive trees, with a terrace that naturally becomes the center of the day. Life here happens outside more than inside, but the interior still remains functional, warm and easy to use.",
+        "The layout fits a summer rhythm: swimming, lunch in the shade, returning from the jetty, dinner on the terrace and evenings without city noise. This is not hotel luxury, but a real and carefully kept family stay by the sea."
+      ]
+    },
+    "amenities": {
+      "title": "The amenities that truly carry the stay",
+      "items": [
+        {
+          "title": "Private jetty and immediate swimming",
+          "text": "The wild stone beach and private access to the sea are around 30 m from the house, with no need for daily logistics."
+        },
+        {
+          "title": "Covered terrace and barbecue",
+          "text": "An outdoor table, shade and a barbecue shape the rhythm of the house from morning coffee to long dinners outside."
+        },
+        {
+          "title": "Equipped kitchen",
+          "text": "A dishwasher, microwave, coffee maker, blender and essential cooking equipment are in place for independent meals."
+        },
+        {
+          "title": "Wi-Fi, satellite TV and fans",
+          "text": "Core connectivity and summer comfort are available without disturbing the slower atmosphere of the stay."
+        },
+        {
+          "title": "Practical for longer stays",
+          "text": "A washing machine plus weekly towel and linen change make the house easier to use for more than a short break."
+        },
+        {
+          "title": "Pet-friendly stay",
+          "text": "According to the current VRBO listing, dogs are welcome, which matters for guests who travel with their companion."
+        }
+      ]
+    },
+    "spaces": {
+      "title": "How the stay is arranged",
+      "items": [
+        {
+          "title": "A detached stone house",
+          "text": "The stay is independent and private, with no shared hotel zones and no neighboring rhythm setting the tone."
+        },
+        {
+          "title": "Two bedrooms and two bathrooms",
+          "text": "The layout creates enough separation for a family or two adult units that want to share a house without crowding."
+        },
+        {
+          "title": "Living area and kitchen zone",
+          "text": "The interior works as a calm base between swimming, lunch and evening downtime."
+        },
+        {
+          "title": "Terrace, garden and greenery",
+          "text": "The outside is an extension of the house: a shaded table, stone paving, a barbecue and only a few steps to the water."
+        }
+      ]
+    },
+    "practical": {
+      "title": "Practical details",
+      "items": [
+        {
+          "label": "Best suited for",
+          "value": "A family, two couples or a calmer group of up to 6 guests"
+        },
+        {
+          "label": "Arrival",
+          "value": "Access by car, with the final stretch following a mix of asphalt and macadam"
+        },
+        {
+          "label": "Parking",
+          "value": "A shaded parking area sits around 40 m from the house"
+        },
+        {
+          "label": "House rhythm",
+          "value": "Terrace, sea and privacy matter more here than urban activity or crowds"
+        },
+        {
+          "label": "Reservations",
+          "value": "Direct owner inquiry and manual date confirmation"
+        }
+      ]
+    },
+    "roomDetails": {
+      "title": "The rooms in more detail",
+      "items": [
+        {
+          "title": "Bedroom 1",
+          "details": [
+            "A calmer corner of the house for rest after time in the sea.",
+            "Part of the layout that helps a group keep privacy and its own rhythm.",
+            "A fan supports comfort during warmer summer nights."
+          ]
+        },
+        {
+          "title": "Bedroom 2",
+          "details": [
+            "A second separate room for family members or additional guests.",
+            "Useful for a more flexible arrangement within a stay of up to six people.",
+            "Its position near the second bathroom makes morning routines easier."
+          ]
+        },
+        {
+          "title": "Living area and kitchen",
+          "details": [
+            "The gathering point between swims, lunches and slow evenings.",
+            "The kitchen is equipped for simple independent meals and longer stays.",
+            "Wi-Fi and satellite TV are available whenever you want to stay connected or wind down."
+          ]
+        },
+        {
+          "title": "Bathrooms and practical upkeep",
+          "details": [
+            "Two bathrooms make the house easier to share for a larger family or two couples.",
+            "A washing machine supports longer summer stays.",
+            "According to the listing details, towels and bed linen are changed weekly."
+          ]
+        },
+        {
+          "title": "Terrace, garden and sea access",
+          "details": [
+            "The covered terrace is made for breakfast in the shade, slow lunches and long evenings.",
+            "The barbecue, garden and stone surfaces strengthen the feeling of a private summer house.",
+            "The private jetty and wild stone shoreline are around 30 m away."
+          ]
+        }
+      ]
+    }
+  },
+  "gallery": {
+    "hero": {
+      "eyebrow": "Gallery",
+      "title": "A real house, a real terrace and a real setting.",
+      "intro": "The gallery uses photos stored locally from the existing VRBO listing so the new website immediately has a credible visual base."
+    },
+    "introTitle": "What the gallery shows",
+    "introText": "The emphasis is on the house in greenery, the outdoor dining terrace, the garden setting and the inside-outside relationship. The structure stays simple so original owner files can replace these images later.",
+    "categories": [
+      {
+        "title": "The house among pines and olive trees",
+        "text": "Exterior views and the feeling of seclusion on a large plot close to the sea."
+      },
+      {
+        "title": "Terrace life and outdoor dining",
+        "text": "A stay that naturally moves into shade, garden air and long dinners outside."
+      },
+      {
+        "title": "Interior as a calm base",
+        "text": "Simple interior spaces that support summer living without visual clutter."
+      }
+    ],
+    "note": "The current photos were imported from the VRBO source and stored locally, so the website does not hotlink media from the external platform."
+  },
+  "location": {
+    "hero": {
+      "eyebrow": "Location",
+      "title": "A secluded position near Milna, but not disconnected.",
+      "intro": "House Punta sits on a quiet coastal stretch reached through vineyards and olive groves. The sea is very close, while Milna remains near enough for daily needs."
+    },
+    "introTitle": "A location for guests who do not negotiate on peace",
+    "introText": "The real value of the setting is not only the distance to the water, but the balance between privacy and practicality. You arrive by car, and once you are here the day quickly reduces to swims, terrace time and a slower rhythm.",
+    "highlights": {
+      "title": "Why the setting stands out",
+      "items": [
+        {
+          "title": "About 30 m to the sea",
+          "text": "The wild stone shoreline and private jetty are so close that going to the water stops being a plan and becomes part of the house."
+        },
+        {
+          "title": "Milna in about 15 minutes",
+          "text": "The village stays practical for lunch, supplies, the marina and short evening outings."
+        },
+        {
+          "title": "Arrival and parking without urban stress",
+          "text": "The final access follows a mix of asphalt and macadam, and the shaded parking area is around 40 m from the house."
+        }
+      ]
+    },
+    "gettingHere": {
+      "title": "How to get here",
+      "steps": [
+        "Reach Brac by ferry or catamaran depending on your route and the season.",
+        "From the arrival port, continue by car toward Milna and the quieter coastal zone outside the main village activity.",
+        "The final part of the drive follows a mix of asphalt and macadam through vineyards and olive groves to the parking area above the house."
+      ]
+    },
+    "mapCard": {
+      "title": "Directions",
+      "text": "The coordinates are prepared for opening in maps. Exact last-step arrival instructions can also be shared with guests after the reservation is confirmed.",
+      "buttonLabel": "Open the map"
+    }
+  },
+  "availability": {
+    "hero": {
+      "eyebrow": "Availability",
+      "title": "A date overview without a booking engine.",
+      "intro": "This version of the website intentionally uses a simple availability display. It is clear enough for first contact, and the code is ready for later iCal syncing."
+    },
+    "introTitle": "How to read the overview",
+    "introText": "The board is a quick guide. For final confirmation of dates, the best option is still to send an inquiry because availability can shift between platforms and direct arrangements.",
+    "legend": {
+      "available": "Available",
+      "limited": "Limited",
+      "booked": "Booked",
+      "inquiry": "On request"
+    },
+    "noteTitle": "Important when confirming dates",
+    "noteText": "If a month or date range looks suitable, send an inquiry and we will confirm the current status before any next step.",
+    "syncTitle": "Prepared for future syncing",
+    "syncText": "The architecture is intentionally set up so the manual view can later be replaced by iCal feeds from VRBO, Airbnb or Booking.com without redesigning the page."
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Contact and inquiry",
+      "title": "The fastest route to a precise answer is a direct message.",
+      "intro": "If you want to check dates, price, arrival with a dog or any practical stay detail, reach out by WhatsApp, email or the inquiry form."
+    },
+    "introTitle": "The easiest ways to get in touch",
+    "introText": "For a quick date check, WhatsApp is usually fastest. For a more detailed arrangement, feel free to email or use the form with approximate dates and your group size.",
+    "methodsTitle": "Choose the channel that suits you best",
+    "methods": [
+      {
+        "title": "WhatsApp",
+        "text": "The quickest route for an initial availability check and essential questions about the house."
+      },
+      {
+        "title": "Email",
+        "text": "Useful for more detailed questions, a fuller trip outline and concrete dates."
+      },
+      {
+        "title": "Direct inquiry",
+        "text": "The form is structured so it can later connect to a service, PHP mail or a custom endpoint without changing the visitor experience."
+      }
+    ],
+    "form": {
+      "title": "Send an inquiry",
+      "intro": "Share your approximate dates, number of guests and any detail that matters for the stay, for example whether you are traveling with a dog or want more context on access and parking.",
+      "nameLabel": "Full name",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "arrivalLabel": "Arrival",
+      "departureLabel": "Departure",
+      "guestsLabel": "Number of guests",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell us your preferred dates, group size and anything important for your stay at House Punta.",
+      "dateHint": "If your dates are not fixed yet, an approximate period is enough.",
+      "guestsHint": "For example: 4 adults and 2 children.",
+      "privacyHint": "Submitting the form does not create a reservation. It is only the first step in checking dates and details.",
+      "submitLabel": "Send inquiry",
+      "pendingLabel": "Sending...",
+      "successTitle": "Your inquiry is ready",
+      "successBody": "Thank you for your interest. If you want to confirm details immediately, continue through the suggested direct contact channel.",
+      "notConfiguredTitle": "The contact form is not connected yet",
+      "notConfiguredBody": "A sending backend is not configured in this version of the site. Please use WhatsApp or email below and you will receive the same quick response.",
+      "validationMessage": "Please complete the required fields and check that the email address is valid."
+    }
+  },
+  "privacy": {
+    "hero": {
+      "eyebrow": "Privacy policy",
+      "title": "Basic information about data handling.",
+      "intro": "This privacy policy explains which information House Punta may receive through direct contact and how it is used for communication about a stay."
+    },
+    "introduction": "The website serves primarily as an information and contact point for direct inquiries. Before the final public launch, the full legal details of the rental operator should be added.",
+    "sections": [
+      {
+        "title": "Data controller",
+        "paragraphs": [
+          "House Punta is a private family accommodation. Before the final website goes live, the full legal name and address of the accommodation operator should be inserted here.",
+          "For privacy questions, visitors can use the published contact email address."
+        ]
+      },
+      {
+        "title": "What information you may send",
+        "paragraphs": [
+          "When you contact us directly, you may send your name, email address, phone number, preferred stay dates, guest count and the content of your message.",
+          "The website currently does not use a full booking engine or automatic payment flow."
+        ]
+      },
+      {
+        "title": "Purpose of processing",
+        "paragraphs": [
+          "Information is used only to answer inquiries, check availability, prepare an offer and continue communication related to a stay.",
+          "It will not be used for unrelated marketing messages without additional consent."
+        ]
+      },
+      {
+        "title": "Storage and sharing",
+        "paragraphs": [
+          "Information is kept only as long as necessary for communication about a specific inquiry or reservation.",
+          "If an external form service or iCal integration is added later, this policy should be updated with precise provider details."
+        ]
+      }
+    ],
+    "closing": "Before public launch, this privacy policy should be reviewed and updated with the exact identity of the rental operator and the final processing channels."
+  },
+  "galleryCaptions": {
+    "hero-coast": "The stone house among pines, only a few steps from the sea.",
+    "house-exterior": "The house and garden in the shade of pines and olive trees.",
+    "terrace-evening": "The covered terrace for shaded lunches and long evenings.",
+    "living-area": "A view from inside toward the stone terrace and garden.",
+    "house-front": "Another view of the house and the greenery that surrounds it."
+  }
+}

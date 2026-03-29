@@ -1,0 +1,21 @@
+---
+import type { SiteContent } from '../content/site-content';
+import { property } from '../data/property';
+import { localizedPath, type Locale } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+  content: SiteContent;
+}
+
+const { locale, content } = Astro.props;
+---
+
+<div class="sticky-contact">
+  <a class="sticky-contact__button sticky-contact__button--ghost" href={`https://wa.me/${property.whatsappE164.replace('+', '')}`}>
+    {content.common.contactLabels.whatsapp}
+  </a>
+  <a class="sticky-contact__button" href={localizedPath(locale, 'contact')}>
+    {content.common.primaryCta}
+  </a>
+</div>

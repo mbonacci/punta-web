@@ -1,0 +1,184 @@
+---
+import type { SiteContent } from '../content/site-content';
+import { property } from '../data/property';
+import { inquiryAdapter } from '../lib/inquiry';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+---
+
+<section
+  class="contact-form-shell"
+  data-inquiry-shell
+  data-adapter-mode={inquiryAdapter.mode}
+  data-property-name={property.propertyName}
+  data-email={property.email}
+  data-whatsapp={property.whatsappE164}
+  data-form-title={content.contact.form.title}
+  data-submit-label={content.contact.form.submitLabel}
+  data-pending-label={content.contact.form.pendingLabel}
+  data-validation-message={content.contact.form.validationMessage}
+  data-not-configured-title={content.contact.form.notConfiguredTitle}
+  data-not-configured-body={content.contact.form.notConfiguredBody}
+>
+  <div class="section-heading">
+    <h2>{content.contact.form.title}</h2>
+    <p>{content.contact.form.intro}</p>
+  </div>
+
+  <form class="contact-form" data-inquiry-form novalidate>
+    <div class="form-grid">
+      <label>
+        <span>{content.contact.form.nameLabel}</span>
+        <input name="name" type="text" required />
+      </label>
+
+      <label>
+        <span>{content.contact.form.emailLabel}</span>
+        <input name="email" type="email" required />
+      </label>
+
+      <label>
+        <span>{content.contact.form.phoneLabel}</span>
+        <input name="phone" type="tel" />
+      </label>
+
+      <label>
+        <span>{content.contact.form.guestsLabel}</span>
+        <input name="guests" type="text" aria-describedby="guests-hint" />
+      </label>
+
+      <label>
+        <span>{content.contact.form.arrivalLabel}</span>
+        <input name="arrival" type="date" aria-describedby="date-hint" />
+      </label>
+
+      <label>
+        <span>{content.contact.form.departureLabel}</span>
+        <input name="departure" type="date" aria-describedby="date-hint" />
+      </label>
+
+      <label class="form-grid__full">
+        <span>{content.contact.form.messageLabel}</span>
+        <textarea
+          name="message"
+          rows="6"
+          placeholder={content.contact.form.messagePlaceholder}
+          required
+        />
+      </label>
+    </div>
+
+    <div class="form-hints">
+      <p id="date-hint">{content.contact.form.dateHint}</p>
+      <p id="guests-hint">{content.contact.form.guestsHint}</p>
+      <p>{content.contact.form.privacyHint}</p>
+    </div>
+
+    <div class="form-actions">
+      <button class="button" type="submit" data-submit-button>{content.contact.form.submitLabel}</button>
+      <a class="button button--ghost" href={`mailto:${property.email}`}>{content.common.contactLabels.email}</a>
+    </div>
+  </form>
+
+  <aside class="form-status" data-form-status hidden>
+    <h3 data-status-title></h3>
+    <p data-status-body></p>
+    <div class="form-status__actions">
+      <a class="button button--ghost" data-fallback-mail href={`mailto:${property.email}`}>
+        {content.common.contactLabels.email}
+      </a>
+      <a
+        class="button"
+        data-fallback-whatsapp
+        href={`https://wa.me/${property.whatsappE164.replace('+', '')}`}
+      >
+        {content.common.contactLabels.whatsapp}
+      </a>
+    </div>
+  </aside>
+</section>
+
+<script is:inline>
+  function buildMailtoUrl(email, propertyName, payload) {
+    const lines = [
+      payload.name ? `Name: ${payload.name}` : '',
+      payload.email ? `Email: ${payload.email}` : '',
+      payload.phone ? `Phone: ${payload.phone}` : '',
+      payload.arrival ? `Arrival: ${payload.arrival}` : '',
+      payload.departure ? `Departure: ${payload.departure}` : '',
+      payload.guests ? `Guests: ${payload.guests}` : '',
+      payload.message ? `Message:\n${payload.message}` : ''
+    ].filter(Boolean);
+
+    const subject = encodeURIComponent(
+      `${propertyName} inquiry${payload.arrival ? ` ${payload.arrival}` : ''}`
+    );
+    const body = encodeURIComponent(lines.join('\n'));
+    return `mailto:${email}?subject=${subject}&body=${body}`;
+  }
+
+  function buildWhatsAppUrl(phone, propertyName, payload) {
+    const text = encodeURIComponent(
+      [
+        `Hello, I would like to ask about staying at ${propertyName}.`,
+        payload.arrival ? `Arrival: ${payload.arrival}` : '',
+        payload.departure ? `Departure: ${payload.departure}` : '',
+        payload.guests ? `Guests: ${payload.guests}` : '',
+        payload.name ? `Name: ${payload.name}` : '',
+        payload.message ? `Message: ${payload.message}` : ''
+      ]
+        .filter(Boolean)
+        .join('\n')
+    );
+
+    return `https://wa.me/${phone.replace('+', '')}?text=${text}`;
+  }
+
+  for (const shell of document.querySelectorAll('[data-inquiry-shell]')) {
+    const form = shell.querySelector('[data-inquiry-form]');
+    const status = shell.querySelector('[data-form-status]');
+    const title = shell.querySelector('[data-status-title]');
+    const body = shell.querySelector('[data-status-body]');
+    const submitButton = shell.querySelector('[data-submit-button]');
+    const fallbackMail = shell.querySelector('[data-fallback-mail]');
+    const fallbackWhatsApp = shell.querySelector('[data-fallback-whatsapp]');
+
+    if (!form || !status || !title || !body || !submitButton || !fallbackMail || !fallbackWhatsApp) {
+      continue;
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      if (!form.reportValidity()) {
+        title.textContent = shell.dataset.formTitle || '';
+        body.textContent = shell.dataset.validationMessage || '';
+        status.hidden = false;
+        return;
+      }
+
+      const previousLabel = shell.dataset.submitLabel || submitButton.textContent || '';
+      submitButton.disabled = true;
+      submitButton.textContent = shell.dataset.pendingLabel || previousLabel;
+
+      const payload = Object.fromEntries(new FormData(form).entries());
+      fallbackMail.href = buildMailtoUrl(shell.dataset.email || '', shell.dataset.propertyName || '', payload);
+      fallbackWhatsApp.href = buildWhatsAppUrl(
+        shell.dataset.whatsapp || '',
+        shell.dataset.propertyName || '',
+        payload
+      );
+
+      title.textContent = shell.dataset.notConfiguredTitle || '';
+      body.textContent = shell.dataset.notConfiguredBody || '';
+      status.hidden = false;
+      status.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      submitButton.disabled = false;
+      submitButton.textContent = previousLabel;
+    });
+  }
+</script>

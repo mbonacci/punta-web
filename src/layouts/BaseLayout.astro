@@ -1,0 +1,81 @@
+---
+import '../styles/global.css';
+import type { SiteContent } from '../content/site-content';
+import { property } from '../data/property';
+import { defaultLocale, localizedPath, type Locale, type PageSlug } from '../lib/i18n';
+import { buildStructuredData, getSeoMeta } from '../lib/seo';
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import StickyContactBar from '../components/StickyContactBar.astro';
+
+interface Props {
+  locale: Locale;
+  page: PageSlug;
+  content: SiteContent;
+  structuredData?: Array<Record<string, unknown>> | Record<string, unknown>;
+}
+
+const { locale, page, content, structuredData } = Astro.props;
+
+const seo = getSeoMeta(locale, content, page);
+const baseStructuredData = buildStructuredData(locale, page, content);
+const allStructuredData = [
+  ...baseStructuredData,
+  ...(Array.isArray(structuredData)
+    ? structuredData
+    : structuredData
+      ? [structuredData]
+      : [])
+];
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={seo.description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#f4efe4" />
+    <link rel="canonical" href={seo.canonical} />
+    {
+      seo.alternates.map((alternate) => (
+        <link rel="alternate" hreflang={alternate.hrefLang} href={alternate.href} />
+      ))
+    }
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={new URL(localizedPath(defaultLocale), property.siteUrl).toString()}
+    />
+    <title>{seo.title}</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={property.siteName} />
+    <meta property="og:title" content={seo.title} />
+    <meta property="og:description" content={seo.description} />
+    <meta property="og:url" content={seo.canonical} />
+    <meta property="og:image" content={seo.ogImage} />
+    <meta property="og:image:alt" content={content.metadata.ogAlt} />
+    <meta property="og:locale" content={seo.ogLocale} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={seo.title} />
+    <meta name="twitter:description" content={seo.description} />
+    <meta name="twitter:image" content={seo.ogImage} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {
+      allStructuredData.map((item) => (
+        <script is:inline type="application/ld+json" set:html={JSON.stringify(item)} />
+      ))
+    }
+  </head>
+  <body>
+    <div class="site-surface">
+      <SiteHeader locale={locale} page={page} content={content} />
+      <main>
+        <slot />
+      </main>
+      <SiteFooter locale={locale} content={content} />
+      <StickyContactBar locale={locale} content={content} />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import FeatureGrid from '../../components/FeatureGrid.astro';
+import InquiryForm from '../../components/InquiryForm.astro';
+import { getSiteContent } from '../../content/site-content';
+import { property } from '../../data/property';
+import { getStaticLocalePaths, type Locale } from '../../lib/i18n';
+
+export function getStaticPaths() {
+  return getStaticLocalePaths();
+}
+
+const locale = Astro.params.locale as Locale;
+const content = getSiteContent(locale);
+
+const methodCards = [
+  {
+    ...content.contact.methods[0],
+    href: `https://wa.me/${property.whatsappE164.replace('+', '')}`,
+    value: property.whatsappDisplay
+  },
+  {
+    ...content.contact.methods[1],
+    href: `mailto:${property.email}`,
+    value: property.email
+  },
+  {
+    ...content.contact.methods[2],
+    href: '#inquiry-form',
+    value: content.contact.form.title
+  }
+];
+---
+
+<BaseLayout locale={locale} page="contact" content={content}>
+  <PageHero
+    eyebrow={content.contact.hero.eyebrow}
+    title={content.contact.hero.title}
+    intro={content.contact.hero.intro}
+  />
+
+  <section class="section">
+    <div class="container split-grid">
+      <div>
+        <SectionHeading
+          title={content.contact.introTitle}
+          intro={content.contact.introText}
+        />
+        <FeatureGrid items={content.contact.methods} />
+      </div>
+      <aside class="contact-card-grid">
+        {
+          methodCards.map((item) => (
+            <a class="contact-card" href={item.href}>
+              <h2>{item.title}</h2>
+              <p>{item.text}</p>
+              <strong>{item.value}</strong>
+            </a>
+          ))
+        }
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--soft" id="inquiry-form">
+    <div class="container">
+      <InquiryForm content={content} />
+    </div>
+  </section>
+</BaseLayout>

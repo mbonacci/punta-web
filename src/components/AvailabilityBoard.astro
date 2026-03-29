@@ -1,0 +1,40 @@
+---
+import type { SiteContent } from '../content/site-content';
+import { availabilityProvider } from '../lib/availability';
+import type { Locale } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+  content: SiteContent;
+}
+
+const { locale, content } = Astro.props;
+
+const entries = availabilityProvider.getAvailability(locale);
+const formatter = new Intl.DateTimeFormat(locale, {
+  month: 'long',
+  year: 'numeric'
+});
+
+const labels = content.availability.legend;
+
+const stateLabels = {
+  available: labels.available,
+  limited: labels.limited,
+  booked: labels.booked,
+  inquiry: labels.inquiry
+};
+---
+
+<div class="availability-board">
+  {
+    entries.map((entry) => (
+      <article class:list={['availability-card', `is-${entry.state}`]}>
+        <p class="availability-card__month">{formatter.format(new Date(`${entry.month}-01T00:00:00`))}</p>
+        <span class:list={['status-pill', `status-pill--${entry.state}`]}>
+          {stateLabels[entry.state]}
+        </span>
+      </article>
+    ))
+  }
+</div>

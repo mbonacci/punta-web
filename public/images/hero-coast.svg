@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100">
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8d9b2" />
+      <stop offset="42%" stop-color="#f9f2e8" />
+      <stop offset="100%" stop-color="#d7eef4" />
+    </linearGradient>
+    <linearGradient id="sea" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#53afbb" />
+      <stop offset="100%" stop-color="#0f5f6e" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1100" fill="url(#sky)" />
+  <circle cx="1280" cy="190" r="86" fill="#f4c16e" opacity="0.88" />
+  <path d="M0 522C225 452 387 471 573 539C794 620 979 644 1188 574C1332 525 1478 518 1600 538V0H0Z" fill="#f7efe2" opacity="0.9" />
+  <path d="M0 573C249 524 424 541 620 624C792 696 1002 726 1222 646C1358 597 1508 593 1600 609V770H0Z" fill="#d0ccb3" opacity="0.95" />
+  <rect y="670" width="1600" height="430" fill="url(#sea)" />
+  <path d="M0 744C195 721 342 701 542 737C734 771 919 846 1122 819C1302 795 1452 744 1600 713V1100H0Z" fill="#0e4c57" opacity="0.38" />
+  <path d="M0 844C141 814 289 801 456 834C612 864 752 919 939 906C1134 892 1326 821 1600 801V1100H0Z" fill="#fff" opacity="0.14" />
+  <path d="M1004 516L1127 412L1215 476L1151 569Z" fill="#efe8d9" />
+  <path d="M1073 458L1133 514L1168 474L1111 421Z" fill="#c07e4f" />
+  <path d="M1038 524H1180V682H1038Z" fill="#f8f2e8" />
+  <path d="M1070 560H1144V682H1070Z" fill="#dbc6a6" />
+  <path d="M1005 682H1228V720H1005Z" fill="#b58a5b" />
+  <path d="M884 710H1240V740H884Z" fill="#dcc8aa" opacity="0.95" />
+</svg>

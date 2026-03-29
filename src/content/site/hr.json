@@ -1,0 +1,477 @@
+{
+  "locale": "hr",
+  "languageLabel": "Hrvatski",
+  "metadata": {
+    "siteTitle": "House Punta",
+    "siteDescription": "Privatna kamena kuća za odmor u robinzonskom stilu kraj Milne na Braču, oko 30 m od mora i okružena s 20.000 m2 borove i maslinove tišine.",
+    "ogAlt": "Kamena kuća House Punta među borovima, s terasom i morem u blizini.",
+    "announcement": "Direktni upiti za sezonu 2026. Odgovaramo brzo putem WhatsAppa i e-maila."
+  },
+  "navigation": {
+    "home": "Početna",
+    "accommodation": "Kuća",
+    "gallery": "Galerija",
+    "location": "Lokacija",
+    "availability": "Dostupnost",
+    "contact": "Upit",
+    "privacy": "Privatnost"
+  },
+  "common": {
+    "primaryCta": "Pošaljite upit",
+    "secondaryCta": "Pišite na WhatsApp",
+    "viewGallery": "Pogledajte galeriju",
+    "viewAvailability": "Provjerite dostupnost",
+    "viewLocation": "Istražite lokaciju",
+    "viewAccommodation": "Upoznajte kuću",
+    "readMore": "Saznajte više",
+    "directInquiry": "Direktan kontakt",
+    "priceOnRequest": "Cijena na upit",
+    "season": "Sezona 2026",
+    "placeholderNotice": "Fotografije u ovoj verziji preuzete su s postojećeg VRBO oglasa i kasnije se mogu zamijeniti izvornim datotekama bez promjena u kodu.",
+    "statLabels": {
+      "guests": "gostiju",
+      "bedrooms": "spavaće sobe",
+      "bathrooms": "kupaonice",
+      "size": "unutarnjeg prostora",
+      "grounds": "okućnice i prirode",
+      "beachDistance": "do mora"
+    },
+    "contactLabels": {
+      "whatsapp": "WhatsApp",
+      "email": "E-mail",
+      "phone": "Telefon"
+    },
+    "listingLabels": {
+      "vrbo": "VRBO",
+      "airbnb": "Airbnb",
+      "booking": "Booking.com"
+    },
+    "scheduleLabels": {
+      "checkIn": "Dolazak",
+      "checkOut": "Odlazak"
+    }
+  },
+  "footer": {
+    "tagline": "Privatna obiteljska kuća u robinzonskom stilu, na 20.000 m2 borove i maslinove sjene, nekoliko koraka od mora.",
+    "navigationTitle": "Navigacija",
+    "contactTitle": "Kontakt",
+    "legalTitle": "Informacije",
+    "listingsTitle": "Profili na platformama",
+    "addressLabel": "Milna, otok Brač, Hrvatska",
+    "availabilityLabel": "Dolazak nakon 16:00, odlazak do 11:00",
+    "listingsNote": "VRBO poveznica je aktivna. Dodajte Airbnb i Booking.com poveznice u konfiguraciji kada budu spremne.",
+    "rights": "Sva prava pridržana."
+  },
+  "seo": {
+    "home": {
+      "title": "House Punta | Privatna kamena kuća uz more na Braču",
+      "description": "Robinzonski mir kraj Milne: 2 spavaće sobe, 2 kupaonice, privatni mul i terasa svega oko 30 m od mora."
+    },
+    "accommodation": {
+      "title": "Kuća i smještaj | House Punta",
+      "description": "Upoznajte raspored kuće, sadržaje, terasu, dvije spavaće sobe i praktične detalje boravka u House Punta."
+    },
+    "gallery": {
+      "title": "Galerija | House Punta",
+      "description": "Pogledajte kuću, terasu, vrt i atmosferu boravka kroz fotografije migrirane s postojećeg VRBO oglasa."
+    },
+    "location": {
+      "title": "Lokacija | House Punta",
+      "description": "Saznajte kako izgleda pristup kući kraj Milne, koliko je blizu more i zašto je položaj idealan za tih odmor."
+    },
+    "availability": {
+      "title": "Dostupnost | House Punta",
+      "description": "Pregledajte ručno vođenu dostupnost i pošaljite upit za potvrdu željenih termina u House Punta."
+    },
+    "contact": {
+      "title": "Kontakt i upit | House Punta",
+      "description": "Pošaljite direktan upit vlasnicima, javite se putem WhatsAppa ili e-maila i brzo provjerite detalje boravka."
+    },
+    "privacy": {
+      "title": "Pravila privatnosti | House Punta",
+      "description": "Pregledajte kako House Punta postupa s osnovnim podacima koje šaljete kroz direktan kontakt ili upit."
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Robinzonski mir na Braču",
+      "title": "Kamena kuća, privatna obala i ljeto bez žurbe.",
+      "intro": "House Punta je samostojeća dalmatinska kamena kuća skrivena među borovima i maslinama, na oko 20.000 m2 privatnog zemljišta. Divlja kamena plaža i privatni mul nalaze se oko 30 m od kuće.",
+      "primaryCta": "Pošaljite upit",
+      "secondaryCta": "Pišite na WhatsApp",
+      "badges": [
+        "30 m do mora",
+        "20.000 m2 privatne prirode",
+        "2 spavaće sobe / do 6 gostiju"
+      ]
+    },
+    "highlights": {
+      "title": "Zašto House Punta ostaje u sjećanju",
+      "intro": "Boravak je namijenjen gostima koji žele mir, more i osjećaj da im dan vodi terasa, a ne raspored.",
+      "items": [
+        {
+          "title": "Privatna obala za svaki dan",
+          "text": "Do divlje kamene plaže i privatnog mula stiže se za nekoliko koraka, pa kupanje lako postane jutarnji i večernji ritual."
+        },
+        {
+          "title": "Velika doza privatnosti",
+          "text": "Kuća je okružena borovima, maslinama i tišinom, bez susjedne gužve i bez osjećaja da ste u turističkom kompleksu."
+        },
+        {
+          "title": "Milna je blizu kada je trebate",
+          "text": "Do mjesta se vozi oko 15 minuta, dovoljno kratko za ručak ili nabavu, a dovoljno daleko da kuća zadrži izdvojeni ritam."
+        }
+      ]
+    },
+    "story": {
+      "title": "Autentičan Jadran, ali bez odricanja od osnovne udobnosti",
+      "lead": "Ovdje se dan prirodno slaže oko mora, hlada i sporijeg ritma.",
+      "body": "House Punta je robinzonski ugođaj u stvarnoj, obiteljskoj kući: kameni zidovi, natkrivena terasa, vrt, roštilj i osjećaj da je priroda odmah oko vas. Istodobno imate Wi-Fi, opremljenu kuhinju, dvije kupaonice i raspored koji je jednostavan za duži ljetni boravak.",
+      "aside": "Najbolje odgovara obitelji, dvama parovima ili mirnijoj grupi prijatelja do šest osoba, osobito ako žele više privatnosti nego što je nude klasični apartmani."
+    },
+    "quickFacts": {
+      "title": "Boravak na prvi pogled",
+      "intro": "Najvažnije činjenice iz VRBO oglasa sažete su ovdje, bez booking enginea i bez skrivene složenosti."
+    },
+    "reviewSummary": {
+      "eyebrow": "Signal povjerenja",
+      "title": "Snažan agregatni rezultat gosta, bez oslanjanja na generičan marketing.",
+      "intro": "Na postojećem VRBO profilu House Punta trenutačno se vidi vrlo stabilan sažetak zadovoljstva gostiju, što ovoj stranici daje dodatnu vjerodostojnost uz direktan kontakt s vlasnicima.",
+      "sourceLabel": "Izvor: agregirani sažetak ocjena na VRBO-u",
+      "badgeLabel": "Loved by Guests",
+      "reviewCountLabel": "provjerenih recenzija",
+      "rankingLabel": "U vrhu, među najboljih 10% objekata u području"
+    },
+    "galleryPreview": {
+      "title": "Pogledajte stvarnu atmosferu kuće",
+      "intro": "Galerija koristi lokalno spremljene fotografije preuzete s postojećeg VRBO oglasa: eksterijer, terasa, vrt i pogled iz interijera.",
+      "cta": "Otvorite galeriju"
+    },
+    "locationPreview": {
+      "title": "Mirna uvala, ali bez osjećaja odsječenosti",
+      "intro": "Prilaz vodi kombinacijom asfalta i makadama kroz vinograde i maslinike. Do Milne je oko 3 milje odnosno oko 15 minuta vožnje.",
+      "cta": "Pogledajte lokaciju"
+    },
+    "availabilityPreview": {
+      "title": "Jednostavna provjera termina",
+      "intro": "Dostupnost je i dalje ručna i pregledna. Ako vam okvirni termin odgovara, pošaljite upit i potvrdit ćemo stvarno stanje.",
+      "cta": "Pregledajte dostupnost"
+    },
+    "trust": {
+      "title": "Za mirnu odluku bez suvišnog obećavanja",
+      "points": [
+        "2 spavaće sobe, 2 kupaonice i oko 807 sq ft unutarnjeg prostora.",
+        "Pas je dobrodošao, a na raspolaganju su Wi-Fi, satelitska TV, ventilatori, roštilj i perilica rublja.",
+        "Direktan upit vlasnicima uz dodatni kredibilitet postojećeg VRBO profila i agregatne ocjene 10/10."
+      ]
+    }
+  },
+  "accommodation": {
+    "hero": {
+      "eyebrow": "O kući",
+      "title": "Robinzonski karakter, ali s punom osnovnom udobnošću.",
+      "intro": "Samostojeća kamena kuća osmišljena je za goste koji žele more i prirodu kao glavni dio dana, ali bez odricanja od praktičnih sadržaja potrebnih za udoban boravak."
+    },
+    "overview": {
+      "title": "Kuća za one koji vole privatnost više od gužve",
+      "paragraphs": [
+        "House Punta smještena je na velikoj privatnoj parceli među borovima i maslinama, s terasom koja prirodno postaje središte dana. Ovdje se više vremena provodi vani nego unutra, ali interijer i dalje ostaje funkcionalan, topao i lagan za korištenje.",
+        "Raspored odgovara ljetnom ritmu: kupanje, ručak u hladu, povratak s mola, večera na terasi i večer bez gradske buke. To nije hotelski luksuz, nego stvaran i pažljivo održavan obiteljski boravak uz more."
+      ]
+    },
+    "amenities": {
+      "title": "Sadržaji koji zaista nose boravak",
+      "items": [
+        {
+          "title": "Privatni mul i blizina kupanja",
+          "text": "Divlja kamena plaža i privatni pristup moru nalaze se oko 30 m od kuće, bez potrebe za dnevnom logistikom."
+        },
+        {
+          "title": "Natkrivena terasa i roštilj",
+          "text": "Vanjski stol, hlad i roštilj stvaraju ritam kuće od jutarnje kave do dugih večera na otvorenom."
+        },
+        {
+          "title": "Opremljena kuhinja",
+          "text": "Na raspolaganju su perilica posuđa, mikrovalna pećnica, aparat za kavu, blender i osnovna kuhinjska oprema za samostalne obroke."
+        },
+        {
+          "title": "Wi-Fi, satelitska TV i ventilatori",
+          "text": "Osnovna povezanost i ljetna udobnost ostaju dostupne bez narušavanja sporijeg ritma boravka."
+        },
+        {
+          "title": "Praktično za dulji boravak",
+          "text": "Perilica rublja te tjedna izmjena ručnika i posteljine olakšavaju boravak dulji od vikenda."
+        },
+        {
+          "title": "Pet-friendly boravak",
+          "text": "Kuća prema aktualnom VRBO oglasu prima i pse, što je važno gostima koji putuju bez odvajanja od ljubimca."
+        }
+      ]
+    },
+    "spaces": {
+      "title": "Kako je boravak organiziran",
+      "items": [
+        {
+          "title": "Samostojeća kamena kuća",
+          "text": "Boravak je izdvojen i samostalan, bez zajedničkih hotelskih zona i bez susjednog ritma koji vas određuje."
+        },
+        {
+          "title": "Dvije spavaće sobe i dvije kupaonice",
+          "text": "Raspored daje dovoljno privatnosti za obitelj ili dvije odrasle jedinice koje žele dijeliti kuću bez stiskanja."
+        },
+        {
+          "title": "Dnevni boravak i kuhinjski dio",
+          "text": "Unutarnji prostor služi kao mirna baza između kupanja, ručka i večernjeg odmora."
+        },
+        {
+          "title": "Terasa, vrt i zelenilo",
+          "text": "Vanjski prostor je produžetak kuće: stol u hladu, kameni plato, roštilj i nekoliko koraka do mora."
+        }
+      ]
+    },
+    "practical": {
+      "title": "Praktične informacije",
+      "items": [
+        {
+          "label": "Najbolje odgovara za",
+          "value": "Obitelj, dva para ili mirniju grupu do 6 gostiju"
+        },
+        {
+          "label": "Dolazak",
+          "value": "Pristup automobilom, uz završni dio puta kombinacijom asfalta i makadama"
+        },
+        {
+          "label": "Parkiranje",
+          "value": "Zasjenjeno parkirno mjesto nalazi se oko 40 m od kuće"
+        },
+        {
+          "label": "Ritam kuće",
+          "value": "Terasa, more i privatnost važniji su od gradskog sadržaja i gužve"
+        },
+        {
+          "label": "Rezervacije",
+          "value": "Direktan upit vlasnicima i ručna potvrda termina"
+        }
+      ]
+    },
+    "roomDetails": {
+      "title": "Prostori detaljnije",
+      "items": [
+        {
+          "title": "Spavaća soba 1",
+          "details": [
+            "Mirniji kut kuće za odmor nakon dana na moru.",
+            "Dio rasporeda koji pomaže da grupa zadrži privatnost i vlastiti ritam.",
+            "Ventilator pridonosi ljetnoj udobnosti tijekom toplijih noći."
+          ]
+        },
+        {
+          "title": "Spavaća soba 2",
+          "details": [
+            "Druga odvojena soba za obitelj ili dodatne goste.",
+            "Prikladna je za fleksibilniji raspored boravka do ukupno šest osoba.",
+            "Blizina druge kupaonice olakšava jutarnju organizaciju."
+          ]
+        },
+        {
+          "title": "Dnevni boravak i kuhinja",
+          "details": [
+            "Mjesto okupljanja između kupanja, ručka i večernjeg odmora.",
+            "Kuhinja je opremljena za jednostavne samostalne obroke i duži boravak.",
+            "Wi-Fi i satelitska TV dostupni su kada trebate ostati povezani ili se navečer opustiti."
+          ]
+        },
+        {
+          "title": "Kupaonice i praktično održavanje",
+          "details": [
+            "Dvije kupaonice olakšavaju boravak većoj obitelji ili dvama parovima.",
+            "Perilica rublja pomaže kod duljeg ljetnog boravka.",
+            "Prema informacijama s oglasa, ručnici i posteljina mijenjaju se jednom tjedno."
+          ]
+        },
+        {
+          "title": "Terasa, vrt i more",
+          "details": [
+            "Natkrivena terasa služi za doručak u hladu, ručak bez žurbe i duge večeri.",
+            "Roštilj, vrt i kameni plato pojačavaju osjećaj privatne ljetne kuće.",
+            "Privatni mul i divlja kamena obala udaljeni su oko 30 m."
+          ]
+        }
+      ]
+    }
+  },
+  "gallery": {
+    "hero": {
+      "eyebrow": "Galerija",
+      "title": "Stvarna kuća, stvarna terasa i stvaran okoliš.",
+      "intro": "Fotografije u galeriji lokalno su spremljene iz postojećeg VRBO oglasa kako bi nova stranica odmah dobila vjerodostojan vizualni temelj."
+    },
+    "introTitle": "Što galerija pokazuje",
+    "introText": "Naglasak je na kući u zelenilu, terasi za objedovanje, vrtu i pogledu iz interijera prema vanjskom prostoru. Struktura ostaje jednostavna za buduću zamjenu originalnim datotekama.",
+    "categories": [
+      {
+        "title": "Kuća u borovima i maslinama",
+        "text": "Eksterijer i osjećaj izdvojenosti na velikoj parceli uz more."
+      },
+      {
+        "title": "Terasa i vanjski stol",
+        "text": "Ritam boravka koji se prirodno seli u hlad, vrt i otvoreni zrak."
+      },
+      {
+        "title": "Interijer kao mirna baza",
+        "text": "Jednostavni unutarnji prostori koji podržavaju ljetni boravak bez viška dekorativne buke."
+      }
+    ],
+    "note": "Sadašnje fotografije uvezene su iz VRBO izvora i spremljene lokalno, tako da nema hotlinkanja prema vanjskoj platformi."
+  },
+  "location": {
+    "hero": {
+      "eyebrow": "Lokacija",
+      "title": "Izdvojena pozicija kraj Milne, ali ne i odsječena.",
+      "intro": "House Punta nalazi se u tihom obalnom pojasu do kojeg se dolazi kroz vinograde i maslinike. More je vrlo blizu, a Milna ostaje dovoljno blizu za svakodnevne potrebe."
+    },
+    "introTitle": "Lokacija za goste kojima mir nije pregovaračka stavka",
+    "introText": "Najveća vrijednost položaja nije samo udaljenost od mora, nego odnos između privatnosti i praktičnosti. Do kuće se dolazi automobilom, a nakon dolaska dan se lako svodi na kupaće, terasu i ritam bez žurbe.",
+    "highlights": {
+      "title": "Zašto je položaj poseban",
+      "items": [
+        {
+          "title": "Oko 30 m do mora",
+          "text": "Divlja kamena obala i privatni mul toliko su blizu da se više ne planira odlazak na plažu, nego se samo izlazi iz kuće."
+        },
+        {
+          "title": "Milna oko 15 minuta vožnje",
+          "text": "Mjesto ostaje praktično za ručak, kupnju namirnica, marinu i kratke večernje izlaske."
+        },
+        {
+          "title": "Prilaz i parkiranje bez gradske gužve",
+          "text": "Završni pristup vodi kombinacijom asfalta i makadama, a zasjenjeno parkirno mjesto nalazi se oko 40 m od kuće."
+        }
+      ]
+    },
+    "gettingHere": {
+      "title": "Kako doći",
+      "steps": [
+        "Na Brač dolazite trajektom ili katamaranom, ovisno o polazištu i sezoni.",
+        "Iz luke nastavite automobilom prema Milni i obalnom području izvan glavne gužve mjesta.",
+        "Zadnji dio puta vodi kombinacijom asfalta i makadama kroz vinograde i maslinike do parkiranja iznad kuće."
+      ]
+    },
+    "mapCard": {
+      "title": "Upute za dolazak",
+      "text": "Koordinate su pripremljene za otvaranje u kartama. Preciznu završnu uputu za zadnji prilaz možete dodatno poslati gostima nakon potvrde rezervacije.",
+      "buttonLabel": "Otvorite kartu"
+    }
+  },
+  "availability": {
+    "hero": {
+      "eyebrow": "Dostupnost",
+      "title": "Pregled termina bez booking enginea.",
+      "intro": "Ova verzija stranice namjerno koristi jednostavan prikaz dostupnosti. Dovoljno je jasan za prvi kontakt, a kod je spreman za kasnije spajanje iCal sinkronizacije."
+    },
+    "introTitle": "Kako čitati prikaz",
+    "introText": "Tablica je brza orijentacija. Za konačnu potvrdu termina i dalje je najbolje poslati upit jer se stanje može mijenjati između platformi i direktnih dogovora.",
+    "legend": {
+      "available": "Slobodno",
+      "limited": "Ograničeno",
+      "booked": "Popunjeno",
+      "inquiry": "Na upit"
+    },
+    "noteTitle": "Važno za potvrdu datuma",
+    "noteText": "Ako vam odgovara određeni mjesec ili raspon datuma, pošaljite upit i potvrdit ćemo aktualno stanje prije dogovora.",
+    "syncTitle": "Priprema za buduću sinkronizaciju",
+    "syncText": "Arhitektura je namjerno postavljena tako da se ručni prikaz kasnije može zamijeniti iCal izvorima s VRBO-a, Airbnba ili Booking.com-a bez promjene dizajna stranice."
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Kontakt i upit",
+      "title": "Najbrži put do točnog odgovora je izravna poruka.",
+      "intro": "Ako želite provjeriti termin, cijenu, dolazak s psom ili detalje boravka uz more, javite se putem WhatsAppa, e-maila ili obrasca."
+    },
+    "introTitle": "Kako najlakše stupiti u kontakt",
+    "introText": "Za kratku provjeru termina WhatsApp je najbrži. Za detaljniji dogovor slobodno pošaljite e-mail ili ispunite obrazac s okvirnim datumima i brojem gostiju.",
+    "methodsTitle": "Odaberite kanal koji vam najviše odgovara",
+    "methods": [
+      {
+        "title": "WhatsApp",
+        "text": "Najbrži način za prvu provjeru dostupnosti i osnovnih pitanja o kući."
+      },
+      {
+        "title": "E-mail",
+        "text": "Praktičan za detaljnija pitanja, dulji opis plana putovanja i konkretne datume."
+      },
+      {
+        "title": "Direktan upit",
+        "text": "Obrazac je pripremljen tako da se kasnije može spojiti na servis, PHP mail ili vlastiti endpoint bez mijenjanja korisničkog iskustva."
+      }
+    ],
+    "form": {
+      "title": "Pošaljite upit",
+      "intro": "Napišite okvirne datume, broj gostiju i sve važno za boravak, primjerice dolazite li sa psom ili trebate dodatna pojašnjenja oko prilaza i parkiranja.",
+      "nameLabel": "Ime i prezime",
+      "emailLabel": "E-mail",
+      "phoneLabel": "Telefon",
+      "arrivalLabel": "Dolazak",
+      "departureLabel": "Odlazak",
+      "guestsLabel": "Broj gostiju",
+      "messageLabel": "Poruka",
+      "messagePlaceholder": "Napišite željene datume, broj gostiju i sve što je važno za vaš boravak u House Punta.",
+      "dateHint": "Ako termini još nisu sigurni, dovoljan je okvirni period.",
+      "guestsHint": "Na primjer: 4 odraslih i 2 djece.",
+      "privacyHint": "Slanjem obrasca ne nastaje rezervacija. Upit služi za prvi kontakt i provjeru termina.",
+      "submitLabel": "Pošaljite upit",
+      "pendingLabel": "Slanje...",
+      "successTitle": "Upit je pripremljen",
+      "successBody": "Hvala na interesu. Ako želite odmah potvrditi detalje, nastavite preko ponuđenog direktnog kontakta.",
+      "notConfiguredTitle": "Kontakt forma još nije spojena",
+      "notConfiguredBody": "Backend za slanje nije konfiguriran u ovoj verziji stranice. Upotrijebite WhatsApp ili e-mail ispod i dobit ćete jednako brz odgovor.",
+      "validationMessage": "Molimo ispunite obavezna polja i provjerite ispravnost e-mail adrese."
+    }
+  },
+  "privacy": {
+    "hero": {
+      "eyebrow": "Pravila privatnosti",
+      "title": "Osnovne informacije o obradi podataka.",
+      "intro": "Ova politika privatnosti objašnjava koje podatke House Punta može zaprimiti kroz izravan kontakt i kako se oni koriste za komunikaciju oko boravka."
+    },
+    "introduction": "Stranica prvenstveno služi kao informativna i kontaktna točka za direktne upite. Prije javne objave završne verzije potrebno je unijeti pune pravne podatke iznajmljivača.",
+    "sections": [
+      {
+        "title": "Voditelj obrade",
+        "paragraphs": [
+          "House Punta je privatni obiteljski smještaj. Prije javne objave završne verzije stranice potrebno je unijeti puni naziv i adresu nositelja smještaja.",
+          "Za sva pitanja o privatnosti korisnici se mogu javiti putem objavljene kontakt e-mail adrese."
+        ]
+      },
+      {
+        "title": "Koje podatke možete poslati",
+        "paragraphs": [
+          "Kada nam se javite izravno, možete poslati ime, e-mail adresu, telefonski broj, željene datume boravka, broj gostiju i sadržaj poruke.",
+          "Stranica trenutno ne koristi puni sustav rezervacija niti automatsku naplatu."
+        ]
+      },
+      {
+        "title": "Svrha korištenja podataka",
+        "paragraphs": [
+          "Podaci se koriste isključivo za odgovaranje na upite, provjeru dostupnosti, pripremu ponude i naknadnu komunikaciju povezanu s boravkom.",
+          "Podaci se neće koristiti za nepovezano marketinško slanje bez dodatne privole."
+        ]
+      },
+      {
+        "title": "Pohrana i dijeljenje",
+        "paragraphs": [
+          "Podaci se čuvaju onoliko dugo koliko je potrebno za komunikaciju oko konkretnog upita ili rezervacije.",
+          "Ako se u budućnosti spoji vanjska forma ili iCal sinkronizacija, ovu politiku treba ažurirati konkretnim informacijama o pružateljima usluga."
+        ]
+      }
+    ],
+    "closing": "Prije javnog lansiranja preporučuje se pregled i prilagodba ove politike privatnosti s točnim identitetom iznajmljivača i stvarnim kanalima obrade."
+  },
+  "galleryCaptions": {
+    "hero-coast": "Kamena kuća među borovima, nekoliko koraka od mora.",
+    "house-exterior": "Kuća i vrt u sjeni borova i maslina.",
+    "terrace-evening": "Natkrivena terasa za ručak u hladu i duge večeri.",
+    "living-area": "Pogled iz interijera prema kamenoj terasi i vrtu.",
+    "house-front": "Još jedan pogled na kuću i zelenilo koje je okružuje."
+  }
+}

@@ -1,0 +1,36 @@
+---
+import type { SiteContent } from '../content/site-content';
+import { property } from '../data/property';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+
+const items = [
+  { value: property.facts.maxGuests, label: content.common.statLabels.guests },
+  { value: property.facts.bedrooms, label: content.common.statLabels.bedrooms },
+  { value: property.facts.bathrooms, label: content.common.statLabels.bathrooms },
+  {
+    value: `${property.facts.livingSpaceSqFt.toLocaleString(content.locale)} sq ft`,
+    label: content.common.statLabels.size
+  },
+  {
+    value: `${property.facts.groundsSqm.toLocaleString(content.locale)} m2`,
+    label: content.common.statLabels.grounds
+  },
+  { value: `${property.facts.beachDistanceMeters} m`, label: content.common.statLabels.beachDistance }
+];
+---
+
+<div class="stats-strip">
+  {
+    items.map((item) => (
+      <article class="stat-card">
+        <strong>{item.value}</strong>
+        <span>{item.label}</span>
+      </article>
+    ))
+  }
+</div>

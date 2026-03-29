@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import FeatureGrid from '../../components/FeatureGrid.astro';
+import StatsStrip from '../../components/StatsStrip.astro';
+import { getSiteContent } from '../../content/site-content';
+import { galleryMediaById, property } from '../../data/property';
+import { getStaticLocalePaths, localizedPath, type Locale } from '../../lib/i18n';
+
+export function getStaticPaths() {
+  return getStaticLocalePaths();
+}
+
+const locale = Astro.params.locale as Locale;
+const content = getSiteContent(locale);
+---
+
+<BaseLayout locale={locale} page="accommodation" content={content}>
+  <PageHero
+    eyebrow={content.accommodation.hero.eyebrow}
+    title={content.accommodation.hero.title}
+    intro={content.accommodation.hero.intro}
+  />
+
+  <section class="section section--compact">
+    <div class="container">
+      <StatsStrip content={content} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-grid">
+      <div>
+        <SectionHeading title={content.accommodation.overview.title} />
+        {content.accommodation.overview.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+      <aside class="panel panel--aside">
+        <img
+          src={galleryMediaById['house-exterior'].src}
+          alt={content.galleryCaptions['house-exterior']}
+          width={galleryMediaById['house-exterior'].width}
+          height={galleryMediaById['house-exterior'].height}
+          loading="eager"
+        />
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <SectionHeading title={content.accommodation.amenities.title} />
+      <FeatureGrid items={content.accommodation.amenities.items} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading title={content.accommodation.spaces.title} />
+      <FeatureGrid items={content.accommodation.spaces.items} />
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <SectionHeading title={content.accommodation.roomDetails.title} />
+      <div class="card-grid">
+        {content.accommodation.roomDetails.items.map((item) => (
+          <article class="card">
+            <h3>{item.title}</h3>
+            <ul class="step-list">
+              {item.details.map((detail) => <li>{detail}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-grid">
+      <div class="panel">
+        <SectionHeading title={content.accommodation.practical.title} />
+        <dl class="detail-list">
+          {content.accommodation.practical.items.map((item) => (
+            <div>
+              <dt>{item.label}</dt>
+              <dd>{item.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <aside class="panel panel--aside">
+        <img
+          src={galleryMediaById['terrace-evening'].src}
+          alt={content.galleryCaptions['terrace-evening']}
+          width={galleryMediaById['terrace-evening'].width}
+          height={galleryMediaById['terrace-evening'].height}
+          loading="lazy"
+        />
+        <div class="panel panel--note">
+          <p class="eyebrow">{content.common.directInquiry}</p>
+          <h2>{content.common.priceOnRequest}</h2>
+          <p>{`${property.review.scoreDisplay} · ${property.review.reviewCount} ${content.home.reviewSummary.reviewCountLabel}`}</p>
+          <p>{content.home.reviewSummary.sourceLabel}</p>
+        </div>
+        <p>
+          {content.common.scheduleLabels.checkIn}: {property.checkIn}
+        </p>
+        <p>
+          {content.common.scheduleLabels.checkOut}: {property.checkOut}
+        </p>
+        <a class="button" href={localizedPath(locale, 'contact')}>
+          {content.common.primaryCta}
+        </a>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

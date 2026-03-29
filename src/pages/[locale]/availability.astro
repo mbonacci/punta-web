@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import AvailabilityBoard from '../../components/AvailabilityBoard.astro';
+import { getSiteContent } from '../../content/site-content';
+import { getStaticLocalePaths, localizedPath, type Locale } from '../../lib/i18n';
+
+export function getStaticPaths() {
+  return getStaticLocalePaths();
+}
+
+const locale = Astro.params.locale as Locale;
+const content = getSiteContent(locale);
+const legendItems = [
+  { key: 'available', label: content.availability.legend.available },
+  { key: 'limited', label: content.availability.legend.limited },
+  { key: 'booked', label: content.availability.legend.booked },
+  { key: 'inquiry', label: content.availability.legend.inquiry }
+];
+---
+
+<BaseLayout locale={locale} page="availability" content={content}>
+  <PageHero
+    eyebrow={content.availability.hero.eyebrow}
+    title={content.availability.hero.title}
+    intro={content.availability.hero.intro}
+  />
+
+  <section class="section">
+    <div class="container split-grid">
+      <div>
+        <SectionHeading
+          title={content.availability.introTitle}
+          intro={content.availability.introText}
+        />
+        <div class="season-tag">{content.common.season}</div>
+      </div>
+      <aside class="panel panel--aside">
+        <p class="eyebrow">{content.common.directInquiry}</p>
+        <h2>{content.common.priceOnRequest}</h2>
+        <p>{content.availability.noteText}</p>
+        <a class="button" href={localizedPath(locale, 'contact')}>
+          {content.common.primaryCta}
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <AvailabilityBoard locale={locale} content={content} />
+      <div class="legend-grid">
+        {legendItems.map((item) => (
+          <article class="legend-card">
+            <span class:list={['status-pill', `status-pill--${item.key}`]}>{item.label}</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-grid">
+      <article class="panel">
+        <SectionHeading title={content.availability.noteTitle} />
+        <p>{content.availability.noteText}</p>
+      </article>
+      <article class="panel">
+        <SectionHeading title={content.availability.syncTitle} />
+        <p>{content.availability.syncText}</p>
+        <p>
+          {content.common.listingLabels.airbnb} / {content.common.listingLabels.booking}
+        </p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

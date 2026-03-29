@@ -1,0 +1,26 @@
+---
+import { contentByLocale } from '../content/site-content';
+import { localizedPath, supportedLocales, type Locale, type PageSlug } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+  page: PageSlug;
+}
+
+const { locale, page } = Astro.props;
+---
+
+<div class="language-switcher">
+  {
+    supportedLocales.map((item) => (
+      <a
+        href={localizedPath(item, page)}
+        class:list={['language-switcher__link', item === locale && 'is-active']}
+        lang={item}
+        aria-current={item === locale ? 'true' : undefined}
+      >
+        {contentByLocale[item].languageLabel}
+      </a>
+    ))
+  }
+</div>

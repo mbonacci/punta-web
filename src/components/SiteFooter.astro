@@ -1,0 +1,80 @@
+---
+import type { SiteContent } from '../content/site-content';
+import { property } from '../data/property';
+import { localizedPath, type Locale } from '../lib/i18n';
+import { hasRealExternalLink } from '../lib/seo';
+
+interface Props {
+  locale: Locale;
+  content: SiteContent;
+}
+
+const { locale, content } = Astro.props;
+
+const listingLabelMap = content.common.listingLabels as Record<string, string>;
+const listingEntries = Object.entries(property.listingLinks)
+  .map(([key, url]) => ({
+    label: listingLabelMap[key],
+    url
+  }))
+  .filter((item) => item.label && hasRealExternalLink(item.url));
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <section class="footer-card footer-card--brand">
+      <h2>{property.siteName}</h2>
+      <p>{content.footer.tagline}</p>
+      <p class="footer-note">{content.common.placeholderNotice}</p>
+    </section>
+
+    <section class="footer-card">
+      <h2>{content.footer.navigationTitle}</h2>
+      <div class="footer-links">
+        <a href={localizedPath(locale)}>{content.navigation.home}</a>
+        <a href={localizedPath(locale, 'accommodation')}>{content.navigation.accommodation}</a>
+        <a href={localizedPath(locale, 'gallery')}>{content.navigation.gallery}</a>
+        <a href={localizedPath(locale, 'location')}>{content.navigation.location}</a>
+        <a href={localizedPath(locale, 'availability')}>{content.navigation.availability}</a>
+        <a href={localizedPath(locale, 'contact')}>{content.navigation.contact}</a>
+      </div>
+    </section>
+
+    <section class="footer-card">
+      <h2>{content.footer.contactTitle}</h2>
+      <div class="footer-links">
+        <a href={`https://wa.me/${property.whatsappE164.replace('+', '')}`}>{property.whatsappDisplay}</a>
+        <a href={`mailto:${property.email}`}>{property.email}</a>
+        <a href={`tel:${property.phoneE164}`}>{property.phoneDisplay}</a>
+        <span>{content.footer.addressLabel}</span>
+        <span>{content.footer.availabilityLabel}</span>
+      </div>
+    </section>
+
+    <section class="footer-card">
+      <h2>{content.footer.listingsTitle}</h2>
+      {
+        listingEntries.length > 0 ? (
+          <div class="footer-links">
+            {listingEntries.map((item) => (
+              <a href={item.url} rel="noreferrer noopener" target="_blank">
+                {item.label}
+              </a>
+            ))}
+          </div>
+        ) : (
+          <p>{content.footer.listingsNote}</p>
+        )
+      }
+      <div class="footer-links footer-links--legal">
+        <a href={localizedPath(locale, 'privacy')}>{content.navigation.privacy}</a>
+      </div>
+    </section>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>
+      {property.siteName} · {content.footer.rights}
+    </p>
+  </div>
+</footer>

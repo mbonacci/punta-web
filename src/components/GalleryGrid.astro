@@ -1,0 +1,30 @@
+---
+import type { SiteContent } from '../content/site-content';
+import { galleryMedia } from '../data/property';
+
+interface Props {
+  content: SiteContent;
+  limit?: number;
+}
+
+const { content, limit } = Astro.props;
+const items = typeof limit === 'number' ? galleryMedia.slice(0, limit) : galleryMedia;
+---
+
+<div class="gallery-grid">
+  {
+    items.map((item, index) => (
+      <figure class:list={['gallery-card', index === 0 && 'gallery-card--featured']}>
+        <img
+          src={item.src}
+          alt={content.galleryCaptions[item.id]}
+          width={item.width}
+          height={item.height}
+          loading={item.priority ? 'eager' : 'lazy'}
+          fetchpriority={item.priority ? 'high' : 'auto'}
+        />
+        <figcaption>{content.galleryCaptions[item.id]}</figcaption>
+      </figure>
+    ))
+  }
+</div>

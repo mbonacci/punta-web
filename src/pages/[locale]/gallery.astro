@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import FeatureGrid from '../../components/FeatureGrid.astro';
+import GalleryGrid from '../../components/GalleryGrid.astro';
+import { getSiteContent } from '../../content/site-content';
+import { getStaticLocalePaths, type Locale } from '../../lib/i18n';
+
+export function getStaticPaths() {
+  return getStaticLocalePaths();
+}
+
+const locale = Astro.params.locale as Locale;
+const content = getSiteContent(locale);
+---
+
+<BaseLayout locale={locale} page="gallery" content={content}>
+  <PageHero
+    eyebrow={content.gallery.hero.eyebrow}
+    title={content.gallery.hero.title}
+    intro={content.gallery.hero.intro}
+  />
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading title={content.gallery.introTitle} intro={content.gallery.introText} />
+      <FeatureGrid items={content.gallery.categories} />
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <GalleryGrid content={content} />
+      <div class="panel panel--note">
+        <p>{content.gallery.note}</p>
+        <p>{content.common.placeholderNotice}</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import FeatureGrid from '../../components/FeatureGrid.astro';
+import GalleryGrid from '../../components/GalleryGrid.astro';
+import StatsStrip from '../../components/StatsStrip.astro';
+import AvailabilityBoard from '../../components/AvailabilityBoard.astro';
+import { getSiteContent } from '../../content/site-content';
+import { galleryMediaById, property } from '../../data/property';
+import { getStaticLocalePaths, localizedPath, type Locale } from '../../lib/i18n';
+
+export function getStaticPaths() {
+  return getStaticLocalePaths();
+}
+
+const locale = Astro.params.locale as Locale;
+const content = getSiteContent(locale);
+---
+
+<BaseLayout locale={locale} page="" content={content}>
+  <section class="home-hero">
+    <div class="container home-hero__grid">
+      <div class="home-hero__content">
+        <p class="eyebrow">{content.home.hero.eyebrow}</p>
+        <h1>{content.home.hero.title}</h1>
+        <p class="lead">{content.home.hero.intro}</p>
+        <div class="button-row">
+          <a class="button" href={localizedPath(locale, 'contact')}>
+            {content.home.hero.primaryCta}
+          </a>
+          <a class="button button--ghost" href={`https://wa.me/${property.whatsappE164.replace('+', '')}`}>
+            {content.home.hero.secondaryCta}
+          </a>
+        </div>
+        <ul class="badge-list">
+          {content.home.hero.badges.map((badge) => <li>{badge}</li>)}
+        </ul>
+      </div>
+
+      <div class="home-hero__media">
+        <img
+          src={galleryMediaById['hero-coast'].src}
+          alt={content.galleryCaptions['hero-coast']}
+          width={galleryMediaById['hero-coast'].width}
+          height={galleryMediaById['hero-coast'].height}
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="hero-aside">
+          <p class="eyebrow">{content.common.season}</p>
+          <h2>{content.common.priceOnRequest}</h2>
+          <div class="hero-aside__facts">
+            <span>
+              {content.common.scheduleLabels.checkIn}: {property.checkIn}
+            </span>
+            <span>
+              {content.common.scheduleLabels.checkOut}: {property.checkOut}
+            </span>
+            <span>{content.footer.addressLabel}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--compact">
+    <div class="container">
+      <SectionHeading
+        title={content.home.quickFacts.title}
+        intro={content.home.quickFacts.intro}
+      />
+      <StatsStrip content={content} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container panel panel--trust">
+      <p class="eyebrow">{content.home.reviewSummary.eyebrow}</p>
+      <h2>{content.home.reviewSummary.title}</h2>
+      <p>{content.home.reviewSummary.intro}</p>
+      <ul class="trust-list">
+        <li>
+          {property.review.scoreDisplay} {content.home.reviewSummary.badgeLabel}
+        </li>
+        <li>
+          {property.review.reviewCount} {content.home.reviewSummary.reviewCountLabel}
+        </li>
+        <li>{content.home.reviewSummary.rankingLabel}</li>
+        <li>{content.home.reviewSummary.sourceLabel}</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        title={content.home.highlights.title}
+        intro={content.home.highlights.intro}
+      />
+      <FeatureGrid items={content.home.highlights.items} />
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container split-grid">
+      <div class="panel panel--story">
+        <p class="eyebrow">{content.navigation.accommodation}</p>
+        <h2>{content.home.story.title}</h2>
+        <p class="lead lead--compact">{content.home.story.lead}</p>
+        <p>{content.home.story.body}</p>
+      </div>
+      <aside class="panel panel--aside">
+        <p>{content.home.story.aside}</p>
+        <a class="button" href={localizedPath(locale, 'accommodation')}>
+          {content.common.viewAccommodation}
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        title={content.home.galleryPreview.title}
+        intro={content.home.galleryPreview.intro}
+      />
+      <GalleryGrid content={content} limit={4} />
+      <div class="section-actions">
+        <a class="button button--ghost" href={localizedPath(locale, 'gallery')}>
+          {content.home.galleryPreview.cta}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container split-grid">
+      <article class="panel">
+        <p class="eyebrow">{content.navigation.location}</p>
+        <h2>{content.home.locationPreview.title}</h2>
+        <p>{content.home.locationPreview.intro}</p>
+        <a class="button button--ghost" href={localizedPath(locale, 'location')}>
+          {content.home.locationPreview.cta}
+        </a>
+      </article>
+
+      <article class="panel">
+        <p class="eyebrow">{content.navigation.availability}</p>
+        <h2>{content.home.availabilityPreview.title}</h2>
+        <p>{content.home.availabilityPreview.intro}</p>
+        <AvailabilityBoard locale={locale} content={content} />
+        <a class="button" href={localizedPath(locale, 'availability')}>
+          {content.home.availabilityPreview.cta}
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container panel panel--trust">
+      <SectionHeading title={content.home.trust.title} />
+      <ul class="trust-list">
+        {content.home.trust.points.map((point) => <li>{point}</li>)}
+      </ul>
+      <div class="button-row">
+        <a class="button" href={localizedPath(locale, 'contact')}>
+          {content.common.primaryCta}
+        </a>
+        <a class="button button--ghost" href={`https://wa.me/${property.whatsappE164.replace('+', '')}`}>
+          {content.common.secondaryCta}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
