@@ -330,7 +330,28 @@
         "text": "Simple interior spaces that support summer living without visual clutter."
       }
     ],
-    "note": "The current photos were imported from the VRBO source and stored locally, so the website does not hotlink media from the external platform."
+    "note": "The current photos were imported from the VRBO source and stored locally, so the website does not hotlink media from the external platform.",
+    "atmosphere": {
+      "title": "Atmosphere in motion",
+      "intro": "Short video moments show the rhythm of the house, the pine-lined coast, and the privacy guests feel throughout the day.",
+      "items": [
+        {
+          "title": "Morning calm by the sea",
+          "text": "A first-light view of the shoreline and private jetty area.",
+          "embedUrl": "https://www.youtube.com/embed/Scxs7L0vhZ4"
+        },
+        {
+          "title": "Terrace and garden daytime",
+          "text": "Pine shade, outdoor dining, and the easy flow between swims and rest.",
+          "embedUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+        },
+        {
+          "title": "Evening atmosphere",
+          "text": "Golden-hour terrace mood and the quiet coastal setting after sunset.",
+          "embedUrl": "https://www.youtube.com/embed/LXb3EKWsInQ"
+        }
+      ]
+    }
   },
   "location": {
     "hero": {

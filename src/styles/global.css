@@ -677,6 +677,19 @@ small,
   color: var(--muted);
 }
 
+.card--video {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.video-panel__media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 0.8rem;
+  box-shadow: var(--shadow-soft);
+}
+
 .stats-strip {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }

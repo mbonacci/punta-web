@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 import FeatureGrid from '../../components/FeatureGrid.astro';
+import VideoPanelGrid from '../../components/VideoPanelGrid.astro';
 import GalleryGrid from '../../components/GalleryGrid.astro';
 import { getSiteContent } from '../../content/site-content';
 import { pageMedia } from '../../data/property';
@@ -33,6 +34,16 @@ const content = getSiteContent(locale);
     <div class="container">
       <SectionHeading title={content.gallery.introTitle} intro={content.gallery.introText} />
       <FeatureGrid items={content.gallery.categories} />
+    </div>
+  </section>
+
+  <section class="section section--compact">
+    <div class="container">
+      <SectionHeading
+        title={content.gallery.atmosphere.title}
+        intro={content.gallery.atmosphere.intro}
+      />
+      <VideoPanelGrid items={content.gallery.atmosphere.items} />
     </div>
   </section>
 

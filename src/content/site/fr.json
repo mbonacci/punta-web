@@ -330,7 +330,28 @@
         "text": "Des espaces intérieurs simples, pensés pour l'été sans surcharge visuelle."
       }
     ],
-    "note": "Les photos actuelles ont été importées depuis la source VRBO et stockées localement, afin que le site ne hotlinke aucun média depuis la plateforme externe."
+    "note": "Les photos actuelles ont été importées depuis la source VRBO et stockées localement, afin que le site ne hotlinke aucun média depuis la plateforme externe.",
+    "atmosphere": {
+      "title": "Atmosphère en vidéo",
+      "intro": "De courts extraits vidéo montrent le rythme de la maison, la côte bordée de pins et l’intimité ressentie tout au long de la journée.",
+      "items": [
+        {
+          "title": "Calme du matin au bord de la mer",
+          "text": "Vue matinale sur le rivage et la zone de jetée privée.",
+          "embedUrl": "https://www.youtube.com/embed/Scxs7L0vhZ4"
+        },
+        {
+          "title": "Terrasse et jardin en journée",
+          "text": "Ombre des pins, repas dehors et va-et-vient naturel entre baignade et repos.",
+          "embedUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+        },
+        {
+          "title": "Ambiance du soir",
+          "text": "Atmosphère dorée sur la terrasse et côte silencieuse après le coucher du soleil.",
+          "embedUrl": "https://www.youtube.com/embed/LXb3EKWsInQ"
+        }
+      ]
+    }
   },
   "location": {
     "hero": {

@@ -330,7 +330,28 @@
         "text": "Espacios interiores sencillos que acompañan la vida de verano sin ruido visual."
       }
     ],
-    "note": "Las fotos actuales se importaron desde la fuente de VRBO y se guardaron localmente, de modo que el sitio no hace hotlink de medios desde la plataforma externa."
+    "note": "Las fotos actuales se importaron desde la fuente de VRBO y se guardaron localmente, de modo que el sitio no hace hotlink de medios desde la plataforma externa.",
+    "atmosphere": {
+      "title": "Atmósfera en video",
+      "intro": "Pequeños vídeos muestran el ritmo de la casa, la costa entre pinos y la privacidad que se siente durante todo el día.",
+      "items": [
+        {
+          "title": "Calma de la mañana junto al mar",
+          "text": "Vista temprana de la costa y de la zona del embarcadero privado.",
+          "embedUrl": "https://www.youtube.com/embed/Scxs7L0vhZ4"
+        },
+        {
+          "title": "Terraza y jardín durante el día",
+          "text": "Sombra de pinos, comidas al aire libre y un ritmo suave entre baños y descanso.",
+          "embedUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+        },
+        {
+          "title": "Ambiente al atardecer",
+          "text": "Luz dorada en la terraza y costa tranquila tras la puesta de sol.",
+          "embedUrl": "https://www.youtube.com/embed/LXb3EKWsInQ"
+        }
+      ]
+    }
   },
   "location": {
     "hero": {

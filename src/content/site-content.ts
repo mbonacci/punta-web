@@ -28,6 +28,12 @@ const cardSchema = z.object({
   text: z.string()
 });
 
+const videoCardSchema = z.object({
+  title: z.string(),
+  text: z.string(),
+  embedUrl: z.url()
+});
+
 const labelValueSchema = z.object({
   label: z.string(),
   value: z.string()
@@ -185,6 +191,11 @@ export const siteContentSchema = z.object({
     introTitle: z.string(),
     introText: z.string(),
     categories: z.array(cardSchema),
+    atmosphere: z.object({
+      title: z.string(),
+      intro: z.string(),
+      items: z.array(videoCardSchema).length(3)
+    }),
     note: z.string()
   }),
   location: z.object({

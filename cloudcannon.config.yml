@@ -64,6 +64,8 @@ file_config:
         label: Accommodation page
       gallery:
         label: Gallery page
+      atmosphere:
+        label: Gallery atmosphere videos
       location:
         label: Location page
       availability:
@@ -154,6 +156,9 @@ file_config:
             subtext:
               - key: text
             icon: photo_library
+      embedUrl:
+        type: url
+        label: Video embed URL
       sections:
         type: array
         label: Privacy sections
