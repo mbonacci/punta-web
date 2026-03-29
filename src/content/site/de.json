@@ -94,8 +94,8 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Robinson-Ruhe auf Brač",
-      "title": "Steinhaus, privates Ufer und ein Sommer ohne Eile.",
+      "eyebrow": "Robinson-Ruhe auf Brač, mit einem Hauch von Luxus.",
+      "title": "Steinhaus, privates Ufer und Sommer unter sicheren Bedingungen.",
       "intro": "House Punta ist ein freistehendes dalmatinisches Steinhaus, versteckt zwischen Pinien und Olivenbäumen auf etwa 20.000 m2 privatem Land. Ein wilder Steinstrand und ein privater Steg liegen rund 30 m vom Haus entfernt.",
       "primaryCta": "Anfrage senden",
       "secondaryCta": "Auf WhatsApp schreiben",
@@ -226,6 +226,14 @@
         {
           "title": "Terrasse, Garten und Grün",
           "text": "Der Außenraum erweitert das Haus: Tisch im Schatten, Steinflächen, Grill und nur wenige Schritte bis zum Wasser."
+        },
+        {
+          "title": "Private Liegen im Kiefernschatten",
+          "text": "Nur wenige Schritte vom Meer entfernt bieten private Liegen unter Kiefern Diskretion und Sonne ohne Gedränge."
+        },
+        {
+          "title": "Gepflegter, großzügiger Privatgarten",
+          "text": "Für morgendliches Yoga, Meditation oder den ersten Kaffee des Tages – begleitet nur vom Rauschen der Wellen."
         }
       ]
     },
@@ -322,7 +330,28 @@
         "text": "Schlichte Innenräume, die das Sommerleben unterstützen, ohne visuelle Unruhe."
       }
     ],
-    "note": "Die aktuellen Fotos wurden aus der VRBO-Quelle importiert und lokal gespeichert, sodass die Website keine Bilder von der externen Plattform hotlinkt."
+    "note": "Die aktuellen Fotos wurden aus der VRBO-Quelle importiert und lokal gespeichert, sodass die Website keine Bilder von der externen Plattform hotlinkt.",
+    "atmosphere": {
+      "title": "Atmosphäre in Bewegung",
+      "intro": "Kurze Videos zeigen den Rhythmus des Hauses, die piniengesäumte Küste und das Gefühl von Privatsphäre über den Tag hinweg.",
+      "items": [
+        {
+          "title": "Morgenruhe am Meer",
+          "text": "Blick auf Küste und privaten Stegbereich im ersten Tageslicht.",
+          "embedUrl": "https://www.youtube.com/embed/Scxs7L0vhZ4"
+        },
+        {
+          "title": "Terrasse und Garten am Tag",
+          "text": "Pinien-Schatten, Essen im Freien und der entspannte Wechsel zwischen Baden und Pause.",
+          "embedUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+        },
+        {
+          "title": "Abendstimmung",
+          "text": "Goldene Stunde auf der Terrasse und ruhige Küste nach Sonnenuntergang.",
+          "embedUrl": "https://www.youtube.com/embed/LXb3EKWsInQ"
+        }
+      ]
+    }
   },
   "location": {
     "hero": {

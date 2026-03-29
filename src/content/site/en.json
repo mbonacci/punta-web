@@ -94,8 +94,8 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Robinson-style calm on Brac",
-      "title": "A stone house, a private shoreline and a summer without hurry.",
+      "eyebrow": "Robinson-style peace on Brač, with a touch of luxury.",
+      "title": "Stone house, private shoreline, and summer in safe conditions.",
       "intro": "House Punta is a detached Dalmatian stone house hidden among pines and olive trees on about 20,000 m2 of private land. A wild stone beach and private jetty sit around 30 m from the house.",
       "primaryCta": "Send an inquiry",
       "secondaryCta": "Message on WhatsApp",
@@ -226,6 +226,14 @@
         {
           "title": "Terrace, garden and greenery",
           "text": "The outside is an extension of the house: a shaded table, stone paving, a barbecue and only a few steps to the water."
+        },
+        {
+          "title": "Private sun loungers in pine shade",
+          "text": "Just a few steps from entering the sea, private loungers under pine trees offer discretion and sunbathing without crowding."
+        },
+        {
+          "title": "Maintained, spacious private garden",
+          "text": "For morning yoga, meditation, or your first coffee of the day with nothing but the sound of waves."
         }
       ]
     },
@@ -322,7 +330,28 @@
         "text": "Simple interior spaces that support summer living without visual clutter."
       }
     ],
-    "note": "The current photos were imported from the VRBO source and stored locally, so the website does not hotlink media from the external platform."
+    "note": "The current photos were imported from the VRBO source and stored locally, so the website does not hotlink media from the external platform.",
+    "atmosphere": {
+      "title": "Atmosphere in motion",
+      "intro": "Short video moments show the rhythm of the house, the pine-lined coast, and the privacy guests feel throughout the day.",
+      "items": [
+        {
+          "title": "Morning calm by the sea",
+          "text": "A first-light view of the shoreline and private jetty area.",
+          "embedUrl": "https://www.youtube.com/embed/Scxs7L0vhZ4"
+        },
+        {
+          "title": "Terrace and garden daytime",
+          "text": "Pine shade, outdoor dining, and the easy flow between swims and rest.",
+          "embedUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+        },
+        {
+          "title": "Evening atmosphere",
+          "text": "Golden-hour terrace mood and the quiet coastal setting after sunset.",
+          "embedUrl": "https://www.youtube.com/embed/LXb3EKWsInQ"
+        }
+      ]
+    }
   },
   "location": {
     "hero": {

@@ -94,8 +94,8 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Calme Robinson sur Brač",
-      "title": "Maison en pierre, rivage privé et été sans précipitation.",
+      "eyebrow": "Calme Robinson sur Brač, avec une touche de luxe.",
+      "title": "Maison en pierre, rivage privé et été dans des conditions sûres.",
       "intro": "House Punta est une maison dalmate indépendante en pierre, cachée parmi les pins et les oliviers sur environ 20 000 m2 de terrain privé. Une plage sauvage de pierre et une jetée privée se trouvent à environ 30 m de la maison.",
       "primaryCta": "Envoyer une demande",
       "secondaryCta": "Écrire sur WhatsApp",
@@ -226,6 +226,14 @@
         {
           "title": "Terrasse, jardin et verdure",
           "text": "L'extérieur prolonge la maison : table à l'ombre, pierre, barbecue et quelques pas seulement jusqu'à l'eau."
+        },
+        {
+          "title": "Transats privés à l’ombre des pins",
+          "text": "À seulement quelques pas de l’entrée dans la mer, des transats privés à l’ombre des pins offrent discrétion et détente au soleil."
+        },
+        {
+          "title": "Jardin privé entretenu et spacieux",
+          "text": "Pour le yoga du matin, la méditation ou le premier café de la journée, avec pour seul fond sonore le murmure des vagues."
         }
       ]
     },
@@ -322,7 +330,28 @@
         "text": "Des espaces intérieurs simples, pensés pour l'été sans surcharge visuelle."
       }
     ],
-    "note": "Les photos actuelles ont été importées depuis la source VRBO et stockées localement, afin que le site ne hotlinke aucun média depuis la plateforme externe."
+    "note": "Les photos actuelles ont été importées depuis la source VRBO et stockées localement, afin que le site ne hotlinke aucun média depuis la plateforme externe.",
+    "atmosphere": {
+      "title": "Atmosphère en vidéo",
+      "intro": "De courts extraits vidéo montrent le rythme de la maison, la côte bordée de pins et l’intimité ressentie tout au long de la journée.",
+      "items": [
+        {
+          "title": "Calme du matin au bord de la mer",
+          "text": "Vue matinale sur le rivage et la zone de jetée privée.",
+          "embedUrl": "https://www.youtube.com/embed/Scxs7L0vhZ4"
+        },
+        {
+          "title": "Terrasse et jardin en journée",
+          "text": "Ombre des pins, repas dehors et va-et-vient naturel entre baignade et repos.",
+          "embedUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+        },
+        {
+          "title": "Ambiance du soir",
+          "text": "Atmosphère dorée sur la terrasse et côte silencieuse après le coucher du soleil.",
+          "embedUrl": "https://www.youtube.com/embed/LXb3EKWsInQ"
+        }
+      ]
+    }
   },
   "location": {
     "hero": {
