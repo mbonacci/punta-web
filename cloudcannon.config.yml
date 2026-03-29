@@ -2,13 +2,502 @@ paths:
   static: public
   uploads: public/uploads
 
+editor:
+  default_path: /hr/
+
 collections_config:
   locale_content:
     path: src/content/site
+    name: Localized Copy
+    icon: translate
+    description: Edit the text for each language. Croatian is the source locale.
     disable_add: true
     disable_add_folder: true
+    preview:
+      text:
+        - key: languageLabel
+      subtext:
+        - key: locale
+      icon: translate
+    _enabled_editors:
+      - data
 
   site_data:
     path: src/content/data
+    name: Site Data
+    icon: dataset
+    description: Update property facts, gallery media, and availability without touching templates.
     disable_add: true
     disable_add_folder: true
+    _enabled_editors:
+      - data
+
+file_config:
+  - glob: src/content/site/*.json
+    _enabled_editors:
+      - data
+    _inputs:
+      $:
+        type: object
+        comment: Croatian is the source locale. Keep the same keys in every language file.
+        options:
+          subtype: tabbed
+      locale:
+        label: Locale code
+        disabled: true
+      languageLabel:
+        label: Language label
+      metadata:
+        label: Site metadata
+      navigation:
+        label: Navigation
+      common:
+        label: Shared labels
+      footer:
+        label: Footer
+      seo:
+        type: object
+        label: SEO by page
+        options:
+          subtype: tabbed
+      home:
+        label: Home page
+      accommodation:
+        label: Accommodation page
+      gallery:
+        label: Gallery page
+      location:
+        label: Location page
+      availability:
+        label: Availability page
+      contact:
+        label: Contact page
+      privacy:
+        label: Privacy page
+      galleryCaptions:
+        label: Gallery captions
+        comment: Keep one caption per media id from src/content/data/media.json.
+      siteDescription:
+        type: textarea
+        label: Site description
+        options:
+          show_count: true
+      description:
+        type: textarea
+        comment: Meta descriptions usually work best around 140 to 160 characters.
+        options:
+          show_count: true
+      announcement:
+        type: textarea
+        options:
+          show_count: true
+      intro:
+        type: textarea
+      introText:
+        type: textarea
+      introduction:
+        type: textarea
+      lead:
+        type: textarea
+      body:
+        type: textarea
+      aside:
+        type: textarea
+      note:
+        type: textarea
+      noteText:
+        type: textarea
+      syncText:
+        type: textarea
+      closing:
+        type: textarea
+      placeholderNotice:
+        type: textarea
+      messagePlaceholder:
+        type: textarea
+      privacyHint:
+        type: textarea
+      successBody:
+        type: textarea
+      notConfiguredBody:
+        type: textarea
+      validationMessage:
+        type: textarea
+      items:
+        type: array
+        label: Cards
+        options:
+          preview:
+            text:
+              - key: title
+              - Card
+            subtext:
+              - key: text
+            icon: article
+      methods:
+        type: array
+        label: Contact methods
+        options:
+          preview:
+            text:
+              - key: title
+              - Method
+            subtext:
+              - key: text
+            icon: contact_phone
+      categories:
+        type: array
+        label: Gallery categories
+        options:
+          preview:
+            text:
+              - key: title
+              - Category
+            subtext:
+              - key: text
+            icon: photo_library
+      sections:
+        type: array
+        label: Privacy sections
+        options:
+          preview:
+            text:
+              - key: title
+              - Section
+            icon: policy
+      roomDetails:
+        label: Room details
+      paragraphs:
+        type: array
+        label: Paragraphs
+      points:
+        type: array
+        label: Bullet points
+      steps:
+        type: array
+        label: Steps
+      badges:
+        type: array
+        label: Hero badges
+      details:
+        type: array
+        label: Detail list
+
+  - glob: src/content/data/property.json
+    _enabled_editors:
+      - data
+    _inputs:
+      $:
+        type: object
+        comment: These values control contact details, listing links, and the facts shown across the site.
+        options:
+          subtype: tabbed
+      siteName:
+        label: Site name
+      propertyName:
+        label: House name
+      contact:
+        label: Contact details
+      email:
+        type: email
+        label: Contact email
+      phoneDisplay:
+        label: Phone number shown to guests
+      phoneE164:
+        label: Phone number in E.164 format
+        comment: Use digits with country code, for example +385910000000.
+      whatsappDisplay:
+        label: WhatsApp number shown to guests
+      whatsappE164:
+        label: WhatsApp number in E.164 format
+        comment: Use digits with country code, for example +385910000000.
+      coordinates:
+        label: Map coordinates
+      address:
+        label: Address details
+      facts:
+        label: Guest and property facts
+      access:
+        label: Access and arrival facts
+      review:
+        label: Review summary
+      schedule:
+        label: Check-in and check-out
+      listingLinks:
+        type: object
+        label: Listing platform links
+        options:
+          subtype: tabbed
+      vrbo:
+        type: url
+        label: VRBO URL
+      airbnb:
+        type: url
+        label: Airbnb URL
+      booking:
+        type: url
+        label: Booking.com URL
+      mapDirectionsUrl:
+        type: url
+        label: Google Maps directions URL
+      latitude:
+        type: number
+        label: Latitude
+      longitude:
+        type: number
+        label: Longitude
+      livingSpaceSqFt:
+        type: number
+        label: Interior size (sq ft)
+      groundsSqm:
+        type: number
+        label: Grounds size (m2)
+      beachDistanceMeters:
+        type: number
+        label: Distance to sea (m)
+      milnaDistanceMiles:
+        type: number
+        label: Distance to Milna (miles)
+      milnaDriveMinutes:
+        type: number
+        label: Drive to Milna (minutes)
+      parkingDistanceMeters:
+        type: number
+        label: Distance from parking (m)
+      score:
+        type: number
+        label: Review score
+      reviewCount:
+        type: number
+        label: Review count
+
+  - glob: src/content/data/media.json
+    _enabled_editors:
+      - data
+    _select_data:
+      gallery_media_ids:
+        - house-exterior
+        - hero-coast
+        - terrace-evening
+        - living-area
+        - house-front
+    _structures:
+      media_gallery_items:
+        values:
+          - label: Image
+            value:
+              id:
+              type: image
+              src:
+              width: 1600
+              height: 900
+              priority: false
+            preview:
+              text:
+                - key: id
+                - Image
+              subtext: Image file
+              image:
+                - key: src
+              icon: image
+          - label: Video file
+            value:
+              id:
+              type: video
+              source: file
+              src:
+              poster:
+              width: 1280
+              height: 720
+              priority: false
+              autoplay: false
+              loop: false
+              muted: false
+            preview:
+              text:
+                - key: id
+                - Video file
+              subtext: Local video file
+              image:
+                - key: poster
+              icon: movie
+          - label: Embedded video
+            value:
+              id:
+              type: video
+              source: embed
+              embedUrl:
+              poster:
+              width: 1280
+              height: 720
+              priority: false
+            preview:
+              text:
+                - key: id
+                - Embedded video
+              subtext: YouTube or Vimeo embed URL
+              image:
+                - key: poster
+              icon: smart_display
+    _inputs:
+      $:
+        type: object
+        comment: Add gallery media here, then pick which item is featured on each page.
+        options:
+          subtype: tabbed
+      socialImage:
+        type: image
+        label: Social sharing image
+      pageMedia:
+        label: Featured media by page
+      homeHero:
+        type: select
+        label: Home hero media
+        options:
+          values: _select_data.gallery_media_ids
+      homeStory:
+        type: select
+        label: Home story media
+        options:
+          values: _select_data.gallery_media_ids
+      accommodationHero:
+        type: select
+        label: Accommodation hero media
+        options:
+          values: _select_data.gallery_media_ids
+      accommodationOverview:
+        type: select
+        label: Accommodation overview media
+        options:
+          values: _select_data.gallery_media_ids
+      galleryHero:
+        type: select
+        label: Gallery hero media
+        options:
+          values: _select_data.gallery_media_ids
+      locationHero:
+        type: select
+        label: Location hero media
+        options:
+          values: _select_data.gallery_media_ids
+      locationIllustration:
+        type: select
+        label: Location illustration media
+        options:
+          values: _select_data.gallery_media_ids
+      gallery:
+        type: array
+        label: Gallery media items
+        comment: Captions are edited separately in each locale file under galleryCaptions.
+        options:
+          structures: _structures.media_gallery_items
+          preview:
+            text:
+              - key: id
+              - Media item
+            subtext:
+              - key: type
+            icon: photo_library
+      id:
+        label: Media id
+        comment: Use a short stable id. Captions and page selections refer to this id.
+      type:
+        hidden: true
+      source:
+        hidden: true
+      src:
+        type: file
+        label: Asset file
+        comment: Upload an image or video file. CloudCannon uploads go to public/uploads by default.
+      poster:
+        type: image
+        label: Poster image
+      embedUrl:
+        type: url
+        label: Embed URL
+        comment: Use an embeddable URL from YouTube or Vimeo.
+      width:
+        type: number
+        label: Width
+      height:
+        type: number
+        label: Height
+      priority:
+        type: switch
+        label: Priority loading
+      autoplay:
+        type: switch
+        label: Autoplay
+      loop:
+        type: switch
+        label: Loop
+      muted:
+        type: switch
+        label: Muted
+
+  - glob: src/content/data/availability.json
+    _enabled_editors:
+      - data
+    _select_data:
+      availability_sources:
+        - manual
+        - ical
+      availability_states:
+        - available
+        - limited
+        - booked
+        - inquiry
+    _structures:
+      availability_months:
+        values:
+          - label: Month status
+            value:
+              month: 2026-01
+              state: available
+            preview:
+              text:
+                - key: month
+              subtext:
+                - key: state
+              icon: event_available
+    _inputs:
+      $:
+        type: object
+        comment: Keep manual month statuses here until iCal feeds are ready.
+        options:
+          subtype: tabbed
+      source:
+        type: select
+        label: Availability source
+        options:
+          values: _select_data.availability_sources
+      icalFeeds:
+        type: object
+        label: iCal feed URLs
+        options:
+          subtype: tabbed
+      airbnb:
+        type: url
+        label: Airbnb iCal URL
+      booking:
+        type: url
+        label: Booking.com iCal URL
+      months:
+        type: array
+        label: Monthly availability
+        options:
+          structures: _structures.availability_months
+          preview:
+            text:
+              - key: month
+            subtext:
+              - key: state
+            icon: calendar_month
+      month:
+        label: Month
+        comment: Use the format YYYY-MM, for example 2026-07.
+      state:
+        type: select
+        label: Status
+        options:
+          values: _select_data.availability_states

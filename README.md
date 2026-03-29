@@ -141,6 +141,10 @@ Put optimized files in:
 
 - `public/images/`
 
+CloudCannon uploads files to:
+
+- `public/uploads/`
+
 Then either:
 
 1. keep the same filenames for zero content changes, or
@@ -151,6 +155,10 @@ Then either:
 Put optimized web-ready files in:
 
 - `public/videos/`
+
+CloudCannon uploads files to:
+
+- `public/uploads/`
 
 Then add a new media item in:
 

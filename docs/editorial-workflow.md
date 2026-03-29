@@ -21,6 +21,7 @@ This project is set up so non-technical edits happen in content files, while Git
 - Manual availability: `src/content/data/availability.json`
 - Uploaded images: `public/images/`
 - Uploaded videos: `public/videos/`
+- Default CloudCannon uploads: `public/uploads/`
 
 ## Daily workflow
 
@@ -29,6 +30,13 @@ This project is set up so non-technical edits happen in content files, while Git
 3. GitHub Actions runs validation and build checks.
 4. You review and merge.
 5. Merge to `main` triggers deployment to cPanel when FTP secrets are configured.
+
+## Editing experience
+
+- Locale files open in the Data Editor with top-level tabs for major sections.
+- Property, media, and availability files open as tabbed data forms instead of raw JSON.
+- Gallery media uses card-style array editing with templates for image, local video, and embedded video items.
+- File uploads from CloudCannon go to `public/uploads/` by default unless moved manually later.
 
 ## Translation rule
 
