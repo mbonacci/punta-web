@@ -93,6 +93,19 @@
       "width": 1665,
       "height": 2686,
       "priority": false
+    },
+    {
+      "id": "more",
+      "type": "video",
+      "source": "file",
+      "src": "/uploads/vid-20240813-092141.mp4",
+      "poster": null,
+      "width": 1280,
+      "height": 720,
+      "priority": false,
+      "autoplay": false,
+      "loop": false,
+      "muted": false
     }
   ]
 }
