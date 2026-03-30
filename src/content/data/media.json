@@ -114,6 +114,14 @@
       "width": 1600,
       "height": 900,
       "priority": false
+    },
+    {
+      "id": "noc",
+      "type": "image",
+      "src": "/uploads/20250802-223455.jpg",
+      "width": 1600,
+      "height": 900,
+      "priority": false
     }
   ]
 }
