@@ -69,6 +69,14 @@
       "width": 1600,
       "height": 900,
       "priority": false
+    },
+    {
+      "id": "leptir",
+      "type": "image",
+      "src": "/uploads/1774819939392.jpg",
+      "width": 1600,
+      "height": 900,
+      "priority": false
     }
   ]
 }
