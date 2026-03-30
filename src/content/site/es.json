@@ -338,17 +338,32 @@
         {
           "title": "Calma de la mañana junto al mar",
           "text": "Vista temprana de la costa y de la zona del embarcadero privado.",
-          "embedUrl": "https://www.youtube.com/embed/Scxs7L0vhZ4"
+          "embedUrl": "",
+          "src": "/uploads/vid-20250811-114256-1.mp4",
+          "poster": "",
+          "autoplay": false,
+          "loop": false,
+          "muted": false
         },
         {
           "title": "Terraza y jardín durante el día",
           "text": "Sombra de pinos, comidas al aire libre y un ritmo suave entre baños y descanso.",
-          "embedUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+          "embedUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ",
+          "src": "",
+          "poster": "",
+          "autoplay": false,
+          "loop": false,
+          "muted": false
         },
         {
           "title": "Ambiente al atardecer",
           "text": "Luz dorada en la terraza y costa tranquila tras la puesta de sol.",
-          "embedUrl": "https://www.youtube.com/embed/LXb3EKWsInQ"
+          "embedUrl": "https://www.youtube.com/embed/LXb3EKWsInQ",
+          "src": "",
+          "poster": "",
+          "autoplay": false,
+          "loop": false,
+          "muted": false
         }
       ]
     }

@@ -338,17 +338,32 @@
         {
           "title": "Jutarnji mir uz more",
           "text": "Pogled u rano jutro prema obali i zoni privatnog mula.",
-          "embedUrl": "/uploads/vid-20250811-114256-1.mp4"
+          "embedUrl": "",
+          "src": "/uploads/vid-20250811-114256-1.mp4",
+          "poster": "",
+          "autoplay": false,
+          "loop": false,
+          "muted": false
         },
         {
           "title": "Terasa i vrt tijekom dana",
           "text": "Borova sjena, objedovanje na otvorenom i miran ritam između kupanja i odmora.",
-          "embedUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+          "embedUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ",
+          "src": "",
+          "poster": "",
+          "autoplay": false,
+          "loop": false,
+          "muted": false
         },
         {
           "title": "Večernji ugođaj",
           "text": "Predvečerje na terasi i tišina obale bez gradske gužve.",
-          "embedUrl": "https://www.youtube.com/embed/LXb3EKWsInQ"
+          "embedUrl": "https://www.youtube.com/embed/LXb3EKWsInQ",
+          "src": "",
+          "poster": "",
+          "autoplay": false,
+          "loop": false,
+          "muted": false
         }
       ]
     }

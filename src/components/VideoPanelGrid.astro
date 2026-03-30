@@ -1,30 +1,57 @@
 ---
-type VideoPanelItem = {
-  title: string;
-  text: string;
-  embedUrl: string;
-};
+import type { AtmosphereVideoItem } from '../content/site-content';
+
+type VideoPanelItem = AtmosphereVideoItem;
 
 interface Props {
   items: VideoPanelItem[];
 }
 
 const { items } = Astro.props;
+
+function getVideoMimeType(src: string) {
+  if (src.endsWith('.webm')) {
+    return 'video/webm';
+  }
+
+  if (src.endsWith('.ogg') || src.endsWith('.ogv')) {
+    return 'video/ogg';
+  }
+
+  return 'video/mp4';
+}
 ---
 
 <div class="card-grid">
   {
     items.map((item) => (
       <article class="card card--video">
-        <iframe
-          class="video-panel__media"
-          src={item.embedUrl}
-          title={item.title}
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          referrerpolicy="strict-origin-when-cross-origin"
-        />
+        {item.embedUrl ? (
+          <iframe
+            class="video-panel__media"
+            src={item.embedUrl}
+            title={item.title}
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin"
+          />
+        ) : (
+          <video
+            class="video-panel__media"
+            title={item.title}
+            poster={item.poster}
+            preload="metadata"
+            autoplay={item.autoplay}
+            loop={item.loop}
+            muted={item.muted ?? item.autoplay ?? false}
+            controls
+            playsinline
+          >
+            <source src={item.src} type={getVideoMimeType(item.src!)} />
+            {item.title}
+          </video>
+        )}
         <h3>{item.title}</h3>
         <p>{item.text}</p>
       </article>

@@ -36,6 +36,42 @@ file_config:
   - glob: src/content/site/*.json
     _enabled_editors:
       - data
+    _structures:
+      gallery_atmosphere_items:
+        style: modal
+        values:
+          - label: Embedded video
+            value:
+              title:
+              text:
+              embedUrl:
+              src: ""
+              poster: ""
+              autoplay: false
+              loop: false
+              muted: false
+            preview:
+              text:
+                - key: title
+                - Embedded video
+              subtext: YouTube or Vimeo embed
+              icon: smart_display
+          - label: Local video file
+            value:
+              title:
+              text:
+              embedUrl: ""
+              src:
+              poster: ""
+              autoplay: false
+              loop: false
+              muted: false
+            preview:
+              text:
+                - key: title
+                - Local video
+              subtext: Uploaded video file
+              icon: movie
     _inputs:
       $:
         type: object
@@ -156,9 +192,39 @@ file_config:
             subtext:
               - key: text
             icon: photo_library
+      gallery.atmosphere.items:
+        type: array
+        label: Atmosphere videos
+        comment: Use either an embedded video or a local uploaded video file for each card.
+        options:
+          structures: _structures.gallery_atmosphere_items
+          preview:
+            text:
+              - key: title
+              - Atmosphere video
+            subtext:
+              - key: text
+            icon: movie
       embedUrl:
         type: url
-        label: Video embed URL
+        label: Embedded video URL
+        comment: Leave empty when using a local video file.
+      src:
+        type: file
+        label: Local video file
+        comment: Upload a web-ready video file. CloudCannon uploads go to public/uploads.
+      poster:
+        type: image
+        label: Poster image
+      autoplay:
+        type: switch
+        label: Autoplay
+      loop:
+        type: switch
+        label: Loop
+      muted:
+        type: switch
+        label: Muted
       sections:
         type: array
         label: Privacy sections

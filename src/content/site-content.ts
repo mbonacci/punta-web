@@ -28,11 +28,52 @@ const cardSchema = z.object({
   text: z.string()
 });
 
-const videoCardSchema = z.object({
-  title: z.string(),
-  text: z.string(),
-  embedUrl: z.url()
-});
+const localAssetPathSchema = z.string().startsWith('/');
+
+const optionalLocalAssetPathSchema = z
+  .union([localAssetPathSchema, z.literal(''), z.null()])
+  .optional()
+  .transform((value) =>
+    typeof value === 'string' && value.length > 0 ? value : undefined
+  );
+
+const optionalVideoFilePathSchema = z
+  .union([localAssetPathSchema, z.literal(''), z.null()])
+  .optional()
+  .transform((value) =>
+    typeof value === 'string' && value.length > 0 ? value : undefined
+  );
+
+const optionalVideoEmbedSchema = z
+  .union([z.url(), z.literal(''), z.null()])
+  .optional()
+  .transform((value) =>
+    typeof value === 'string' && value.length > 0 ? value : undefined
+  );
+
+const videoCardSchema = z
+  .object({
+    title: z.string(),
+    text: z.string(),
+    embedUrl: optionalVideoEmbedSchema,
+    src: optionalVideoFilePathSchema,
+    poster: optionalLocalAssetPathSchema,
+    autoplay: z.boolean().optional(),
+    loop: z.boolean().optional(),
+    muted: z.boolean().optional()
+  })
+  .strict()
+  .superRefine((value, ctx) => {
+    const hasEmbed = Boolean(value.embedUrl);
+    const hasSrc = Boolean(value.src);
+
+    if (hasEmbed === hasSrc) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'Each atmosphere video needs exactly one source: embedUrl or src.'
+      });
+    }
+  });
 
 const labelValueSchema = z.object({
   label: z.string(),
@@ -275,6 +316,7 @@ export const siteContentSchema = z.object({
 });
 
 export type SiteContent = z.infer<typeof siteContentSchema>;
+export type AtmosphereVideoItem = SiteContent['gallery']['atmosphere']['items'][number];
 
 const rawContent = { hr, en, de, fr, es };
 

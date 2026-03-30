@@ -110,6 +110,31 @@ const baseLocaleContent = readJson('src/content/site/hr.json');
 for (const locale of localeIds) {
   const localizedContent = readJson(`src/content/site/${locale}.json`);
   compareShape(baseLocaleContent, localizedContent, [], locale);
+
+  const atmosphereItems = localizedContent.gallery?.atmosphere?.items ?? [];
+
+  for (let index = 0; index < atmosphereItems.length; index += 1) {
+    const item = atmosphereItems[index];
+    const hasEmbed = typeof item.embedUrl === 'string' && item.embedUrl.length > 0;
+    const hasSrc = typeof item.src === 'string' && item.src.length > 0;
+
+    if (hasEmbed === hasSrc) {
+      errors.push(
+        `${locale}:gallery.atmosphere.items[${index}] must define exactly one of embedUrl or src.`
+      );
+    }
+
+    if (hasSrc) {
+      ensureAssetExists(item.src, `${locale}:gallery.atmosphere.items[${index}].src`);
+    }
+
+    if (typeof item.poster === 'string' && item.poster.length > 0) {
+      ensureAssetExists(
+        item.poster,
+        `${locale}:gallery.atmosphere.items[${index}].poster`
+      );
+    }
+  }
 }
 
 const media = readJson('src/content/data/media.json');

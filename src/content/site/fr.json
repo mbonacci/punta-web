@@ -338,17 +338,32 @@
         {
           "title": "Calme du matin au bord de la mer",
           "text": "Vue matinale sur le rivage et la zone de jetée privée.",
-          "embedUrl": "https://www.youtube.com/embed/Scxs7L0vhZ4"
+          "embedUrl": "",
+          "src": "/uploads/vid-20250811-114256-1.mp4",
+          "poster": "",
+          "autoplay": false,
+          "loop": false,
+          "muted": false
         },
         {
           "title": "Terrasse et jardin en journée",
           "text": "Ombre des pins, repas dehors et va-et-vient naturel entre baignade et repos.",
-          "embedUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+          "embedUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ",
+          "src": "",
+          "poster": "",
+          "autoplay": false,
+          "loop": false,
+          "muted": false
         },
         {
           "title": "Ambiance du soir",
           "text": "Atmosphère dorée sur la terrasse et côte silencieuse après le coucher du soleil.",
-          "embedUrl": "https://www.youtube.com/embed/LXb3EKWsInQ"
+          "embedUrl": "https://www.youtube.com/embed/LXb3EKWsInQ",
+          "src": "",
+          "poster": "",
+          "autoplay": false,
+          "loop": false,
+          "muted": false
         }
       ]
     }

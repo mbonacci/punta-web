@@ -338,17 +338,32 @@
         {
           "title": "Morgenruhe am Meer",
           "text": "Blick auf Küste und privaten Stegbereich im ersten Tageslicht.",
-          "embedUrl": "https://www.youtube.com/embed/Scxs7L0vhZ4"
+          "embedUrl": "",
+          "src": "/uploads/vid-20250811-114256-1.mp4",
+          "poster": "",
+          "autoplay": false,
+          "loop": false,
+          "muted": false
         },
         {
           "title": "Terrasse und Garten am Tag",
           "text": "Pinien-Schatten, Essen im Freien und der entspannte Wechsel zwischen Baden und Pause.",
-          "embedUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+          "embedUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ",
+          "src": "",
+          "poster": "",
+          "autoplay": false,
+          "loop": false,
+          "muted": false
         },
         {
           "title": "Abendstimmung",
           "text": "Goldene Stunde auf der Terrasse und ruhige Küste nach Sonnenuntergang.",
-          "embedUrl": "https://www.youtube.com/embed/LXb3EKWsInQ"
+          "embedUrl": "https://www.youtube.com/embed/LXb3EKWsInQ",
+          "src": "",
+          "poster": "",
+          "autoplay": false,
+          "loop": false,
+          "muted": false
         }
       ]
     }
