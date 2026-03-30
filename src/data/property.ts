@@ -7,6 +7,10 @@ import propertyData from '../content/data/property.json';
 export type AvailabilityState = 'available' | 'limited' | 'booked' | 'inquiry';
 
 const localAssetPathSchema = z.string().startsWith('/');
+const optionalLocalAssetPathSchema = z
+  .union([localAssetPathSchema, z.null()])
+  .optional()
+  .transform((value) => value ?? undefined);
 const availabilityStateSchema = z.enum(['available', 'limited', 'booked', 'inquiry']);
 
 const propertyDataSchema = z
@@ -94,7 +98,7 @@ const fileVideoSchema = z
     type: z.literal('video'),
     source: z.literal('file'),
     src: localAssetPathSchema,
-    poster: localAssetPathSchema.optional(),
+    poster: optionalLocalAssetPathSchema,
     width: z.number().int().positive().optional(),
     height: z.number().int().positive().optional(),
     priority: z.boolean().optional(),
@@ -110,7 +114,7 @@ const embedVideoSchema = z
     type: z.literal('video'),
     source: z.literal('embed'),
     embedUrl: z.url(),
-    poster: localAssetPathSchema.optional(),
+    poster: optionalLocalAssetPathSchema,
     width: z.number().int().positive().optional(),
     height: z.number().int().positive().optional(),
     priority: z.boolean().optional()

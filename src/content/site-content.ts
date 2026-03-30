@@ -194,7 +194,7 @@ export const siteContentSchema = z.object({
     atmosphere: z.object({
       title: z.string(),
       intro: z.string(),
-      items: z.array(videoCardSchema).length(3)
+      items: z.array(videoCardSchema).min(1)
     }),
     note: z.string()
   }),

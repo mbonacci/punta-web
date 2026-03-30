@@ -336,6 +336,16 @@
       "intro": "Kratki video isječci prenose ritam kuće, borove uz more i osjećaj privatnosti kroz dan.",
       "items": [
         {
+          "title": "Jutarnji mir uz more",
+          "text": "Pogled u rano jutro prema obali i zoni privatnog mula.",
+          "embedUrl": "https://www.youtube.com/embed/Scxs7L0vhZ4"
+        },
+        {
+          "title": "Terasa i vrt tijekom dana",
+          "text": "Borova sjena, objedovanje na otvorenom i miran ritam između kupanja i odmora.",
+          "embedUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+        },
+        {
           "title": "Večernji ugođaj",
           "text": "Predvečerje na terasi i tišina obale bez gradske gužve.",
           "embedUrl": "https://www.youtube.com/embed/LXb3EKWsInQ"
@@ -491,6 +501,7 @@
     "house-exterior": "Kuća i vrt u sjeni borova i maslina.",
     "terrace-evening": "Natkrivena terasa za ručak u hladu i duge večeri.",
     "living-area": "Pogled iz interijera prema kamenoj terasi i vrtu.",
-    "house-front": "Još jedan pogled na kuću i zelenilo koje je okružuje."
+    "house-front": "Još jedan pogled na kuću i zelenilo koje je okružuje.",
+    "cicada": "Kratki video atmosfere uz cvrčke, more i borovu sjenu."
   }
 }

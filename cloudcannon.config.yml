@@ -280,6 +280,7 @@ file_config:
         - terrace-evening
         - living-area
         - house-front
+        - cicada
     _structures:
       media_gallery_items:
         values:
