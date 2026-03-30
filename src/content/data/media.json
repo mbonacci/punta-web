@@ -27,6 +27,14 @@
       "priority": true
     },
     {
+      "id": "kuhinja",
+      "type": "image",
+      "src": "/uploads/1774819939425.jpg",
+      "width": 1600,
+      "height": 900,
+      "priority": false
+    },
+    {
       "id": "terrace-evening",
       "type": "image",
       "src": "/images/house-punta-terrace.jpg",
@@ -40,6 +48,14 @@
       "src": "/images/house-punta-interior.jpg",
       "width": 865,
       "height": 1400,
+      "priority": false
+    },
+    {
+      "id": "leptir",
+      "type": "image",
+      "src": "/uploads/1774819939392.jpg",
+      "width": 1600,
+      "height": 900,
       "priority": false
     },
     {
@@ -61,22 +77,6 @@
       "autoplay": false,
       "loop": false,
       "muted": false
-    },
-    {
-      "id": "kuhinja",
-      "type": "image",
-      "src": "/uploads/1774819939425.jpg",
-      "width": 1600,
-      "height": 900,
-      "priority": false
-    },
-    {
-      "id": "leptir",
-      "type": "image",
-      "src": "/uploads/1774819939392.jpg",
-      "width": 1600,
-      "height": 900,
-      "priority": false
     }
   ]
 }
