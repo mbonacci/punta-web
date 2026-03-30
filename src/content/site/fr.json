@@ -358,8 +358,8 @@
         {
           "title": "Ambiance du soir",
           "text": "Atmosphère dorée sur la terrasse et côte silencieuse après le coucher du soleil.",
-          "embedUrl": "https://www.youtube.com/embed/LXb3EKWsInQ",
-          "src": "",
+          "embedUrl": "",
+          "src": "/uploads/vid-20250802-203551.mp4",
           "poster": "",
           "autoplay": false,
           "loop": false,
@@ -517,6 +517,10 @@
     "terrace-evening": "La terrasse couverte pour les déjeuners à l'ombre et les longues soirées.",
     "living-area": "La vue depuis l'intérieur vers la terrasse en pierre et le jardin.",
     "house-front": "Un autre regard sur la maison et la verdure qui l'entoure.",
-    "cicada": "Courte vidéo d’ambiance avec cigales, mer et ombre des pins."
+    "cicada": "Courte vidéo d’ambiance avec cigales, mer et ombre des pins.",
+    "kuhinja": "Vue depuis la cuisine vers les pins et la mer.",
+    "leptir": "Un papillon posé sur la table de la terrasse.",
+    "bor-uz-more": "Un pin au bord de la mer dans la lumière chaude du soir.",
+    "terasa": "Vue depuis la terrasse cadrée par les pins et la mer."
   }
 }

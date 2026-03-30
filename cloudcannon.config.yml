@@ -343,10 +343,14 @@ file_config:
       gallery_media_ids:
         - house-exterior
         - hero-coast
+        - kuhinja
         - terrace-evening
         - living-area
+        - leptir
         - house-front
         - cicada
+        - bor-uz-more
+        - terasa
     _structures:
       media_gallery_items:
         values:

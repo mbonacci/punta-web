@@ -358,8 +358,8 @@
         {
           "title": "Abendstimmung",
           "text": "Goldene Stunde auf der Terrasse und ruhige Küste nach Sonnenuntergang.",
-          "embedUrl": "https://www.youtube.com/embed/LXb3EKWsInQ",
-          "src": "",
+          "embedUrl": "",
+          "src": "/uploads/vid-20250802-203551.mp4",
           "poster": "",
           "autoplay": false,
           "loop": false,
@@ -517,6 +517,10 @@
     "terrace-evening": "Die überdachte Terrasse für Mittagessen im Schatten und lange Abende.",
     "living-area": "Der Blick von innen auf die Steinterrasse und den Garten.",
     "house-front": "Noch ein Blick auf das Haus und das Grün, das es umgibt.",
-    "cicada": "Kurzes Stimmungsvideo mit Zikaden, Meer und Pinien-Schatten."
+    "cicada": "Kurzes Stimmungsvideo mit Zikaden, Meer und Pinien-Schatten.",
+    "kuhinja": "Blick aus der Küche zu den Pinien und zum Meer.",
+    "leptir": "Ein Schmetterling auf dem Terrassentisch.",
+    "bor-uz-more": "Eine Kiefer am Meer im warmen Abendlicht.",
+    "terasa": "Blick von der Terrasse auf Pinien und Meer."
   }
 }

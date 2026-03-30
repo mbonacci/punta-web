@@ -358,7 +358,7 @@
         {
           "title": "Večernji ugođaj",
           "text": "Suton uz valove.",
-          "embedUrl": null,
+          "embedUrl": "",
           "src": "/uploads/vid-20250802-203551.mp4",
           "poster": "",
           "autoplay": false,
@@ -517,6 +517,10 @@
     "terrace-evening": "Natkrivena terasa za ručak u hladu i duge večeri.",
     "living-area": "Pogled iz interijera prema kamenoj terasi i vrtu.",
     "house-front": "Još jedan pogled na kuću i zelenilo koje je okružuje.",
-    "cicada": "Kratki video atmosfere uz cvrčke, more i borovu sjenu."
+    "cicada": "Kratki video atmosfere uz cvrčke, more i borovu sjenu.",
+    "kuhinja": "Pogled iz kuhinje prema borovima i moru.",
+    "leptir": "Leptir koji slijeće na stol na terasi.",
+    "bor-uz-more": "Bor uz more u zlatnom svjetlu predvečerja.",
+    "terasa": "Pogled s terase prema borovima i moru."
   }
 }

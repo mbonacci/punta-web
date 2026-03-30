@@ -30,8 +30,8 @@
       "id": "kuhinja",
       "type": "image",
       "src": "/uploads/1774819939425.jpg",
-      "width": 1600,
-      "height": 900,
+      "width": 2592,
+      "height": 4608,
       "priority": false
     },
     {
@@ -54,8 +54,8 @@
       "id": "leptir",
       "type": "image",
       "src": "/uploads/1774819939392.jpg",
-      "width": 1600,
-      "height": 900,
+      "width": 2592,
+      "height": 4608,
       "priority": false
     },
     {
@@ -71,27 +71,27 @@
       "type": "video",
       "source": "file",
       "src": "/uploads/vid-20250811-114256-1.mp4",
-      "width": 1280,
-      "height": 720,
+      "width": 720,
+      "height": 1280,
       "priority": false,
       "autoplay": false,
       "loop": false,
       "muted": false
     },
     {
-      "id": null,
+      "id": "bor-uz-more",
       "type": "image",
       "src": "/uploads/1774884169475.jpg",
-      "width": 1600,
-      "height": 900,
+      "width": 3280,
+      "height": 2464,
       "priority": false
     },
     {
       "id": "terasa",
       "type": "image",
       "src": "/uploads/1774884218525.jpg",
-      "width": 1600,
-      "height": 900,
+      "width": 1665,
+      "height": 2686,
       "priority": false
     }
   ]

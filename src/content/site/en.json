@@ -358,8 +358,8 @@
         {
           "title": "Evening atmosphere",
           "text": "Golden-hour terrace mood and the quiet coastal setting after sunset.",
-          "embedUrl": "https://www.youtube.com/embed/LXb3EKWsInQ",
-          "src": "",
+          "embedUrl": "",
+          "src": "/uploads/vid-20250802-203551.mp4",
           "poster": "",
           "autoplay": false,
           "loop": false,
@@ -517,6 +517,10 @@
     "terrace-evening": "The covered terrace for shaded lunches and long evenings.",
     "living-area": "A view from inside toward the stone terrace and garden.",
     "house-front": "Another view of the house and the greenery that surrounds it.",
-    "cicada": "A short atmosphere video with cicadas, sea, and pine shade."
+    "cicada": "A short atmosphere video with cicadas, sea, and pine shade.",
+    "kuhinja": "A kitchen view opening toward the pines and the sea.",
+    "leptir": "A butterfly settling on the terrace table.",
+    "bor-uz-more": "A pine by the sea in warm evening light.",
+    "terasa": "A terrace view framed by pines and the sea."
   }
 }

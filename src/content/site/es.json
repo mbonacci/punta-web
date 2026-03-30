@@ -358,8 +358,8 @@
         {
           "title": "Ambiente al atardecer",
           "text": "Luz dorada en la terraza y costa tranquila tras la puesta de sol.",
-          "embedUrl": "https://www.youtube.com/embed/LXb3EKWsInQ",
-          "src": "",
+          "embedUrl": "",
+          "src": "/uploads/vid-20250802-203551.mp4",
           "poster": "",
           "autoplay": false,
           "loop": false,
@@ -517,6 +517,10 @@
     "terrace-evening": "La terraza cubierta para comer a la sombra y alargar la noche.",
     "living-area": "La vista desde el interior hacia la terraza de piedra y el jardín.",
     "house-front": "Otra vista de la casa y la vegetación que la rodea.",
-    "cicada": "Breve video de ambiente con cigarras, mar y sombra de los pinos."
+    "cicada": "Breve video de ambiente con cigarras, mar y sombra de los pinos.",
+    "kuhinja": "Vista desde la cocina hacia los pinos y el mar.",
+    "leptir": "Una mariposa posada sobre la mesa de la terraza.",
+    "bor-uz-more": "Un pino junto al mar con la cálida luz de la tarde.",
+    "terasa": "Vista desde la terraza entre pinos y mar."
   }
 }
