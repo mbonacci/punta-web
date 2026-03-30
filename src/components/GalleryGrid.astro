@@ -10,20 +10,28 @@ interface Props {
 
 const { content, limit } = Astro.props;
 const items = typeof limit === 'number' ? galleryMedia.slice(0, limit) : galleryMedia;
+
+const tilePattern = ['featured', 'tall', 'standard', 'wide', 'standard', 'tall'] as const;
 ---
 
 <div class="gallery-grid">
   {
     items.map((item, index) => (
-      <figure class:list={['gallery-card', index === 0 && 'gallery-card--featured']}>
+      <article
+        class:list={[
+          'gallery-card',
+          `gallery-card--${item.type === 'video' && index !== 0 ? 'tall' : tilePattern[index % tilePattern.length]}`,
+          item.type === 'video' && 'gallery-card--video'
+        ]}
+      >
         <MediaAsset
           item={item}
           alt={content.galleryCaptions[item.id]}
+          class="gallery-card__media"
           loading={item.priority ? 'eager' : 'lazy'}
           fetchpriority={item.priority ? 'high' : 'auto'}
         />
-        <figcaption>{content.galleryCaptions[item.id]}</figcaption>
-      </figure>
+      </article>
     ))
   }
 </div>

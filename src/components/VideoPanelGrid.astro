@@ -22,13 +22,13 @@ function getVideoMimeType(src: string) {
 }
 ---
 
-<div class="card-grid">
+<div class="video-panel-grid">
   {
     items.map((item) => (
-      <article class="card card--video">
+      <article class="card card--video video-panel-grid__item">
         {item.embedUrl ? (
           <iframe
-            class="video-panel__media"
+            class="video-panel__media video-panel__media--embed"
             src={item.embedUrl}
             title={item.title}
             loading="lazy"
@@ -38,8 +38,8 @@ function getVideoMimeType(src: string) {
           />
         ) : (
           <video
-            class="video-panel__media"
-            title={item.title}
+            class="video-panel__media video-panel__media--file"
+            aria-label={item.title}
             poster={item.poster}
             preload="metadata"
             autoplay={item.autoplay}
