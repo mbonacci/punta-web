@@ -1,6 +1,6 @@
 ---
 import type { SiteContent } from '../content/site-content';
-import { galleryMedia } from '../data/property';
+import { galleryMedia, type GalleryMediaItem } from '../data/property';
 import MediaAsset from './MediaAsset.astro';
 
 interface Props {
@@ -11,7 +11,50 @@ interface Props {
 const { content, limit } = Astro.props;
 const items = typeof limit === 'number' ? galleryMedia.slice(0, limit) : galleryMedia;
 
-const tilePattern = ['featured', 'tall', 'standard', 'wide', 'standard', 'tall'] as const;
+type TileVariant = 'featured' | 'wide' | 'standard' | 'tall';
+
+function getAspectRatio(item: GalleryMediaItem) {
+  if (!item.width || !item.height) {
+    return undefined;
+  }
+
+  return item.width / item.height;
+}
+
+function createTileVariants(mediaItems: GalleryMediaItem[]) {
+  let landscapeCount = 0;
+
+  return mediaItems.map((item, index) => {
+    const ratio = getAspectRatio(item);
+
+    if (ratio === undefined) {
+      return index === 0 ? 'featured' : 'standard';
+    }
+
+    if (ratio < 0.82) {
+      return 'tall';
+    }
+
+    if (ratio >= 1.25) {
+      let variant: TileVariant;
+
+      if (landscapeCount === 0) {
+        variant = 'featured';
+      } else if (landscapeCount === 1 || landscapeCount % 2 === 1) {
+        variant = 'wide';
+      } else {
+        variant = 'standard';
+      }
+
+      landscapeCount += 1;
+      return variant;
+    }
+
+    return 'standard';
+  });
+}
+
+const tileVariants = createTileVariants(items);
 ---
 
 <div class="gallery-grid">
@@ -20,7 +63,7 @@ const tilePattern = ['featured', 'tall', 'standard', 'wide', 'standard', 'tall']
       <article
         class:list={[
           'gallery-card',
-          `gallery-card--${item.type === 'video' && index !== 0 ? 'tall' : tilePattern[index % tilePattern.length]}`,
+          `gallery-card--${tileVariants[index]}`,
           item.type === 'video' && 'gallery-card--video'
         ]}
       >
