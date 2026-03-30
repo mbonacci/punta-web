@@ -28,6 +28,7 @@ const tilePattern = ['featured', 'tall', 'standard', 'wide', 'standard', 'tall']
           item={item}
           alt={content.galleryCaptions[item.id]}
           class="gallery-card__media"
+          fill={true}
           loading={item.priority ? 'eager' : 'lazy'}
           fetchpriority={item.priority ? 'high' : 'auto'}
         />

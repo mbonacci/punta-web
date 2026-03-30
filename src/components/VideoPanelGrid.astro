@@ -1,5 +1,7 @@
 ---
 import type { AtmosphereVideoItem } from '../content/site-content';
+import type { GalleryMediaItem } from '../data/property';
+import MediaAsset from './MediaAsset.astro';
 
 type VideoPanelItem = AtmosphereVideoItem;
 
@@ -9,49 +11,43 @@ interface Props {
 
 const { items } = Astro.props;
 
-function getVideoMimeType(src: string) {
-  if (src.endsWith('.webm')) {
-    return 'video/webm';
+function toMediaItem(item: VideoPanelItem, index: number): GalleryMediaItem {
+  if (item.embedUrl) {
+    return {
+      id: `atmosphere-${index}`,
+      type: 'video',
+      source: 'embed',
+      embedUrl: item.embedUrl,
+      poster: item.poster
+    };
   }
 
-  if (src.endsWith('.ogg') || src.endsWith('.ogv')) {
-    return 'video/ogg';
-  }
-
-  return 'video/mp4';
+  return {
+    id: `atmosphere-${index}`,
+    type: 'video',
+    source: 'file',
+    src: item.src!,
+    poster: item.poster,
+    autoplay: item.autoplay,
+    loop: item.loop,
+    muted: item.muted
+  };
 }
 ---
 
 <div class="video-panel-grid">
   {
-    items.map((item) => (
+    items.map((item, index) => (
       <article class="card card--video video-panel-grid__item">
-        {item.embedUrl ? (
-          <iframe
-            class="video-panel__media video-panel__media--embed"
-            src={item.embedUrl}
-            title={item.title}
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            referrerpolicy="strict-origin-when-cross-origin"
-          />
-        ) : (
-          <video
-            class="video-panel__media video-panel__media--file"
-            aria-label={item.title}
-            poster={item.poster}
-            preload="metadata"
-            autoplay={item.autoplay}
-            loop={item.loop}
-            muted={item.muted ?? item.autoplay ?? false}
-            controls
-            playsinline
-          >
-            <source src={item.src} type={getVideoMimeType(item.src!)} />
-            {item.title}
-          </video>
-        )}
+        <MediaAsset
+          item={toMediaItem(item, index)}
+          alt={item.title}
+          class:list={[
+            'video-panel__media',
+            item.embedUrl ? 'video-panel__media--embed' : 'video-panel__media--file'
+          ]}
+          controls={!item.embedUrl}
+        />
         <h3>{item.title}</h3>
         <p>{item.text}</p>
       </article>

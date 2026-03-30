@@ -8,6 +8,7 @@ interface Props {
   loading?: 'eager' | 'lazy';
   fetchpriority?: 'high' | 'auto';
   controls?: boolean;
+  fill?: boolean;
 }
 
 const {
@@ -16,13 +17,14 @@ const {
   class: className,
   loading = 'lazy',
   fetchpriority = 'auto',
-  controls = item.type === 'video'
+  controls = item.type === 'video',
+  fill = false
 } = Astro.props;
 
 const aspectRatio =
   item.width && item.height ? `${item.width} / ${item.height}` : undefined;
 
-const assetStyle = aspectRatio ? `aspect-ratio: ${aspectRatio};` : undefined;
+const assetStyle = !fill && aspectRatio ? `aspect-ratio: ${aspectRatio};` : undefined;
 
 function getVideoMimeType(src: string) {
   if (src.endsWith('.webm')) {
