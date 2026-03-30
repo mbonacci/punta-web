@@ -170,6 +170,7 @@ Supported approaches:
 - external embed URL, for example a YouTube or Vimeo embed URL
 
 Keep original masters outside Git. Only commit compressed files intended for the website.
+For mobile recordings, export or convert the final MP4 so the portrait or landscape orientation is baked into the file itself rather than stored only as rotation metadata.
 
 ### Edit availability
 

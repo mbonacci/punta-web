@@ -46,4 +46,5 @@ Croatian (`hr`) is the source locale. When structure changes in Croatian, the ot
 
 - Keep original photo and video masters outside Git.
 - Only commit optimized web-ready files.
+- Export local MP4 files with the final upright orientation baked in. Avoid phone videos that rely only on rotation metadata.
 - Keep captions in sync with media ids across all locale files.

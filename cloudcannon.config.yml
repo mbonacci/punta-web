@@ -212,7 +212,7 @@ file_config:
       src:
         type: file
         label: Local video file
-        comment: Upload a web-ready video file. CloudCannon uploads go to public/uploads.
+        comment: Upload a web-ready MP4 file. If the video was filmed on a phone, export it with the final orientation baked in before uploading. CloudCannon uploads go to public/uploads.
       poster:
         type: image
         label: Poster image
