@@ -358,8 +358,8 @@
         {
           "title": "Večernji ugođaj",
           "text": "Suton uz valove.",
-          "embedUrl": "/uploads/vid-20250802-203551.mp4",
-          "src": "",
+          "embedUrl": null,
+          "src": "/uploads/vid-20250802-203551.mp4",
           "poster": "",
           "autoplay": false,
           "loop": false,
