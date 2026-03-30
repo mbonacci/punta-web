@@ -77,6 +77,22 @@
       "autoplay": false,
       "loop": false,
       "muted": false
+    },
+    {
+      "id": null,
+      "type": "image",
+      "src": "/uploads/1774884169475.jpg",
+      "width": 1600,
+      "height": 900,
+      "priority": false
+    },
+    {
+      "id": "terasa",
+      "type": "image",
+      "src": "/uploads/1774884218525.jpg",
+      "width": 1600,
+      "height": 900,
+      "priority": false
     }
   ]
 }
