@@ -106,6 +106,14 @@
       "autoplay": false,
       "loop": false,
       "muted": false
+    },
+    {
+      "id": "suton",
+      "type": "image",
+      "src": "/uploads/20240803-200714.jpg",
+      "width": 1600,
+      "height": 900,
+      "priority": false
     }
   ]
 }
