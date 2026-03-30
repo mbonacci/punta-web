@@ -61,6 +61,14 @@
       "autoplay": false,
       "loop": false,
       "muted": false
+    },
+    {
+      "id": "kuhinja",
+      "type": "image",
+      "src": "/uploads/1774819939425.jpg",
+      "width": 1600,
+      "height": 900,
+      "priority": false
     }
   ]
 }
