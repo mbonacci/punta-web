@@ -101,7 +101,7 @@ All user-facing text lives in:
 - `src/content/site/fr.json`
 - `src/content/site/es.json`
 
-Croatian is the source version. Keep the same structure across all locale files and update all locales in the same pull request when fields are added, removed, or reordered.
+Croatian is the source version. Keep the same structure across all locale files and update all locales in the same pull request when fields are added, removed, or reordered. For new gallery media, Croatian captions are required first and the other locales can temporarily fall back to Croatian until translated.
 
 ### Edit contact info, guest facts, and listing links
 

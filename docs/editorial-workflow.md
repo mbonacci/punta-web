@@ -41,10 +41,11 @@ This project is set up so non-technical edits happen in content files, while Git
 ## Translation rule
 
 Croatian (`hr`) is the source locale. When structure changes in Croatian, the other locale files must be updated in the same pull request.
+For gallery media, Croatian captions are required immediately. Missing translated captions temporarily fall back to Croatian so uploads do not block the build.
 
 ## Media rule
 
 - Keep original photo and video masters outside Git.
 - Only commit optimized web-ready files.
 - Export local MP4 files with the final upright orientation baked in. Avoid phone videos that rely only on rotation metadata.
-- Keep captions in sync with media ids across all locale files.
+- Add a Croatian caption for every new gallery media id. Other locale captions can follow in a later edit without breaking CI.

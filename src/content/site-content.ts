@@ -1,54 +1,54 @@
-import { z } from 'zod';
-import de from './site/de.json';
-import en from './site/en.json';
-import es from './site/es.json';
-import fr from './site/fr.json';
-import hr from './site/hr.json';
-import { supportedLocales, type Locale } from '../lib/i18n';
+import { z } from "zod";
+import de from "./site/de.json";
+import en from "./site/en.json";
+import es from "./site/es.json";
+import fr from "./site/fr.json";
+import hr from "./site/hr.json";
+import { supportedLocales, type Locale } from "../lib/i18n";
 
 const seoEntrySchema = z.object({
   title: z.string(),
-  description: z.string()
+  description: z.string(),
 });
 
 const heroSchema = z.object({
   eyebrow: z.string(),
   title: z.string(),
-  intro: z.string()
+  intro: z.string(),
 });
 
 const heroWithActionsSchema = heroSchema.extend({
   primaryCta: z.string(),
   secondaryCta: z.string(),
-  badges: z.array(z.string())
+  badges: z.array(z.string()),
 });
 
 const cardSchema = z.object({
   title: z.string(),
-  text: z.string()
+  text: z.string(),
 });
 
-const localAssetPathSchema = z.string().startsWith('/');
+const localAssetPathSchema = z.string().startsWith("/");
 
 const optionalLocalAssetPathSchema = z
-  .union([localAssetPathSchema, z.literal(''), z.null()])
+  .union([localAssetPathSchema, z.literal(""), z.null()])
   .optional()
   .transform((value) =>
-    typeof value === 'string' && value.length > 0 ? value : undefined
+    typeof value === "string" && value.length > 0 ? value : undefined,
   );
 
 const optionalVideoFilePathSchema = z
-  .union([localAssetPathSchema, z.literal(''), z.null()])
+  .union([localAssetPathSchema, z.literal(""), z.null()])
   .optional()
   .transform((value) =>
-    typeof value === 'string' && value.length > 0 ? value : undefined
+    typeof value === "string" && value.length > 0 ? value : undefined,
   );
 
 const optionalVideoEmbedSchema = z
-  .union([z.url(), z.literal(''), z.null()])
+  .union([z.url(), z.literal(""), z.null()])
   .optional()
   .transform((value) =>
-    typeof value === 'string' && value.length > 0 ? value : undefined
+    typeof value === "string" && value.length > 0 ? value : undefined,
   );
 
 const videoCardSchema = z
@@ -60,7 +60,7 @@ const videoCardSchema = z
     poster: optionalLocalAssetPathSchema,
     autoplay: z.boolean().optional(),
     loop: z.boolean().optional(),
-    muted: z.boolean().optional()
+    muted: z.boolean().optional(),
   })
   .strict()
   .superRefine((value, ctx) => {
@@ -69,15 +69,16 @@ const videoCardSchema = z
 
     if (hasEmbed === hasSrc) {
       ctx.addIssue({
-        code: 'custom',
-        message: 'Each atmosphere video needs exactly one source: embedUrl or src.'
+        code: "custom",
+        message:
+          "Each atmosphere video needs exactly one source: embedUrl or src.",
       });
     }
   });
 
 const labelValueSchema = z.object({
   label: z.string(),
-  value: z.string()
+  value: z.string(),
 });
 
 export const siteContentSchema = z.object({
@@ -87,7 +88,7 @@ export const siteContentSchema = z.object({
     siteTitle: z.string(),
     siteDescription: z.string(),
     ogAlt: z.string(),
-    announcement: z.string()
+    announcement: z.string(),
   }),
   navigation: z.object({
     home: z.string(),
@@ -96,7 +97,7 @@ export const siteContentSchema = z.object({
     location: z.string(),
     availability: z.string(),
     contact: z.string(),
-    privacy: z.string()
+    privacy: z.string(),
   }),
   common: z.object({
     primaryCta: z.string(),
@@ -116,22 +117,22 @@ export const siteContentSchema = z.object({
       bathrooms: z.string(),
       size: z.string(),
       grounds: z.string(),
-      beachDistance: z.string()
+      beachDistance: z.string(),
     }),
     contactLabels: z.object({
       whatsapp: z.string(),
       email: z.string(),
-      phone: z.string()
+      phone: z.string(),
     }),
     listingLabels: z.object({
       vrbo: z.string(),
       airbnb: z.string(),
-      booking: z.string()
+      booking: z.string(),
     }),
     scheduleLabels: z.object({
       checkIn: z.string(),
-      checkOut: z.string()
-    })
+      checkOut: z.string(),
+    }),
   }),
   footer: z.object({
     tagline: z.string(),
@@ -142,7 +143,7 @@ export const siteContentSchema = z.object({
     addressLabel: z.string(),
     availabilityLabel: z.string(),
     listingsNote: z.string(),
-    rights: z.string()
+    rights: z.string(),
   }),
   seo: z.object({
     home: seoEntrySchema,
@@ -151,24 +152,24 @@ export const siteContentSchema = z.object({
     location: seoEntrySchema,
     availability: seoEntrySchema,
     contact: seoEntrySchema,
-    privacy: seoEntrySchema
+    privacy: seoEntrySchema,
   }),
   home: z.object({
     hero: heroWithActionsSchema,
     highlights: z.object({
       title: z.string(),
       intro: z.string(),
-      items: z.array(cardSchema)
+      items: z.array(cardSchema),
     }),
     story: z.object({
       title: z.string(),
       lead: z.string(),
       body: z.string(),
-      aside: z.string()
+      aside: z.string(),
     }),
     quickFacts: z.object({
       title: z.string(),
-      intro: z.string()
+      intro: z.string(),
     }),
     reviewSummary: z.object({
       eyebrow: z.string(),
@@ -177,55 +178,55 @@ export const siteContentSchema = z.object({
       sourceLabel: z.string(),
       badgeLabel: z.string(),
       reviewCountLabel: z.string(),
-      rankingLabel: z.string()
+      rankingLabel: z.string(),
     }),
     galleryPreview: z.object({
       title: z.string(),
       intro: z.string(),
-      cta: z.string()
+      cta: z.string(),
     }),
     locationPreview: z.object({
       title: z.string(),
       intro: z.string(),
-      cta: z.string()
+      cta: z.string(),
     }),
     availabilityPreview: z.object({
       title: z.string(),
       intro: z.string(),
-      cta: z.string()
+      cta: z.string(),
     }),
     trust: z.object({
       title: z.string(),
-      points: z.array(z.string())
-    })
+      points: z.array(z.string()),
+    }),
   }),
   accommodation: z.object({
     hero: heroSchema,
     overview: z.object({
       title: z.string(),
-      paragraphs: z.array(z.string())
+      paragraphs: z.array(z.string()),
     }),
     amenities: z.object({
       title: z.string(),
-      items: z.array(cardSchema)
+      items: z.array(cardSchema),
     }),
     spaces: z.object({
       title: z.string(),
-      items: z.array(cardSchema)
+      items: z.array(cardSchema),
     }),
     practical: z.object({
       title: z.string(),
-      items: z.array(labelValueSchema)
+      items: z.array(labelValueSchema),
     }),
     roomDetails: z.object({
       title: z.string(),
       items: z.array(
         z.object({
           title: z.string(),
-          details: z.array(z.string())
-        })
-      )
-    })
+          details: z.array(z.string()),
+        }),
+      ),
+    }),
   }),
   gallery: z.object({
     hero: heroSchema,
@@ -235,9 +236,9 @@ export const siteContentSchema = z.object({
     atmosphere: z.object({
       title: z.string(),
       intro: z.string(),
-      items: z.array(videoCardSchema).min(1)
+      items: z.array(videoCardSchema).min(1),
     }),
-    note: z.string()
+    note: z.string(),
   }),
   location: z.object({
     hero: heroSchema,
@@ -245,17 +246,17 @@ export const siteContentSchema = z.object({
     introText: z.string(),
     highlights: z.object({
       title: z.string(),
-      items: z.array(cardSchema)
+      items: z.array(cardSchema),
     }),
     gettingHere: z.object({
       title: z.string(),
-      steps: z.array(z.string())
+      steps: z.array(z.string()),
     }),
     mapCard: z.object({
       title: z.string(),
       text: z.string(),
-      buttonLabel: z.string()
-    })
+      buttonLabel: z.string(),
+    }),
   }),
   availability: z.object({
     hero: heroSchema,
@@ -265,12 +266,12 @@ export const siteContentSchema = z.object({
       available: z.string(),
       limited: z.string(),
       booked: z.string(),
-      inquiry: z.string()
+      inquiry: z.string(),
     }),
     noteTitle: z.string(),
     noteText: z.string(),
     syncTitle: z.string(),
-    syncText: z.string()
+    syncText: z.string(),
   }),
   contact: z.object({
     hero: heroSchema,
@@ -298,8 +299,8 @@ export const siteContentSchema = z.object({
       successBody: z.string(),
       notConfiguredTitle: z.string(),
       notConfiguredBody: z.string(),
-      validationMessage: z.string()
-    })
+      validationMessage: z.string(),
+    }),
   }),
   privacy: z.object({
     hero: heroSchema,
@@ -307,24 +308,40 @@ export const siteContentSchema = z.object({
     sections: z.array(
       z.object({
         title: z.string(),
-        paragraphs: z.array(z.string())
-      })
+        paragraphs: z.array(z.string()),
+      }),
     ),
-    closing: z.string()
+    closing: z.string(),
   }),
-  galleryCaptions: z.record(z.string(), z.string())
+  galleryCaptions: z.record(z.string(), z.string()),
 });
 
 export type SiteContent = z.infer<typeof siteContentSchema>;
-export type AtmosphereVideoItem = SiteContent['gallery']['atmosphere']['items'][number];
+export type AtmosphereVideoItem =
+  SiteContent["gallery"]["atmosphere"]["items"][number];
 
 const rawContent = { hr, en, de, fr, es };
+const baseContent = siteContentSchema.parse(hr);
+
+function applyGalleryCaptionFallback(content: SiteContent): SiteContent {
+  if (content.locale === "hr") {
+    return content;
+  }
+
+  return {
+    ...content,
+    galleryCaptions: {
+      ...baseContent.galleryCaptions,
+      ...content.galleryCaptions,
+    },
+  };
+}
 
 export const contentByLocale: Record<Locale, SiteContent> = Object.fromEntries(
   Object.entries(rawContent).map(([locale, content]) => [
     locale,
-    siteContentSchema.parse(content)
-  ])
+    applyGalleryCaptionFallback(siteContentSchema.parse(content)),
+  ]),
 ) as Record<Locale, SiteContent>;
 
 export function getSiteContent(locale: Locale) {
