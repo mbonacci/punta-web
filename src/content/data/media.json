@@ -31,21 +31,37 @@
       "type": "image",
       "src": "/images/house-punta-terrace.jpg",
       "width": 1400,
-      "height": 933
+      "height": 933,
+      "priority": false
     },
     {
       "id": "living-area",
       "type": "image",
       "src": "/images/house-punta-interior.jpg",
       "width": 865,
-      "height": 1400
+      "height": 1400,
+      "priority": false
     },
     {
       "id": "house-front",
       "type": "image",
       "src": "/images/house-punta-exterior-2.jpg",
       "width": 1400,
-      "height": 786
+      "height": 786,
+      "priority": false
+    },
+    {
+      "id": "cicada",
+      "type": "video",
+      "source": "file",
+      "src": "/uploads/vid-20250811-114256-1.mp4",
+      "poster": null,
+      "width": 1280,
+      "height": 720,
+      "priority": false,
+      "autoplay": false,
+      "loop": false,
+      "muted": false
     }
   ]
 }
